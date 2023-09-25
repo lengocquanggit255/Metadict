@@ -1,0 +1,16 @@
+test case Week 5:
+Account acc = new Account();
+acc.addTransaction(2000.255, "deposit");
+acc.addTransaction(1000, "withdraw");
+acc.printTransaction();
+
+Account acc1 = new Account();
+acc1.addTransaction(200, "beposit");
+acc1.addTransaction(-1, "withdraw");
+acc1.printTransaction();
+
+Account acc2 = new Account();
+acc2.addTransaction(-1, "beposit");
+acc2.addTransaction(200, "beposit");
+acc2.addTransaction(-1, "withdraw");
+acc2.printTransaction();

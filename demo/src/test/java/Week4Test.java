@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.example.Week4;
+import com.example.Week4.Week4;
 
 public class Week4Test {
     @Test

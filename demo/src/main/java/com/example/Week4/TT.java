@@ -1,4 +1,5 @@
-public class Solution {
+package com.example.Week4;
+public class TT {
 
     /**
      * The numerator of the fraction.
@@ -45,7 +46,7 @@ public class Solution {
     /**
      * The numerator of the fraction.
      */
-    public Solution(int numerator, int denominator) {
+    public TT(int numerator, int denominator) {
         if (denominator == 0) {
             this.denominator = 1;
             this.numerator = 0;
@@ -68,7 +69,7 @@ public class Solution {
     /**
      * Reduce the current fraction.
      */
-    public Solution reduce() {
+    public TT reduce() {
         int gcd1 = gcd(numerator, denominator);
         this.denominator /= gcd1;
         this.numerator /= gcd1;
@@ -78,40 +79,40 @@ public class Solution {
     /**
      * Other The solution object that will be added with the current object.
      */
-    public Solution add(Solution other) {
+    public TT add(TT other) {
         int newDenominator = this.denominator * other.denominator;
         int newNumerator = this.numerator * other.denominator + other.numerator * this.denominator;
-        return new Solution(newNumerator, newDenominator);
+        return new TT(newNumerator, newDenominator);
     }
 
     /**
      * Other The solution object that will be subtracted with the current object.
      */
-    public Solution subtract(Solution other) {
+    public TT subtract(TT other) {
         int newNumerator = this.numerator * other.denominator - other.numerator * this.denominator;
         int newDenominator = this.denominator * other.denominator;
-        return new Solution(newNumerator, newDenominator);
+        return new TT(newNumerator, newDenominator);
     }
 
     /**
      * Other The solution object that will be multiplied with the current object.
      */
-    public Solution multiply(Solution other) {
+    public TT multiply(TT other) {
         int newNumerator = this.numerator * other.numerator;
         int newDenominator = this.denominator * other.denominator;
-        return new Solution(newNumerator, newDenominator);
+        return new TT(newNumerator, newDenominator);
     }
 
     /**
      * other The solution object that will be divided with the current object.
      */
-    public Solution divide(Solution other) {
+    public TT divide(TT other) {
         if (other.numerator == 0) {
             return this;
         } else {
             int newNumerator = this.numerator * other.denominator;
             int newDenominator = this.denominator * other.numerator;
-            return new Solution(newNumerator, newDenominator);
+            return new TT(newNumerator, newDenominator);
         }
     }
 
@@ -119,8 +120,8 @@ public class Solution {
      * Obj is an object that will be compared with the current object.
      */
     public boolean equals(Object obj) {
-        if (obj instanceof Solution) {
-            Solution other = (Solution) obj;
+        if (obj instanceof TT) {
+            TT other = (TT) obj;
             return this.numerator * other.denominator == this.denominator * other.numerator;
         }
         return false;

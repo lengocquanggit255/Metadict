@@ -1,4 +1,4 @@
-package com.example;
+package com.example.Week4;
 
 public class Solution {
 
