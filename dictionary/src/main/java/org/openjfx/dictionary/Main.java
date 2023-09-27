@@ -18,7 +18,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Primary.fxml"));
+            Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -27,3 +28,11 @@ public class Main extends Application {
         }
     }
 }
+// filteredList.setPredicate(word -> {
+//             if (searchText == null || searchText.isEmpty()) {
+//                 return true;
+//             }
+
+//             String lowercaseSearchText = searchText.toLowerCase();
+//             return word.toLowerCase().contains(lowercaseSearchText);
+//         });
