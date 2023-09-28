@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 import org.openjfx.dictionary.cmd.Dictionary;
 
-public class PrimaryController implements Initializable {
+public class SearchPaneController implements Initializable {
 
     private Dictionary dictionary = new Dictionary();
     @FXML
@@ -43,7 +43,7 @@ public class PrimaryController implements Initializable {
         });
 
         myListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null && filteredList.contains(newValue)) {
+            if (newValue != null) {
                 Platform.runLater(() -> myTextField.setText(newValue));
                 explainLabel.setText(dictionary.getWord(newValue).getWord_explain());
             }
