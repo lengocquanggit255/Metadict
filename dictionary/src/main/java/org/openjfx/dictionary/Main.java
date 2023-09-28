@@ -28,11 +28,3 @@ public class Main extends Application {
         }
     }
 }
-// filteredList.setPredicate(word -> {
-//             if (searchText == null || searchText.isEmpty()) {
-//                 return true;
-//             }
-
-//             String lowercaseSearchText = searchText.toLowerCase();
-//             return word.toLowerCase().contains(lowercaseSearchText);
-//         });

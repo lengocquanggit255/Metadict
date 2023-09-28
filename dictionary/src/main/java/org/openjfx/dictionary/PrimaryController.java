@@ -1,13 +1,12 @@
 package org.openjfx.dictionary;
 
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -15,15 +14,21 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import org.openjfx.dictionary.cmd.Dictionary;
+
 public class PrimaryController implements Initializable {
 
+    private Dictionary dictionary = new Dictionary();
     @FXML
     private TextField myTextField;
 
     @FXML
     private ListView<String> myListView;
 
-    private final String[] words = { "House", "City", "Village", "State", "Country", "Traction", "Transport", "Train" };
+    @FXML
+    private Label explainLabel;
+
+    private final String[] words = dictionary.getWords_target();
     private FilteredList<String> filteredList;
 
     @Override
@@ -40,6 +45,7 @@ public class PrimaryController implements Initializable {
         myListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null && filteredList.contains(newValue)) {
                 Platform.runLater(() -> myTextField.setText(newValue));
+                explainLabel.setText(dictionary.getWord(newValue).getWord_explain());
             }
         });
     }
