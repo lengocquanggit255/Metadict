@@ -3,11 +3,6 @@ package org.openjfx.dictionary.cmd;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    // public static void main(String[] args) {
-    //     DictionaryCommandline cmdline = new DictionaryCommandline();
-    //     cmdline.dictionaryBasic();
-    // }
-
     private DictionaryManagement service;
     private Scanner scanner;
 

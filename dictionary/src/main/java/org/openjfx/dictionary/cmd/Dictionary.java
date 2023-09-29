@@ -1,6 +1,7 @@
 package org.openjfx.dictionary.cmd;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,13 +9,13 @@ import java.util.Scanner;
 public class Dictionary {
     private static final int MAX_WORD = 10000;
     private Word[] words = new Word[MAX_WORD];
-    private ArrayList<Word> markedWords;
+    private ArrayList<Word> markedWords = new ArrayList<Word>();
     private int numOfWords;
 
     public Dictionary() {
         numOfWords = 0;
-        insertFromFile();
-        markedWords = new ArrayList<Word>();
+        insertWordsFromFile();
+        insertBookMarkFromFile();
     }
 
     public String[] getTargetOFMarked_word() {
@@ -26,7 +27,7 @@ public class Dictionary {
         return words;
     }
 
-    public void markedWords(String word_target) {
+    public void markedWord(String word_target) {
         int i;
         for (i = 0; i < numOfWords; i++) {
             if (words[i].getWord_target().equals(word_target)) {
@@ -111,7 +112,7 @@ public class Dictionary {
         target.setWord_explain(word_explain);
     }
 
-    private void insertFromFile() {
+    private void insertWordsFromFile() {
 
         String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\dictionaries.txt";
 
@@ -135,6 +136,64 @@ public class Dictionary {
             scanner.close();
         } catch (IOException e) {
             System.out.println("File not found: " + e.getMessage());
+        }
+    }
+
+    private void insertBookMarkFromFile() {
+        String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
+
+        try {
+            File file = new File(filePath);
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] words = line.split("\t");
+                if (words.length == 2) {
+                    String word_target = words[0];
+                    String word_explain = words[1];
+                    Word newWord = new Word(word_target, word_explain);
+                    markedWord(newWord.getWord_target());
+                } else {
+                    System.out.println("Invalid line format: " + line);
+                }
+            }
+            System.out.println("Import succeeded!");
+            scanner.close();
+        } catch (IOException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
+    }
+
+    public void exportBookMarkToFile() {
+
+        String filepath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
+
+        try {
+            File file = new File(filepath);
+
+            if (file.createNewFile()) {
+                System.out.println("New file created: " + file.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating the file.");
+            e.printStackTrace();
+        }
+
+        String newText = "";
+        for (int i = 0; i < markedWords.size(); i++) {
+            Word word = markedWords.get(i);
+            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
+        }
+
+        try (FileWriter writer = new FileWriter(filepath, false)) {
+            writer.write(newText);
+            System.out.println("Successfully export the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while rewriting the file.");
+            e.printStackTrace();
         }
     }
 }

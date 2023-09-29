@@ -41,7 +41,7 @@ public class SearchPaneController implements Initializable {
         if (ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
             ContainerController.dictionary.unMarkedWords(targetLabel.getText());
         } else {
-            ContainerController.dictionary.markedWords(targetLabel.getText());
+            ContainerController.dictionary.markedWord(targetLabel.getText());
         }
     }
 
@@ -78,6 +78,9 @@ public class SearchPaneController implements Initializable {
                 targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
             }
         });
+
+        markButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
+        markButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
     }
 
     private void filterList(String searchText) {

@@ -43,7 +43,7 @@ public class BookMarkPaneController implements Initializable {
             ContainerController.dictionary.unMarkedWords(targetLabel.getText());
             reload();
         } else {
-            ContainerController.dictionary.markedWords(targetLabel.getText());
+            ContainerController.dictionary.markedWord(targetLabel.getText());
             reload();
         }
     }
@@ -81,6 +81,9 @@ public class BookMarkPaneController implements Initializable {
                 targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
             }
         });
+
+        markButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
+        markButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
     }
 
     private void filterList(String searchText) {
