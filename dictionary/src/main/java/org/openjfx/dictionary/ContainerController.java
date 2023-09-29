@@ -10,7 +10,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.openjfx.dictionary.cmd.Dictionary;
+
 public class ContainerController implements Initializable {
+    public static Dictionary dictionary = new Dictionary();
     @FXML
     private AnchorPane content_pane;
     @FXML
@@ -24,16 +27,19 @@ public class ContainerController implements Initializable {
     private AnchorPane anchorSearchPane;
     private AnchorPane otherAnchorPane;
 
+    private SearchPaneController searchController;
+
     @FXML
     public void showSearchPane() {
         content_pane.getChildren().clear();
+        searchController.reload();
         if (!content_pane.getChildren().contains(anchorSearchPane)) {
             content_pane.getChildren().add(anchorSearchPane);
         }
     }
 
     @FXML
-    public void showOtherPane() {
+    public void showAddPane() {
         content_pane.getChildren().clear();
         if (!content_pane.getChildren().contains(otherAnchorPane)) {
             content_pane.getChildren().add(otherAnchorPane);
@@ -47,12 +53,13 @@ public class ContainerController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchPane.fxml"));
             anchorSearchPane = fxmlLoader.load();
+            searchController = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("secondary.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addPane.fxml"));
             otherAnchorPane = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();

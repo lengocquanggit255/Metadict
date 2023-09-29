@@ -14,11 +14,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-import org.openjfx.dictionary.cmd.Dictionary;
-
 public class SearchPaneController implements Initializable {
-
-    private Dictionary dictionary = new Dictionary();
     @FXML
     private TextField myTextField;
 
@@ -28,8 +24,18 @@ public class SearchPaneController implements Initializable {
     @FXML
     private Label explainLabel;
 
-    private final String[] words = dictionary.getWords_target();
+    private String[] words = ContainerController.dictionary.getWords_target();
     private FilteredList<String> filteredList;
+
+    public void reload() {
+        words = ContainerController.dictionary.getWords_target(); // Update the words array
+
+        explainLabel.setText("");
+        myTextField.setText("");
+        ObservableList<String> wordsList = FXCollections.observableArrayList(Arrays.asList(words));
+        filteredList = new FilteredList<>(wordsList);
+        myListView.setItems(filteredList);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,7 +54,7 @@ public class SearchPaneController implements Initializable {
         myListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 Platform.runLater(() -> myTextField.setText(newValue));
-                explainLabel.setText(dictionary.getWord(newValue).getWord_explain());
+                explainLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_explain());
             }
         });
     }

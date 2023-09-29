@@ -6,4 +6,5 @@ module dictionary {
     opens org.openjfx.dictionary to javafx.fxml;
 
     exports org.openjfx.dictionary;
+    exports org.openjfx.dictionary.cmd;
 }
