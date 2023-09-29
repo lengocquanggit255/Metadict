@@ -30,27 +30,23 @@ public class BookMarkPaneController implements Initializable {
     private Label targetLabel;
 
     @FXML
-    Button markButton;
+    Button unMarkButton;
 
     private String[] words = ContainerController.dictionary.getTargetOFMarked_word();
     private FilteredList<String> filteredList;
 
     @FXML
-    public void toggleMarkWord() {
+    public void unMarkWord() {
         if (targetLabel.getText().equals(""))
             return;
-        if (ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
-            ContainerController.dictionary.unMarkedWords(targetLabel.getText());
-            reload();
-        } else {
-            ContainerController.dictionary.markedWord(targetLabel.getText());
-            reload();
-        }
+        ContainerController.dictionary.unMarkedWords(targetLabel.getText());
+        reload();
+        myTextField.requestFocus();
+        myTextField.selectAll();
     }
 
     public void reload() {
         words = ContainerController.dictionary.getTargetOFMarked_word(); // Update the words array
-
         targetLabel.setText("");
         explainLabel.setText("");
         myTextField.setText("");
@@ -82,8 +78,8 @@ public class BookMarkPaneController implements Initializable {
             }
         });
 
-        markButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
-        markButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
+        unMarkButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
+        unMarkButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
     }
 
     private void filterList(String searchText) {

@@ -41,7 +41,7 @@ public class SearchPaneController implements Initializable {
         if (ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
             ContainerController.dictionary.unMarkedWords(targetLabel.getText());
         } else {
-            ContainerController.dictionary.markedWord(targetLabel.getText());
+            ContainerController.dictionary.markWord(targetLabel.getText());
         }
     }
 

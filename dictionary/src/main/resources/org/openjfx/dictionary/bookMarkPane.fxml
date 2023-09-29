@@ -25,6 +25,6 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Button fx:id="markButton" layoutX="572.0" layoutY="36.0" mnemonicParsing="false" onAction="#toggleMarkWord" text="Mark" />
+      <Button fx:id="unMarkButton" layoutX="572.0" layoutY="36.0" mnemonicParsing="false" onAction="#unMarkWord" text="unMark" />
    </children>
 </AnchorPane>

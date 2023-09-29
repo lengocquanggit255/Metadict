@@ -27,7 +27,7 @@ public class Dictionary {
         return words;
     }
 
-    public void markedWord(String word_target) {
+    public void markWord(String word_target) {
         int i;
         for (i = 0; i < numOfWords; i++) {
             if (words[i].getWord_target().equals(word_target)) {
@@ -153,7 +153,7 @@ public class Dictionary {
                     String word_target = words[0];
                     String word_explain = words[1];
                     Word newWord = new Word(word_target, word_explain);
-                    markedWord(newWord.getWord_target());
+                    markWord(newWord.getWord_target());
                 } else {
                     System.out.println("Invalid line format: " + line);
                 }
@@ -195,5 +195,14 @@ public class Dictionary {
             System.out.println("An error occurred while rewriting the file.");
             e.printStackTrace();
         }
+    }
+
+    public boolean contain(String word_target) {
+        for (int i = 0; i < numOfWords; i++) {
+            if (words[i].getWord_target().equals(word_target)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

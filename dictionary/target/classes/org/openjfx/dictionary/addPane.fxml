@@ -39,6 +39,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="messageLabel" layoutX="4.0" layoutY="68.0" prefHeight="261.0" prefWidth="299.0" text="Label" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

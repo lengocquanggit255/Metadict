@@ -11,7 +11,7 @@
                <children>
                   <Button fx:id="addButton" layoutY="52.0" mnemonicParsing="false" onAction="#showAddPane" prefHeight="25.0" prefWidth="51.0" text="Add " />
                   <Button fx:id="bookMarkButton" layoutY="104.0" mnemonicParsing="false" onAction="#showBookMarkPane" prefWidth="52.0" text="Book Mark" />
-                  <Button layoutY="151.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="editButton" layoutY="151.0" mnemonicParsing="false" onAction="#showEditPane" prefHeight="25.0" prefWidth="51.0" text="Edit" />
                   <Button fx:id="searchButton" layoutY="198.0" mnemonicParsing="false" onAction="#showSearchPane" text="Search" />
                </children>
             </AnchorPane>
