@@ -39,6 +39,9 @@ public class SearchPaneController implements Initializable {
         myListView.setItems(filteredList);
 
         myTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.equals("")) {
+                explainLabel.setText("");
+            }
             filterList(newValue);
         });
 
