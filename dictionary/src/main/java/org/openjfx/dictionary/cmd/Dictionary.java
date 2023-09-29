@@ -2,16 +2,60 @@ package org.openjfx.dictionary.cmd;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Dictionary {
     private static final int MAX_WORD = 10000;
     private Word[] words = new Word[MAX_WORD];
+    private ArrayList<Word> markedWords;
     private int numOfWords;
 
     public Dictionary() {
         numOfWords = 0;
         insertFromFile();
+        markedWords = new ArrayList<Word>();
+    }
+
+    public String[] getTargetOFMarked_word() {
+        String[] words = new String[markedWords.size()];
+        for (int i = 0; i < markedWords.size(); i++) {
+            words[i] = this.markedWords.get(i).getWord_target();
+        }
+
+        return words;
+    }
+
+    public void markedWords(String word_target) {
+        int i;
+        for (i = 0; i < numOfWords; i++) {
+            if (words[i].getWord_target().equals(word_target)) {
+                break;
+            }
+        }
+        if (i == numOfWords) {
+            return;
+        }
+        if (words[i].isMarked())
+            return;
+        markedWords.add(words[i]);
+        words[i].mark();
+    }
+
+    public void unMarkedWords(String word_target) {
+        int i;
+        for (i = 0; i < numOfWords; i++) {
+            if (words[i].getWord_target().equals(word_target)) {
+                break;
+            }
+        }
+        if (i == numOfWords) {
+            return;
+        }
+        if (!words[i].isMarked())
+            return;
+        markedWords.remove(words[i]);
+        words[i].unMark();
     }
 
     public String[] getWords_target() {
@@ -27,12 +71,12 @@ public class Dictionary {
         return this.numOfWords;
     }
 
-    public Word getWordAt(int index) {
-        return this.words[index];
-    }
-
     public void put(Word newWord) {
         words[numOfWords++] = newWord;
+    }
+
+    public Word getWordAt(int index) {
+        return this.words[index];
     }
 
     public Word getWord(String word_target) {

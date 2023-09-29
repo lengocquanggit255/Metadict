@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-
 public class AddPaneController {
     @FXML
     TextField newWordTextField;
@@ -20,6 +19,14 @@ public class AddPaneController {
         String word_explain = explainTextField.getText();
 
         ContainerController.dictionary.put(new Word(word_target, word_explain));
+
+        newWordTextField.setText("");
+        explainTextField.setText("");
+    }
+
+    public void reload() {
+        newWordTextField.setText("");
+        explainTextField.setText("");
     }
 
 }

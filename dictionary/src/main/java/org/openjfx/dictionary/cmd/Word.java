@@ -3,10 +3,24 @@ package org.openjfx.dictionary.cmd;
 public class Word {
     private String word_target;
     private String word_explain;
+    private Boolean isMarked;
 
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
         this.word_explain = word_explain;
+        this.isMarked = false;
+    }
+
+    public Boolean isMarked() {
+        return isMarked;
+    }
+
+    public void mark() {
+        isMarked = true;
+    }
+
+    public void unMark() {
+        isMarked = false;
     }
 
     public String getWord_target() {

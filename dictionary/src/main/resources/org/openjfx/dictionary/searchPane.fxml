@@ -16,9 +16,15 @@
             <Button layoutX="240.0" layoutY="22.0" minWidth="53.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="53.0" text="Enter" />
          </children>
       </AnchorPane>
-      <Label fx:id="explainLabel" alignment="CENTER" layoutX="342.0" layoutY="12.0" prefHeight="405.0" prefWidth="308.0">
+      <Label fx:id="explainLabel" alignment="CENTER" layoutX="332.0" layoutY="215.0" prefHeight="177.0" prefWidth="308.0">
          <font>
             <Font size="48.0" />
          </font></Label>
+      <Label fx:id="targetLabel" alignment="CENTER" layoutX="332.0" layoutY="38.0" prefHeight="177.0" prefWidth="308.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="markButton" layoutX="576.0" layoutY="38.0" mnemonicParsing="false" onAction="#toggleMarkWord" text="Mark" />
    </children>
 </AnchorPane>

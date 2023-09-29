@@ -1,5 +1,9 @@
 package org.openjfx.dictionary;
 
+import java.net.URL;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,11 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+public class BookMarkPaneController implements Initializable {
 
-public class SearchPaneController implements Initializable {
     @FXML
     private TextField myTextField;
 
@@ -31,7 +32,7 @@ public class SearchPaneController implements Initializable {
     @FXML
     Button markButton;
 
-    private String[] words = ContainerController.dictionary.getWords_target();
+    private String[] words = ContainerController.dictionary.getTargetOFMarked_word();
     private FilteredList<String> filteredList;
 
     @FXML
@@ -40,13 +41,15 @@ public class SearchPaneController implements Initializable {
             return;
         if (ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
             ContainerController.dictionary.unMarkedWords(targetLabel.getText());
+            reload();
         } else {
             ContainerController.dictionary.markedWords(targetLabel.getText());
+            reload();
         }
     }
 
     public void reload() {
-        words = ContainerController.dictionary.getWords_target(); // Update the words array
+        words = ContainerController.dictionary.getTargetOFMarked_word(); // Update the words array
 
         targetLabel.setText("");
         explainLabel.setText("");
@@ -92,4 +95,5 @@ public class SearchPaneController implements Initializable {
 
         System.out.println(filteredList);
     }
+
 }
