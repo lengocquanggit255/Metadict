@@ -7,131 +7,93 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Dictionary {
-    private static final int MAX_WORD = 10000;
-    private Word[] words = new Word[MAX_WORD];
-    private ArrayList<Word> markedWords = new ArrayList<Word>();
-    private int numOfWords;
+    private ArrayList<Word> words;
+    private ArrayList<Word> markedWords;
 
     public Dictionary() {
-        numOfWords = 0;
-        insertWordsFromFile();
-        insertBookMarkFromFile();
-    }
-
-    public String[] getTargetOFMarked_word() {
-        String[] words = new String[markedWords.size()];
-        for (int i = 0; i < markedWords.size(); i++) {
-            words[i] = this.markedWords.get(i).getWord_target();
-        }
-
-        return words;
-    }
-
-    public void markWord(String word_target) {
-        int i;
-        for (i = 0; i < numOfWords; i++) {
-            if (words[i].getWord_target().equals(word_target)) {
-                break;
-            }
-        }
-        if (i == numOfWords) {
-            return;
-        }
-        if (words[i].isMarked())
-            return;
-        markedWords.add(words[i]);
-        words[i].mark();
-    }
-
-    public void unMarkedWords(String word_target) {
-        int i;
-        for (i = 0; i < numOfWords; i++) {
-            if (words[i].getWord_target().equals(word_target)) {
-                break;
-            }
-        }
-        if (i == numOfWords) {
-            return;
-        }
-        if (!words[i].isMarked())
-            return;
-        markedWords.remove(words[i]);
-        words[i].unMark();
+        words = new ArrayList<Word>();
+        markedWords = new ArrayList<Word>();
+        importWordsFromFile();
+        importBookMarkFromFile();
     }
 
     public String[] getWords_target() {
-        String[] words = new String[numOfWords];
-        for (int i = 0; i < numOfWords; i++) {
-            words[i] = this.words[i].getWord_target();
+        String[] res = new String[words.size()];
+        for (int i = 0; i < words.size(); i++) {
+            res[i] = this.words.get(i).getWord_target();
         }
 
-        return words;
+        return res;
+    }
+
+    public boolean contain(String word_target) {
+        return findWord(word_target) != null;
     }
 
     public int getNumOfWords() {
-        return this.numOfWords;
-    }
-
-    public void put(Word newWord) {
-        words[numOfWords++] = newWord;
-    }
-
-    public Word getWordAt(int index) {
-        return this.words[index];
-    }
-
-    public Word getWord(String word_target) {
-        for (int i = 0; i < numOfWords; i++) {
-            if (words[i].getWord_target().equals(word_target))
-                return words[i];
-        }
-        return null;
+        return this.words.size();
     }
 
     private Word findWord(String word_target) {
-        int i;
-        for (i = 0; i < numOfWords; i++) {
-            if (words[i].getWord_target().equals(word_target)) {
-                break;
+        for (int i = 0; i < words.size(); i++) {
+            if (words.get(i).getWord_target().equals(word_target)) {
+                return words.get(i);
             }
         }
-        if (i == numOfWords) {
-            return null;
-        } else
-            return words[i];
+        System.out.println("Can't find the word");
+        return null;
+    }
+
+    public Word getWord(String word_target) {
+        return findWord(word_target);
+    }
+
+    public void put(String word_target, String new_word_explain) {
+        words.add(new Word(word_target, new_word_explain));
+    }
+
+    public void put(Word newWord) {
+        words.add(newWord);
+    }
+
+    public void update(String word_target, String new_word_explain) {
+        Word updatedWord = findWord(word_target);
+        updatedWord.setWord_explain(new_word_explain);
     }
 
     public void remove(String word_target) {
-        Word removedWord = findWord(word_target);
-        int i;
-        for (i = 0; i < numOfWords; i++) {
-            if (words[i] == removedWord) {
-                break;
-            }
-        }
-        if (i == numOfWords) {
+        Word removeWord = findWord(word_target);
+        if (removeWord == null) {
+            System.out.println("Null removeWord found!");
             return;
         }
-
-        if (removedWord.isMarked()) {
-            unMarkedWords(removedWord.getWord_target());
+        if (removeWord.isMarked()) {
+            markedWords.remove(removeWord);
         }
-
-        while (i < numOfWords - 1) {
-            Word temp = words[i];
-            words[i] = words[i + 1];
-            words[i + 1] = temp;
-            i++;
-        }
-        words[numOfWords - 1] = null;
-        numOfWords--;
+        words.remove(removeWord);
     }
 
-    public void update(Word target, String word_explain) {
-        target.setWord_explain(word_explain);
+    public String[] getTargetOFMarked_word() {
+        String[] res = new String[markedWords.size()];
+        for (int i = 0; i < markedWords.size(); i++) {
+            res[i] = this.markedWords.get(i).getWord_target();
+        }
+        return res;
     }
 
-    private void insertWordsFromFile() {
+    public void markWord(String word_target) {
+        Word markedWord = findWord(word_target);
+        markedWord.mark();
+        markedWords.add(markedWord);
+    }
+
+    public void unMarkedWords(String word_target) {
+        Word unMarkedWord = findWord(word_target);
+        unMarkedWord.unMark();
+        markedWords.remove(unMarkedWord);
+    }
+
+    private void importWordsFromFile() {
 
         String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\dictionaries.txt";
 
@@ -146,7 +108,7 @@ public class Dictionary {
                     String word_target = words[0];
                     String word_explain = words[1];
                     Word newWord = new Word(word_target, word_explain);
-                    this.put(newWord);
+                    this.words.add(newWord);
                 } else {
                     System.out.println("Invalid line format: " + line);
                 }
@@ -158,7 +120,7 @@ public class Dictionary {
         }
     }
 
-    private void insertBookMarkFromFile() {
+    private void importBookMarkFromFile() {
         String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
 
         try {
@@ -184,7 +146,43 @@ public class Dictionary {
         }
     }
 
-    public void exportBookMarkToFile() {
+    public void exportDataToFile() {
+        exportDictionaryToFile();
+        exportBookMarkToFile();
+    }
+
+    private void exportDictionaryToFile() {
+        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/cmd/dictionaries.txt";
+
+        try {
+            File file = new File(filepath);
+
+            if (file.createNewFile()) {
+                System.out.println("New file created: " + file.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating the file.");
+            e.printStackTrace();
+        }
+
+        String newText = "";
+        for (int i = 0; i < this.getNumOfWords(); i++) {
+            Word word = words.get(i);
+            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
+        }
+
+        try (FileWriter writer = new FileWriter(filepath, false)) {
+            writer.write(newText);
+            System.out.println("Successfully export the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while rewriting the file.");
+            e.printStackTrace();
+        }
+    }
+
+    private void exportBookMarkToFile() {
 
         String filepath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
 
@@ -216,43 +214,4 @@ public class Dictionary {
         }
     }
 
-    public boolean contain(String word_target) {
-        for (int i = 0; i < numOfWords; i++) {
-            if (words[i].getWord_target().equals(word_target)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void exportToFile() {
-        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/cmd/dictionaries.txt";
-
-        try {
-            File file = new File(filepath);
-
-            if (file.createNewFile()) {
-                System.out.println("New file created: " + file.getAbsolutePath());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred while creating the file.");
-            e.printStackTrace();
-        }
-
-        String newText = "";
-        for (int i = 0; i < this.getNumOfWords(); i++) {
-            Word word = this.getWordAt(i);
-            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
-        }
-
-        try (FileWriter writer = new FileWriter(filepath, false)) {
-            writer.write(newText);
-            System.out.println("Successfully export the file.");
-        } catch (IOException e) {
-            System.out.println("An error occurred while rewriting the file.");
-            e.printStackTrace();
-        }
-    }
 }
