@@ -88,7 +88,21 @@ public class Dictionary {
         return null;
     }
 
-    public void remove(Word removedWord) {
+    private Word findWord(String word_target) {
+        int i;
+        for (i = 0; i < numOfWords; i++) {
+            if (words[i].getWord_target().equals(word_target)) {
+                break;
+            }
+        }
+        if (i == numOfWords) {
+            return null;
+        } else
+            return words[i];
+    }
+
+    public void remove(String word_target) {
+        Word removedWord = findWord(word_target);
         int i;
         for (i = 0; i < numOfWords; i++) {
             if (words[i] == removedWord) {
@@ -98,6 +112,11 @@ public class Dictionary {
         if (i == numOfWords) {
             return;
         }
+
+        if (removedWord.isMarked()) {
+            unMarkedWords(removedWord.getWord_target());
+        }
+
         while (i < numOfWords - 1) {
             Word temp = words[i];
             words[i] = words[i + 1];
@@ -204,5 +223,36 @@ public class Dictionary {
             }
         }
         return false;
+    }
+
+    public void exportToFile() {
+        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/cmd/dictionaries.txt";
+
+        try {
+            File file = new File(filepath);
+
+            if (file.createNewFile()) {
+                System.out.println("New file created: " + file.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while creating the file.");
+            e.printStackTrace();
+        }
+
+        String newText = "";
+        for (int i = 0; i < this.getNumOfWords(); i++) {
+            Word word = this.getWordAt(i);
+            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
+        }
+
+        try (FileWriter writer = new FileWriter(filepath, false)) {
+            writer.write(newText);
+            System.out.println("Successfully export the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while rewriting the file.");
+            e.printStackTrace();
+        }
     }
 }

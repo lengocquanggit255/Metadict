@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -29,19 +31,42 @@ public class SearchPaneController implements Initializable {
     private Label targetLabel;
 
     @FXML
-    Button markButton;
+    private Button markButton;
+    @FXML
+    private ImageView markButtonImageView;
+
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private ImageView deleteButtonImageView;
 
     private String[] words = ContainerController.dictionary.getWords_target();
     private FilteredList<String> filteredList;
 
     @FXML
+    public void delete() {
+        String word = targetLabel.getText();
+        ContainerController.dictionary.remove(word);
+        reload();
+    }
+
+    @FXML
     public void toggleMarkWord() {
-        if (targetLabel.getText().equals(""))
+        if (targetLabel.getText().isEmpty()) {
             return;
-        if (ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
-            ContainerController.dictionary.unMarkedWords(targetLabel.getText());
+        }
+
+        String word = targetLabel.getText();
+        boolean isMarked = ContainerController.dictionary.getWord(word).isMarked();
+
+        if (isMarked) {
+            ContainerController.dictionary.unMarkedWords(word);
+            markButtonImageView.setImage(new Image(
+                    "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
         } else {
-            ContainerController.dictionary.markWord(targetLabel.getText());
+            ContainerController.dictionary.markWord(word);
+            markButtonImageView.setImage(new Image(
+                    "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
         }
     }
 
@@ -76,11 +101,22 @@ public class SearchPaneController implements Initializable {
                 Platform.runLater(() -> myTextField.setText(newValue));
                 explainLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_explain());
                 targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
+                if (!ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
+                    markButtonImageView.setImage(new Image(
+                            "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
+                } else {
+                    markButtonImageView.setImage(new Image(
+                            "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
+                }
+
             }
         });
 
         markButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
         markButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
+
+        deleteButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
+        deleteButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
     }
 
     private void filterList(String searchText) {

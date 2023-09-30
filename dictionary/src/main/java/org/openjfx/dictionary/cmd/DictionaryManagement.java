@@ -38,7 +38,7 @@ public class DictionaryManagement {
         String word_target = scanner.nextLine();
         Word target = dictionary.getWord(word_target);
         if (target != null) {
-            dictionary.remove(target);
+            dictionary.remove(word_target);
             System.out.println("Word removed!");
         } else {
             System.out.println("Can't find " + word_target + " in dictionary");
