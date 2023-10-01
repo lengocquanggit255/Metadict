@@ -37,8 +37,6 @@ public class SearchPaneController implements Initializable {
 
     @FXML
     private Button deleteButton;
-    @FXML
-    private ImageView deleteButtonImageView;
 
     private String[] words = ContainerController.dictionary.getWords_target();
     private FilteredList<String> filteredList;

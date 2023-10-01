@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 public class BookMarkPaneController implements Initializable {
 
@@ -32,8 +33,18 @@ public class BookMarkPaneController implements Initializable {
     @FXML
     Button unMarkButton;
 
+    @FXML
+    private Button deleteButton;
+
     private String[] words = ContainerController.dictionary.getTargetOFMarked_word();
     private FilteredList<String> filteredList;
+
+    @FXML
+    public void delete() {
+        String word = targetLabel.getText();
+        ContainerController.dictionary.remove(word);
+        reload();
+    }
 
     @FXML
     public void unMarkWord() {
@@ -78,6 +89,9 @@ public class BookMarkPaneController implements Initializable {
             }
         });
 
+        deleteButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
+        deleteButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
+
         unMarkButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
         unMarkButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
     }
@@ -91,8 +105,6 @@ public class BookMarkPaneController implements Initializable {
             String lowercaseSearchText = searchText.toLowerCase();
             return word.toLowerCase().contains(lowercaseSearchText);
         });
-
-        System.out.println(filteredList);
     }
 
 }

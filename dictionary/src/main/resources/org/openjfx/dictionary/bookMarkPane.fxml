@@ -18,10 +18,7 @@
             <Button layoutX="240.0" layoutY="22.0" minWidth="53.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="53.0" text="Enter" />
          </children>
       </AnchorPane>
-      <Label fx:id="explainLabel" alignment="CENTER" layoutX="332.0" layoutY="214.0" prefHeight="187.0" prefWidth="308.0" style="-fx-background-color: #FABAA0;">
-         <font>
-            <Font size="48.0" />
-         </font></Label>
+      <Label fx:id="explainLabel" alignment="CENTER" layoutX="332.0" layoutY="214.0" prefHeight="187.0" prefWidth="308.0" style="-fx-background-color: #FABAA0;" />
       <Label fx:id="targetLabel" alignment="CENTER" layoutX="332.0" layoutY="34.0" prefHeight="180.0" prefWidth="308.0" style="-fx-background-color: #FABAA0;">
          <font>
             <Font size="48.0" />
@@ -32,6 +29,15 @@
             <ImageView fx:id="markButtonImageView" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/icons8_Star_Filled_52px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="470.0" layoutY="43.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: White;">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/icons8_Trash_52px.png" />
                </image>
             </ImageView>
          </graphic>
