@@ -1,0 +1,3 @@
+-mancy	-mancy hình thái ghép chỉ sự đoán trước mà đã đoán
+-mer	-mer hậu tố tạo danh từ có nghĩa là polyme (trùng phân) hoặc isome (đồng phân)
+2d module = two-dimensional module	2d module = two-dimensional module (tech) mô đun hai chiều

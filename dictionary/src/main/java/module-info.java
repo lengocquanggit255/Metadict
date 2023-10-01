@@ -2,6 +2,7 @@ module dictionary {
     requires javafx.controls;
     requires javafx.fxml;
     requires transitive javafx.graphics;
+    requires org.jsoup;
 
     opens org.openjfx.dictionary to javafx.fxml;
 

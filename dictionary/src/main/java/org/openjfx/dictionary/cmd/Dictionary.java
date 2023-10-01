@@ -1,10 +1,21 @@
 package org.openjfx.dictionary.cmd;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 public class Dictionary {
     private ArrayList<Word> words;
@@ -94,34 +105,39 @@ public class Dictionary {
     }
 
     private void importWordsFromFile() {
-
-        String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\dictionaries.txt";
+        String path = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\E_V.txt";
+        String line = null;
 
         try {
-            File file = new File(filePath);
-            Scanner scanner = new Scanner(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(path), "UTF8");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] words = line.split("\t");
-                if (words.length == 2) {
-                    String word_target = words[0];
-                    String word_explain = words[1];
-                    Word newWord = new Word(word_target, word_explain);
-                    this.words.add(newWord);
-                } else {
-                    System.out.println("Invalid line format: " + line);
+            while ((line = bufferedReader.readLine()) != null) {
+                int posSplit = line.indexOf("<html>");
+                if (posSplit > 0 && posSplit < line.length()) {
+                    String word_target = line.substring(0, posSplit);
+                    String explainPart = line.substring(posSplit);
+                    Document doc = Jsoup.parseBodyFragment(explainPart);
+                    Element contentDiv = doc.selectFirst("body");
+                    if (contentDiv != null) {
+                        String word_explain = contentDiv.text();
+                        words.add(new Word(word_target, word_explain));
+                    } else {
+                        System.out.println("Could not find 'body' element for word: " + word_target);
+                    }
                 }
             }
-            System.out.println("Import succeeded!");
-            scanner.close();
-        } catch (IOException e) {
-            System.out.println("File not found: " + e.getMessage());
+
+            bufferedReader.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + path + "'");
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
     private void importBookMarkFromFile() {
-        String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
+        String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\output\\bookMark.txt";
 
         try {
             File file = new File(filePath);
@@ -133,8 +149,7 @@ public class Dictionary {
                 if (words.length == 2) {
                     String word_target = words[0];
                     String word_explain = words[1];
-                    Word newWord = new Word(word_target, word_explain);
-                    markWord(newWord.getWord_target());
+                    markWord(word_target);
                 } else {
                     System.out.println("Invalid line format: " + line);
                 }
@@ -151,66 +166,50 @@ public class Dictionary {
         exportBookMarkToFile();
     }
 
-    private void exportDictionaryToFile() {
-        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/cmd/dictionaries.txt";
+    private void exportBookMarkToFile() {
 
+        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/bookMark.txt";
         try {
-            File file = new File(filepath);
+            FileOutputStream fileOutputStream = new FileOutputStream(filepath);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            if (file.createNewFile()) {
-                System.out.println("New file created: " + file.getAbsolutePath());
-            } else {
-                System.out.println("File already exists.");
+            for (Word word : markedWords) {
+                bufferedWriter.write(word.getWord_target() + "\t" + word.getWord_explain());
+                bufferedWriter.newLine();
             }
-        } catch (IOException e) {
-            System.out.println("An error occurred while creating the file.");
-            e.printStackTrace();
-        }
 
-        String newText = "";
-        for (int i = 0; i < this.getNumOfWords(); i++) {
-            Word word = words.get(i);
-            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
-        }
-
-        try (FileWriter writer = new FileWriter(filepath, false)) {
-            writer.write(newText);
-            System.out.println("Successfully export the file.");
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        } catch (UnsupportedEncodingException e) {
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.println("An error occurred while rewriting the file.");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    private void exportBookMarkToFile() {
-
-        String filepath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\cmd\\bookMark.txt";
-
+    public void exportDictionaryToFile() {
+        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/dictionaries.txt";
         try {
-            File file = new File(filepath);
+            FileOutputStream fileOutputStream = new FileOutputStream(filepath);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            if (file.createNewFile()) {
-                System.out.println("New file created: " + file.getAbsolutePath());
-            } else {
-                System.out.println("File already exists.");
+            for (Word word : words) {
+                bufferedWriter.write(word.getWord_target() + "\t" + word.getWord_explain());
+                bufferedWriter.newLine();
             }
-        } catch (IOException e) {
-            System.out.println("An error occurred while creating the file.");
-            e.printStackTrace();
-        }
 
-        String newText = "";
-        for (int i = 0; i < markedWords.size(); i++) {
-            Word word = markedWords.get(i);
-            newText += word.getWord_target() + "\t" + word.getWord_explain() + "\n";
-        }
-
-        try (FileWriter writer = new FileWriter(filepath, false)) {
-            writer.write(newText);
-            System.out.println("Successfully export the file.");
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        } catch (UnsupportedEncodingException e) {
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.println("An error occurred while rewriting the file.");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

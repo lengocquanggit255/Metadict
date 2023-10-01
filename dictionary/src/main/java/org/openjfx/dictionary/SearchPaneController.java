@@ -128,7 +128,5 @@ public class SearchPaneController implements Initializable {
             String lowercaseSearchText = searchText.toLowerCase();
             return word.toLowerCase().contains(lowercaseSearchText);
         });
-
-        System.out.println(filteredList);
     }
 }

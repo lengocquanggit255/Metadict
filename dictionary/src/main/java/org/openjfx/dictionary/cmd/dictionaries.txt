@@ -1,4 +1,0 @@
-City	Thanh pho
-Transform	Bien doi
-Transit	Qua canh
-House	Nha

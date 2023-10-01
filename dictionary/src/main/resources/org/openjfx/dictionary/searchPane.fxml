@@ -21,10 +21,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <Label fx:id="explainLabel" alignment="CENTER" layoutX="332.0" layoutY="215.0" prefHeight="188.0" prefWidth="308.0" style="-fx-background-color: White;">
-         <font>
-            <Font size="48.0" />
-         </font></Label>
+      <Label fx:id="explainLabel" alignment="CENTER" layoutX="332.0" layoutY="215.0" prefHeight="188.0" prefWidth="308.0" style="-fx-background-color: White;" />
       <Label fx:id="targetLabel" alignment="CENTER" layoutX="332.0" layoutY="36.0" prefHeight="179.0" prefWidth="308.0" style="-fx-background-color: White;">
          <font>
             <Font size="48.0" />

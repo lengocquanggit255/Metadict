@@ -1,4 +1,9 @@
-org\openjfx\dictionary\SecondaryController.class
+org\openjfx\dictionary\BookMarkPaneController.class
 module-info.class
+org\openjfx\dictionary\cmd\Word.class
+org\openjfx\dictionary\SearchPaneController.class
 org\openjfx\dictionary\Main.class
-org\openjfx\dictionary\PrimaryController.class
+org\openjfx\dictionary\EditPaneController.class
+org\openjfx\dictionary\cmd\Dictionary.class
+org\openjfx\dictionary\AddPaneController.class
+org\openjfx\dictionary\ContainerController.class

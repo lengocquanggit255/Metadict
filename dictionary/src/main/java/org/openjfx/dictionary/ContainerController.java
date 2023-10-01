@@ -15,9 +15,9 @@ import org.openjfx.dictionary.cmd.Dictionary;
 public class ContainerController implements Initializable {
     public static Dictionary dictionary = new Dictionary();
     @FXML
-    private AnchorPane content_pane;
+    public AnchorPane content_pane;
     @FXML
-    private AnchorPane main_pane;
+    public AnchorPane main_pane;
 
     @FXML
     Button addButton;
@@ -28,7 +28,7 @@ public class ContainerController implements Initializable {
     @FXML
     Button editButton;
 
-    private AnchorPane anchorSearchPane;
+    public AnchorPane anchorSearchPane;
     private AnchorPane anchorAddPane;
     private AnchorPane anchorBookMarkPane;
     private AnchorPane anchorEditPane;
