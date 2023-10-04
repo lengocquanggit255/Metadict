@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 
 public class BookMarkPaneController implements Initializable {
 
@@ -31,7 +30,7 @@ public class BookMarkPaneController implements Initializable {
     private Label targetLabel;
 
     @FXML
-    Button unMarkButton;
+    private Button unMarkButton;
 
     @FXML
     private Button deleteButton;
