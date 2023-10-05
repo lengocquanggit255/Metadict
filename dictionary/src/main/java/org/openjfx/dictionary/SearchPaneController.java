@@ -12,6 +12,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -25,7 +27,7 @@ public class SearchPaneController implements Initializable {
     private ListView<String> myListView;
 
     @FXML
-    private Label explainLabel;
+    private WebView explainWebView;
 
     @FXML
     private Label targetLabel;
@@ -72,7 +74,10 @@ public class SearchPaneController implements Initializable {
         words = ContainerController.dictionary.getWords_target(); // Update the words array
 
         targetLabel.setText("");
-        explainLabel.setText("");
+
+        WebEngine explainWebEngine = explainWebView.getEngine();
+        explainWebEngine.loadContent("");
+
         myTextField.setText("");
         ObservableList<String> wordsList = FXCollections.observableArrayList(Arrays.asList(words));
         filteredList = new FilteredList<>(wordsList);
@@ -89,7 +94,8 @@ public class SearchPaneController implements Initializable {
         myTextField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.equals("")) {
                 targetLabel.setText("");
-                explainLabel.setText("");
+                WebEngine explainWebEngine = explainWebView.getEngine();
+                explainWebEngine.loadContent("");
             }
             filterList(newValue);
         });
@@ -97,7 +103,10 @@ public class SearchPaneController implements Initializable {
         myListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 Platform.runLater(() -> myTextField.setText(newValue));
-                explainLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_explain());
+                
+                WebEngine explainWebEngine = explainWebView.getEngine();
+                explainWebEngine.loadContent(ContainerController.dictionary.getWord(newValue).getWord_explain());
+
                 targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
                 if (!ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
                     markButtonImageView.setImage(new Image(

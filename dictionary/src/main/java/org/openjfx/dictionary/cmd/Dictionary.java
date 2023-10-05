@@ -117,10 +117,10 @@ public class Dictionary {
                 if (posSplit > 0 && posSplit < line.length()) {
                     String word_target = line.substring(0, posSplit);
                     String explainPart = line.substring(posSplit);
-                    Document doc = Jsoup.parseBodyFragment(explainPart);
-                    Element contentDiv = doc.selectFirst("body");
-                    if (contentDiv != null) {
-                        String word_explain = contentDiv.text();
+                    // Document doc = Jsoup.parseBodyFragment(explainPart);
+                    // Element contentDiv = doc.selectFirst("body");
+                    if (explainPart != null) {
+                        String word_explain = explainPart;
                         words.add(new Word(word_target, word_explain));
                     } else {
                         System.out.println("Could not find 'body' element for word: " + word_target);

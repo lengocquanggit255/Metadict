@@ -1,6 +1,7 @@
 module dictionary {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.web;
     requires transitive javafx.graphics;
     requires org.jsoup;
 
