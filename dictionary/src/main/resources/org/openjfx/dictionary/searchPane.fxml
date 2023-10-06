@@ -45,5 +45,14 @@
          </graphic>
       </Button>
       <WebView fx:id="explainWebView" layoutX="333.0" layoutY="215.0" prefHeight="200.0" prefWidth="308.0" />
+      <Button fx:id="speakButton" layoutX="592.0" layoutY="36.0" mnemonicParsing="false" onAction="#speak" style="-fx-background-color: White;">
+         <graphic>
+            <ImageView fx:id="markButtonImageView1" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/icons8_Speaker_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

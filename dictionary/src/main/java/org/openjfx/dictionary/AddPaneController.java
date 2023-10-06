@@ -32,8 +32,8 @@ public class AddPaneController {
             return;
         }
 
-        if (!ContainerController.dictionary.contain(word_target)) {
-            ContainerController.dictionary.put(new Word(word_target, word_explain));
+        if (!Helper.dictionary.contain(word_target)) {
+            Helper.dictionary.put(new Word(word_target, word_explain));
             messageLabel.setText("Successfully added!");
             newWordTextField.setText("");
             explainTextField.setText("");

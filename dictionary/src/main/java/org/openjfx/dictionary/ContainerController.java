@@ -10,10 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import org.openjfx.dictionary.cmd.Dictionary;
-
 public class ContainerController implements Initializable {
-    public static Dictionary dictionary = new Dictionary();
     @FXML
     public AnchorPane content_pane;
     @FXML

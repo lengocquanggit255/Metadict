@@ -39,14 +39,22 @@ public class SearchPaneController implements Initializable {
 
     @FXML
     private Button deleteButton;
+    @FXML
+    private Button speakButton;
 
-    private String[] words = ContainerController.dictionary.getWords_target();
+    private String[] words = Helper.dictionary.getWords_target();
     private FilteredList<String> filteredList;
+
+    @FXML
+    public void speak(){
+        String word = targetLabel.getText();
+        Helper.speak(word);
+    }
 
     @FXML
     public void delete() {
         String word = targetLabel.getText();
-        ContainerController.dictionary.remove(word);
+        Helper.dictionary.remove(word);
         reload();
     }
 
@@ -57,21 +65,21 @@ public class SearchPaneController implements Initializable {
         }
 
         String word = targetLabel.getText();
-        boolean isMarked = ContainerController.dictionary.getWord(word).isMarked();
+        boolean isMarked = Helper.dictionary.getWord(word).isMarked();
 
         if (isMarked) {
-            ContainerController.dictionary.unMarkedWords(word);
+            Helper.dictionary.unMarkedWords(word);
             markButtonImageView.setImage(new Image(
                     "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
         } else {
-            ContainerController.dictionary.markWord(word);
+            Helper.dictionary.markWord(word);
             markButtonImageView.setImage(new Image(
                     "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
         }
     }
 
     public void reload() {
-        words = ContainerController.dictionary.getWords_target(); // Update the words array
+        words = Helper.dictionary.getWords_target(); // Update the words array
 
         targetLabel.setText("");
 
@@ -103,12 +111,12 @@ public class SearchPaneController implements Initializable {
         myListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 Platform.runLater(() -> myTextField.setText(newValue));
-                
-                WebEngine explainWebEngine = explainWebView.getEngine();
-                explainWebEngine.loadContent(ContainerController.dictionary.getWord(newValue).getWord_explain());
 
-                targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
-                if (!ContainerController.dictionary.getWord(targetLabel.getText()).isMarked()) {
+                WebEngine explainWebEngine = explainWebView.getEngine();
+                explainWebEngine.loadContent(Helper.dictionary.getWord(newValue).getWord_explain());
+
+                targetLabel.setText(Helper.dictionary.getWord(newValue).getWord_target());
+                if (!Helper.dictionary.getWord(targetLabel.getText()).isMarked()) {
                     markButtonImageView.setImage(new Image(
                             "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
                 } else {

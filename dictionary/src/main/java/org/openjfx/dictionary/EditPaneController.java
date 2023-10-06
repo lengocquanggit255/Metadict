@@ -23,7 +23,7 @@ public class EditPaneController {
         String oldWord_target = oldWordTextField.getText();
         String newWord_target = newWordTextField.getText();
         String newWord_explain = explainTextField.getText();
-        Word oldWord = ContainerController.dictionary.getWord(oldWord_target);
+        Word oldWord = Helper.dictionary.getWord(oldWord_target);
 
         if (oldWord == null) {
             messageLabel.setText("Can't find " + oldWord_target + " in dictionary");

@@ -36,14 +36,22 @@ public class BookMarkPaneController implements Initializable {
 
     @FXML
     private Button deleteButton;
+    @FXML
+    private Button speakButton;
 
-    private String[] words = ContainerController.dictionary.getTargetOFMarked_word();
+    private String[] words = Helper.dictionary.getTargetOFMarked_word();
     private FilteredList<String> filteredList;
+
+    @FXML
+    public void speak() {
+        String word = targetLabel.getText();
+        Helper.speak(word);
+    }
 
     @FXML
     public void delete() {
         String word = targetLabel.getText();
-        ContainerController.dictionary.remove(word);
+        Helper.dictionary.remove(word);
         reload();
     }
 
@@ -51,14 +59,14 @@ public class BookMarkPaneController implements Initializable {
     public void unMarkWord() {
         if (targetLabel.getText().equals(""))
             return;
-        ContainerController.dictionary.unMarkedWords(targetLabel.getText());
+        Helper.dictionary.unMarkedWords(targetLabel.getText());
         reload();
         myTextField.requestFocus();
         myTextField.selectAll();
     }
 
     public void reload() {
-        words = ContainerController.dictionary.getTargetOFMarked_word(); // Update the words array
+        words = Helper.dictionary.getTargetOFMarked_word(); // Update the words array
         targetLabel.setText("");
 
         WebEngine explainWebEngine = explainWebView.getEngine();
@@ -91,9 +99,9 @@ public class BookMarkPaneController implements Initializable {
                 Platform.runLater(() -> myTextField.setText(newValue));
 
                 WebEngine explainWebEngine = explainWebView.getEngine();
-                explainWebEngine.loadContent(ContainerController.dictionary.getWord(newValue).getWord_explain());
-                
-                targetLabel.setText(ContainerController.dictionary.getWord(newValue).getWord_target());
+                explainWebEngine.loadContent(Helper.dictionary.getWord(newValue).getWord_explain());
+
+                targetLabel.setText(Helper.dictionary.getWord(newValue).getWord_target());
             }
         });
 
