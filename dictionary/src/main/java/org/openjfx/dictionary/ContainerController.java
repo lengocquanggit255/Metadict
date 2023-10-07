@@ -22,27 +22,14 @@ public class ContainerController implements Initializable {
     Button searchButton;
     @FXML
     Button bookMarkButton;
-    @FXML
-    Button editButton;
 
     public AnchorPane anchorSearchPane;
     private AnchorPane anchorAddPane;
     private AnchorPane anchorBookMarkPane;
-    private AnchorPane anchorEditPane;
 
     private SearchPaneController searchController;
     private AddPaneController addController;
     private BookMarkPaneController bookMarkController;
-    private EditPaneController editController;
-
-    @FXML
-    public void showEditPane() {
-        content_pane.getChildren().clear();
-        editController.reload();
-        if (!content_pane.getChildren().contains(anchorEditPane)) {
-            content_pane.getChildren().add(anchorEditPane);
-        }
-    }
 
     @FXML
     public void showSearchPane() {
@@ -76,7 +63,6 @@ public class ContainerController implements Initializable {
         main_pane.getChildren().add(addButton);
         main_pane.getChildren().add(searchButton);
         main_pane.getChildren().add(bookMarkButton);
-        main_pane.getChildren().add(editButton);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchPane.fxml"));
             anchorSearchPane = fxmlLoader.load();
@@ -97,14 +83,6 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bookMarkPane.fxml"));
             anchorBookMarkPane = fxmlLoader.load();
             bookMarkController = fxmlLoader.getController();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("editPane.fxml"));
-            anchorEditPane = fxmlLoader.load();
-            editController = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }

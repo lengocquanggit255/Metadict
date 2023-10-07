@@ -18,21 +18,6 @@
                   <Image url="@Icon%20header.png" />
                </image>
             </ImageView>
-            <Button fx:id="editButton" contentDisplay="GRAPHIC_ONLY" layoutY="258.0" mnemonicParsing="false" onAction="#showEditPane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: #A7C5C5;" stylesheets="@containerStyle.css">
-               <graphic>
-                  <ImageView fitHeight="16.0" fitWidth="16.0">
-                     <image>
-                        <Image url="@icons/icons8_Edit_52px_white.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <opaqueInsets>
-                  <Insets bottom="1.0" />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
             <Button fx:id="bookMarkButton" contentDisplay="GRAPHIC_ONLY" layoutY="142.0" mnemonicParsing="false" onAction="#showBookMarkPane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: #A7C5C5;" stylesheets="@containerStyle.css">
                <graphic>
                   <ImageView fitHeight="16.0" fitWidth="16.0">

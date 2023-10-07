@@ -1,23 +1,27 @@
 package org.openjfx.dictionary;
 
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+
+import org.w3c.dom.Document;
 
 public class SearchPaneController implements Initializable {
     @FXML
@@ -30,49 +34,88 @@ public class SearchPaneController implements Initializable {
     private WebView explainWebView;
 
     @FXML
-    private Label targetLabel;
-
-    @FXML
     private Button markButton;
     @FXML
     private ImageView markButtonImageView;
 
     @FXML
     private Button deleteButton;
+
     @FXML
     private Button speakButton;
 
-    private String[] words = Helper.dictionary.getWords_target();
-    private FilteredList<String> filteredList;
+    @FXML
+    private HTMLEditor editor;
 
     @FXML
-    public void speak(){
-        String word = targetLabel.getText();
-        Helper.speak(word);
+    private Button editButton;
+
+    @FXML
+    private Button saveButton;
+
+    private String[] words = Helper.dictionary.getWords_target();
+    private FilteredList<String> filteredList;
+    private String currentSelectedWord = "";
+
+    @FXML
+    public void save() {
+        editor.setDisable(true);
+        editor.setVisible(false);
+        saveButton.setDisable(true);
+        saveButton.setVisible(false);
+        deleteButton.setDisable(false);
+        markButton.setDisable(false);
+        explainWebView.setDisable(false);
+        explainWebView.setVisible(true);
+        speakButton.setDisable(false);
+
+        String editedHtml = editor.getHtmlText();
+        Helper.dictionary.update(currentSelectedWord, editedHtml);
+        WebEngine explainWebEngine = explainWebView.getEngine();
+                explainWebEngine.loadContent(editedHtml);
+    }
+
+    @FXML
+    public void edit() {
+        editor.setDisable(false);
+        editor.setVisible(true);
+        saveButton.setDisable(false);
+        saveButton.setVisible(true);
+        deleteButton.setDisable(true);
+        markButton.setDisable(true);
+        explainWebView.setDisable(true);
+        explainWebView.setVisible(false);
+        speakButton.setDisable(true);
+
+        String currentHtml = explainWebView.getEngine().executeScript("document.documentElement.outerHTML").toString();
+        editor.setHtmlText(currentHtml);
+    }
+
+    @FXML
+    public void speak() {
+        Helper.speak(currentSelectedWord);
     }
 
     @FXML
     public void delete() {
-        String word = targetLabel.getText();
-        Helper.dictionary.remove(word);
+        Helper.dictionary.remove(currentSelectedWord);
         reload();
     }
 
     @FXML
     public void toggleMarkWord() {
-        if (targetLabel.getText().isEmpty()) {
+        if (currentSelectedWord.isEmpty()) {
             return;
         }
 
-        String word = targetLabel.getText();
-        boolean isMarked = Helper.dictionary.getWord(word).isMarked();
+        boolean isMarked = Helper.dictionary.getWord(currentSelectedWord).isMarked();
 
         if (isMarked) {
-            Helper.dictionary.unMarkedWords(word);
+            Helper.dictionary.unMarkedWords(currentSelectedWord);
             markButtonImageView.setImage(new Image(
                     "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
         } else {
-            Helper.dictionary.markWord(word);
+            Helper.dictionary.markWord(currentSelectedWord);
             markButtonImageView.setImage(new Image(
                     "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
         }
@@ -81,7 +124,7 @@ public class SearchPaneController implements Initializable {
     public void reload() {
         words = Helper.dictionary.getWords_target(); // Update the words array
 
-        targetLabel.setText("");
+        currentSelectedWord = "";
 
         WebEngine explainWebEngine = explainWebView.getEngine();
         explainWebEngine.loadContent("");
@@ -94,14 +137,21 @@ public class SearchPaneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         ObservableList<String> wordsList = FXCollections.observableArrayList(Arrays.asList(words));
         filteredList = new FilteredList<>(wordsList);
 
         myListView.setItems(filteredList);
 
+        editor.setDisable(true);
+        editor.setVisible(false);
+
+        saveButton.setDisable(true);
+        saveButton.setVisible(false);
+
         myTextField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.equals("")) {
-                targetLabel.setText("");
+                currentSelectedWord = "";
                 WebEngine explainWebEngine = explainWebView.getEngine();
                 explainWebEngine.loadContent("");
             }
@@ -115,8 +165,9 @@ public class SearchPaneController implements Initializable {
                 WebEngine explainWebEngine = explainWebView.getEngine();
                 explainWebEngine.loadContent(Helper.dictionary.getWord(newValue).getWord_explain());
 
-                targetLabel.setText(Helper.dictionary.getWord(newValue).getWord_target());
-                if (!Helper.dictionary.getWord(targetLabel.getText()).isMarked()) {
+                currentSelectedWord = newValue;
+
+                if (!Helper.dictionary.getWord(currentSelectedWord).isMarked()) {
                     markButtonImageView.setImage(new Image(
                             "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
                 } else {
@@ -127,11 +178,28 @@ public class SearchPaneController implements Initializable {
             }
         });
 
-        markButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
-        markButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
+        WebEngine webEngine = explainWebView.getEngine();
 
-        deleteButton.managedProperty().bind(targetLabel.textProperty().isNotEmpty());
-        deleteButton.visibleProperty().bind(targetLabel.textProperty().isNotEmpty());
+        BooleanBinding isContentLoaded = Bindings.createBooleanBinding(() -> {
+            Document document = webEngine.getDocument();
+            if (document != null) {
+                String content = document.getDocumentElement().getTextContent();
+                return content != null && !content.isEmpty();
+            }
+            return false;
+        }, webEngine.documentProperty());
+
+        editButton.managedProperty().bind(isContentLoaded);
+        editButton.visibleProperty().bind(isContentLoaded);
+
+        speakButton.managedProperty().bind(isContentLoaded);
+        speakButton.visibleProperty().bind(isContentLoaded);
+
+        markButton.managedProperty().bind(isContentLoaded);
+        markButton.visibleProperty().bind(isContentLoaded);
+
+        deleteButton.managedProperty().bind(isContentLoaded);
+        deleteButton.visibleProperty().bind(isContentLoaded);
     }
 
     private void filterList(String searchText) {

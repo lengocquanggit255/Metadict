@@ -21,9 +21,10 @@ public class Helper {
         VoiceParameters params = new VoiceParameters(text, Languages.English_UnitedStates);
         params.setCodec(AudioCodec.WAV);
         params.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+        params.setVoice("Linda");
         params.setBase64(false);
         params.setSSML(false);
-        params.setRate(0);
+        params.setRate((int) Math.round(-2.9936 * 1 * 1 + 15.2942 * 1 - 12.7612));
 
         // Create a voice provider
         VoiceProvider voiceProvider = new VoiceProvider("0399b37a008a49dfa5cda0e4e6162552");
