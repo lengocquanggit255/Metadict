@@ -68,11 +68,13 @@ public class SearchPaneController implements Initializable {
         explainWebView.setDisable(false);
         explainWebView.setVisible(true);
         speakButton.setDisable(false);
+        myTextField.setDisable(false);
+        myListView.setDisable(false);
 
         String editedHtml = editor.getHtmlText();
         Helper.dictionary.update(currentSelectedWord, editedHtml);
         WebEngine explainWebEngine = explainWebView.getEngine();
-                explainWebEngine.loadContent(editedHtml);
+        explainWebEngine.loadContent(editedHtml);
     }
 
     @FXML
@@ -86,7 +88,8 @@ public class SearchPaneController implements Initializable {
         explainWebView.setDisable(true);
         explainWebView.setVisible(false);
         speakButton.setDisable(true);
-
+        myTextField.setDisable(true);
+        myListView.setDisable(true);
         String currentHtml = explainWebView.getEngine().executeScript("document.documentElement.outerHTML").toString();
         editor.setHtmlText(currentHtml);
     }

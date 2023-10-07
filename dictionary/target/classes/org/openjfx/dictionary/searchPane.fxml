@@ -22,9 +22,9 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="333.0" layoutY="32.0" prefHeight="373.0" prefWidth="308.0" />
-      <WebView fx:id="explainWebView" layoutX="333.0" layoutY="32.0" prefHeight="373.0" prefWidth="308.0" />
-      <Button fx:id="speakButton" layoutX="592.0" layoutY="36.0" mnemonicParsing="false" onAction="#speak" style="-fx-background-color: White;">
+      <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="333.0" layoutY="69.0" prefHeight="336.0" prefWidth="308.0" />
+      <WebView fx:id="explainWebView" layoutX="333.0" layoutY="69.0" prefHeight="336.0" prefWidth="308.0" />
+      <Button fx:id="speakButton" layoutX="586.0" layoutY="36.0" mnemonicParsing="false" onAction="#speak" style="-fx-background-color: White;">
          <graphic>
             <ImageView fx:id="markButtonImageView1" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="editButton" layoutX="467.0" layoutY="36.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: White;">
+      <Button fx:id="editButton" layoutX="462.0" layoutY="36.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: White;">
          <graphic>
             <ImageView fx:id="markButtonImageView11" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -59,7 +59,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="saveButton" layoutX="435.0" layoutY="36.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: White;">
+      <Button fx:id="saveButton" layoutX="601.0" layoutY="371.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: White;">
          <graphic>
             <ImageView fx:id="markButtonImageView111" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>

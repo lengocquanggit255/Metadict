@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
@@ -38,9 +39,54 @@ public class BookMarkPaneController implements Initializable {
     @FXML
     private Button speakButton;
 
+    @FXML
+    private HTMLEditor editor;
+    @FXML
+    private Button editButton;
+
+    @FXML
+    private Button saveButton;
+
     private String[] words = Helper.dictionary.getTargetOFMarked_word();
     private FilteredList<String> filteredList;
     private String currentSelectedWord = "";
+
+    @FXML
+    public void save() {
+        editor.setDisable(true);
+        editor.setVisible(false);
+        saveButton.setDisable(true);
+        saveButton.setVisible(false);
+        deleteButton.setDisable(false);
+        unMarkButton.setDisable(false);
+        explainWebView.setDisable(false);
+        explainWebView.setVisible(true);
+        speakButton.setDisable(false);
+        myTextField.setDisable(false);
+        myListView.setDisable(false);
+
+        String editedHtml = editor.getHtmlText();
+        Helper.dictionary.update(currentSelectedWord, editedHtml);
+        WebEngine explainWebEngine = explainWebView.getEngine();
+        explainWebEngine.loadContent(editedHtml);
+    }
+
+    @FXML
+    public void edit() {
+        editor.setDisable(false);
+        editor.setVisible(true);
+        saveButton.setDisable(false);
+        saveButton.setVisible(true);
+        deleteButton.setDisable(true);
+        unMarkButton.setDisable(true);
+        explainWebView.setDisable(true);
+        explainWebView.setVisible(false);
+        speakButton.setDisable(true);
+        myTextField.setDisable(true);
+        myListView.setDisable(true);
+        String currentHtml = explainWebView.getEngine().executeScript("document.documentElement.outerHTML").toString();
+        editor.setHtmlText(currentHtml);
+    }
 
     @FXML
     public void speak() {
@@ -113,6 +159,9 @@ public class BookMarkPaneController implements Initializable {
             }
             return false;
         }, webEngine.documentProperty());
+
+        editButton.managedProperty().bind(isContentLoaded);
+        editButton.visibleProperty().bind(isContentLoaded);
 
         speakButton.managedProperty().bind(isContentLoaded);
         speakButton.visibleProperty().bind(isContentLoaded);

@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.HTMLEditor?>
 <?import javafx.scene.web.WebView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="664.0" style="-fx-background-color: #EFF0EF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.BookMarkPaneController">
@@ -17,7 +18,8 @@
             <Button layoutX="240.0" layoutY="22.0" minWidth="53.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="53.0" text="Enter" />
          </children>
       </AnchorPane>
-      <WebView fx:id="explainWebView" layoutX="332.0" layoutY="35.0" prefHeight="370.0" prefWidth="308.0" />
+      <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="332.0" layoutY="79.0" prefHeight="326.0" prefWidth="308.0" />
+      <WebView fx:id="explainWebView" layoutX="332.0" layoutY="79.0" prefHeight="326.0" prefWidth="308.0" />
       <Button fx:id="unMarkButton" layoutX="520.0" layoutY="43.0" mnemonicParsing="false" onAction="#unMarkWord" style="-fx-background-color: White;">
          <graphic>
             <ImageView fx:id="markButtonImageView" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
@@ -41,6 +43,24 @@
             <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/icons8_Speaker_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="editButton" layoutX="438.0" layoutY="43.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: White;">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/icons8_Edit_52px_2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="saveButton" layoutX="602.0" layoutY="381.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: White;">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/4856668.png" />
                </image>
             </ImageView>
          </graphic>
