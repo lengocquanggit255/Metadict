@@ -19,7 +19,10 @@ import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
+import org.openjfx.dictionary.cmd.Helper;
 import org.w3c.dom.Document;
+
+import com.voicerss.tts.Languages;
 
 public class BookMarkPaneController implements Initializable {
 
@@ -90,7 +93,7 @@ public class BookMarkPaneController implements Initializable {
 
     @FXML
     public void speak() {
-        Helper.speak(currentSelectedWord);
+        Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
     }
 
     @FXML

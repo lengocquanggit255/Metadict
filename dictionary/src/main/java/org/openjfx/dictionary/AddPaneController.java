@@ -1,5 +1,6 @@
 package org.openjfx.dictionary;
 
+import org.openjfx.dictionary.cmd.Helper;
 import org.openjfx.dictionary.cmd.Word;
 
 import javafx.event.ActionEvent;

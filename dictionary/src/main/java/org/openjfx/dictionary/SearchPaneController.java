@@ -21,7 +21,10 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import org.openjfx.dictionary.cmd.Helper;
 import org.w3c.dom.Document;
+
+import com.voicerss.tts.Languages;
 
 public class SearchPaneController implements Initializable {
     @FXML
@@ -96,7 +99,7 @@ public class SearchPaneController implements Initializable {
 
     @FXML
     public void speak() {
-        Helper.speak(currentSelectedWord);
+        Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
     }
 
     @FXML

@@ -1,5 +1,7 @@
 package org.openjfx.dictionary;
 
+import org.openjfx.dictionary.cmd.Helper;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

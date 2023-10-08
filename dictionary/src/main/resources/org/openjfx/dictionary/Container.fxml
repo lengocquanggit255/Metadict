@@ -63,6 +63,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="GoogleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutY="262.0" mnemonicParsing="false" onAction="#showGoogleTranslatePane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: #A7C5C5;" stylesheets="@containerStyle.css">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0">
+                     <image>
+                        <Image url="@icons/icons8_Plus_Math_52px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets bottom="1.0" />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="content_pane" layoutX="56.0" layoutY="54.0" prefHeight="426.0" prefWidth="661.0" />

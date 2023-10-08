@@ -6,6 +6,8 @@ module dictionary {
     requires org.jsoup;
     requires java.desktop;
     requires voicerss.tts;
+    requires java.net.http;
+    requires langdetect;
 
     opens org.openjfx.dictionary to javafx.fxml;
 

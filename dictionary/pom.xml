@@ -41,6 +41,13 @@
             <scope>system</scope>
             <systemPath>D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/lib/voicerss_tts.jar</systemPath>
         </dependency>
+        <!-- langdetect -->
+        <dependency>
+            <groupId>com.cybozu.labs</groupId>
+            <artifactId>langdetect</artifactId>
+            <version>1.1-20120112</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
