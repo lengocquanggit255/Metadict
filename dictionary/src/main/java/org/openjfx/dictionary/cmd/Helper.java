@@ -2,12 +2,12 @@ package org.openjfx.dictionary.cmd;
 
 import com.voicerss.tts.AudioCodec;
 import com.voicerss.tts.AudioFormat;
+import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import com.voicerss.tts.VoiceProvider;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
@@ -70,20 +70,54 @@ public class Helper {
         }
     }
 
-    public static String googleTranslate(String langFrom, String langTo, String text) throws IOException, InterruptedException {
+    public static String googleTranslate(String langFrom, String langTo, String text)
+            throws IOException, InterruptedException {
+
+        switch (langFrom) {
+            case "en-us":
+                langFrom = "en";
+                break;
+
+            case "vi-vn":
+                langFrom = "vi";
+                break;
+
+            case "zh-cn":
+                langFrom = "zh";
+                break;
+
+            default:
+                break;
+        }
+
+        switch (langTo) {
+            case "en-us":
+                langTo = "en";
+                break;
+
+            case "vi-vn":
+                langTo = "vi";
+                break;
+
+            case "zh-cn":
+                langTo = "zh";
+                break;
+
+            default:
+                break;
+        }
         // Construct the URL for the Google Translate script with query parameters
-        String urlScript;
-        urlScript = "https://script.google.com/macros/s/AKfycbw1qSfs1Hvfnoi3FzGuoDWijwQW69eGcMM_iGDF7p5vu1oN_CaFqIDFmCGzBuuGCk_N/exec"
+        String urlScript = "https://script.google.com/macros/s/AKfycbx7_ch9fVT0OpGJ3-lGOt4Byvt3N9hkkwSdsEDZ0XTrjNduT2v1nE9XGAAHEF-qUrdz5A/exec"
                 +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
                 "&source=" + langFrom;
+
         // Create an HttpClient instance
         HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build();
 
         // Create an HttpRequest object with the URL and set the User-Agent header
-        HttpRequest request = HttpRequest.newBuilder(URI.create(urlScript)).header("User-Agent", "Mozilla/5.0")
-                .build();
+        HttpRequest request = HttpRequest.newBuilder(URI.create(urlScript)).header("User-Agent", "Mozilla/5.0").build();
 
         // Send the request and get the response
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -129,24 +163,5 @@ public class Helper {
             // Return a default language if an error occurs
             return "en";
         }
-    }
-
-    public static void main(String[] args) {
-        String text = "Hello, how are you?";
-
-        // Initialize language profiles
-        try {
-            DetectorFactory.loadProfile(
-                    "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/profiles");
-        } catch (LangDetectException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        // Detect the language of the input text
-        String detectedLanguage = detectLanguage(text);
-
-        // Pass the text and detected language to the speak method
-        speak(text, detectedLanguage);
     }
 }

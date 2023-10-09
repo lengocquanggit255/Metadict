@@ -13,7 +13,7 @@ public class Translate {
     public static String googleTranslate(String langFrom, String langTo, String text)
             throws IOException, InterruptedException {
         // Construct the URL for the Google Translate script with query parameters
-        String urlScript = "https://script.google.com/macros/s/AKfycbw1qSfs1Hvfnoi3FzGuoDWijwQW69eGcMM_iGDF7p5vu1oN_CaFqIDFmCGzBuuGCk_N/exec"
+        String urlScript = "https://script.google.com/macros/s/AKfycbx7_ch9fVT0OpGJ3-lGOt4Byvt3N9hkkwSdsEDZ0XTrjNduT2v1nE9XGAAHEF-qUrdz5A/exec"
                 +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
