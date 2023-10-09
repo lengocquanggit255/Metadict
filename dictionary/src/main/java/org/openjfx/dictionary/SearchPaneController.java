@@ -99,7 +99,12 @@ public class SearchPaneController implements Initializable {
 
     @FXML
     public void speak() {
-        Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
+        try {
+            Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     @FXML

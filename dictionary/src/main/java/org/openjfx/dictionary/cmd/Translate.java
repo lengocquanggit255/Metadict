@@ -66,7 +66,11 @@ public class Translate {
             String translation3 = googleTranslate("en", "de", "thank you");
             System.out.println("Translation 3: " + translation3);
 
-            Helper.speak(translation1, Languages.Vietnamese);
+            try {
+                Helper.speak(translation1, Languages.Vietnamese);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

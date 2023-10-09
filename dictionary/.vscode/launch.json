@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Voice",
+            "request": "launch",
+            "mainClass": "dictionary/org.openjfx.dictionary.cmd.Voice",
+            "projectName": "dictionary"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

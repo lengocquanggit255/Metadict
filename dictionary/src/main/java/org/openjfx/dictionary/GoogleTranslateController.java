@@ -99,13 +99,23 @@ public class GoogleTranslateController implements Initializable {
     @FXML
     public void speakLF() {
         if (!currentLF.isEmpty())
-            Helper.speak(LFTextField.getText(), currentLF);
+            try {
+                Helper.speak(LFTextField.getText(), currentLF);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
     }
 
     @FXML
     public void speakLT() {
         if (!currentLT.isEmpty())
-            Helper.speak(LTTextField.getText(), currentLT);
+            try {
+                Helper.speak(LTTextField.getText(), currentLT);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
     }
 
     @FXML

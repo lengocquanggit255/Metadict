@@ -93,7 +93,11 @@ public class BookMarkPaneController implements Initializable {
 
     @FXML
     public void speak() {
-        Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
+        try {
+            Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

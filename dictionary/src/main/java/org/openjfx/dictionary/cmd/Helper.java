@@ -1,12 +1,12 @@
 package org.openjfx.dictionary.cmd;
 
-import com.voicerss.tts.AudioCodec;
 import com.voicerss.tts.AudioFormat;
 import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import com.voicerss.tts.VoiceProvider;
 
-import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
@@ -22,33 +22,26 @@ import com.cybozu.labs.langdetect.LangDetectException;
 
 public class Helper {
     public static Dictionary dictionary = new Dictionary();
-    private static final int BUFFER_SIZE = 8192;
 
-    public static void speak(String text, String languages) {
-        // Set up voice parameters
-        VoiceParameters params = new VoiceParameters(text, languages);
-        params.setCodec(AudioCodec.WAV);
-        params.setFormat(AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
+    public static void speak(String text, String language) throws Exception {
+        String API_KEY = "3d5347f37b39439ba63c6d0f6ab6ae6b";
+        String AUDIO_PATH = "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/audio.wav";
+        double speed = 1;
+
+        VoiceProvider tts = new VoiceProvider(API_KEY);
+        VoiceParameters params = new VoiceParameters(text, AudioFormat.Format_44KHZ.AF_44khz_16bit_stereo);
         params.setBase64(false);
-        params.setSSML(false);
-        params.setRate((int) Math.round(-2.9936 * 1 * 1 + 15.2942 * 1 - 12.7612));
+        params.setLanguage(language);
+        params.setRate((int) Math.round(-2.9936 * speed * speed + 15.2942 * speed - 12.7612));
 
-        // Create a voice provider
-        VoiceProvider voiceProvider = new VoiceProvider("0399b37a008a49dfa5cda0e4e6162552");
+        byte[] voice = tts.speech(params);
 
-        try {
-            // Perform the text-to-speech conversion
-            byte[] voice = voiceProvider.speech(params);
+        FileOutputStream fos = new FileOutputStream(AUDIO_PATH);
+        fos.write(voice, 0, voice.length);
+        fos.flush();
+        fos.close();
 
-            // Play the speech
-            playAudio(voice);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void playAudio(byte[] audioData) {
-        try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(new ByteArrayInputStream(audioData))) {
+        try (AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File(AUDIO_PATH))) {
             javax.sound.sampled.AudioFormat format = audioStream.getFormat();
             DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
 
@@ -56,7 +49,7 @@ public class Helper {
                 line.open(format);
                 line.start();
 
-                byte[] buffer = new byte[BUFFER_SIZE];
+                byte[] buffer = new byte[4096];
                 int bytesRead;
 
                 while ((bytesRead = audioStream.read(buffer, 0, buffer.length)) != -1) {
@@ -65,8 +58,6 @@ public class Helper {
 
                 line.drain();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -163,5 +154,9 @@ public class Helper {
             // Return a default language if an error occurs
             return "en";
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        speak("hi", Languages.English_UnitedStates);
     }
 }
