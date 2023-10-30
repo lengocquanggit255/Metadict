@@ -124,11 +124,11 @@ public class SearchPaneController implements Initializable {
         if (isMarked) {
             Helper.dictionary.unMarkedWords(currentSelectedWord);
             markButtonImageView.setImage(new Image(
-                    "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
+                    "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
         } else {
             Helper.dictionary.markWord(currentSelectedWord);
             markButtonImageView.setImage(new Image(
-                    "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
+                    "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
         }
     }
 
@@ -180,10 +180,10 @@ public class SearchPaneController implements Initializable {
 
                 if (!Helper.dictionary.getWord(currentSelectedWord).isMarked()) {
                     markButtonImageView.setImage(new Image(
-                            "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
+                            "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_52px.png"));
                 } else {
                     markButtonImageView.setImage(new Image(
-                            "D:/QuangWork/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
+                            "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/icons8_Star_Filled_52px.png"));
                 }
 
             }

@@ -101,7 +101,7 @@ public class Dictionary {
     }
 
     private void importWordsFromFile() {
-        String path = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\E_V.txt";
+        String path = "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\E_V.txt";
         String line = null;
 
         try {
@@ -131,7 +131,7 @@ public class Dictionary {
     }
 
     private void importBookMarkFromFile() {
-        String filePath = "D:\\QuangWork\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\output\\bookMark.txt";
+        String filePath = "D:\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\output\\bookMark.txt";
 
         try {
             File file = new File(filePath);
@@ -162,7 +162,7 @@ public class Dictionary {
 
     private void exportBookMarkToFile() {
 
-        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/bookMark.txt";
+        String filepath = "D:/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/bookMark.txt";
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filepath);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF8");
@@ -185,7 +185,7 @@ public class Dictionary {
     }
 
     public void exportDictionaryToFile() {
-        String filepath = "D:/QuangWork/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/dictionaries.txt";
+        String filepath = "D:/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/dictionaries.txt";
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filepath);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF8");
