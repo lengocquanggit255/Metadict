@@ -16,10 +16,6 @@ import java.net.http.HttpResponse;
 
 import javax.sound.sampled.*;
 
-import com.cybozu.labs.langdetect.Detector;
-import com.cybozu.labs.langdetect.DetectorFactory;
-import com.cybozu.labs.langdetect.LangDetectException;
-
 public class Helper {
     public static Dictionary dictionary = new Dictionary();
 
@@ -134,25 +130,6 @@ public class Helper {
         // If the response status code is neither 200 nor 302, throw an exception
         else {
             throw new IOException("Translation request failed with status code: " + response.statusCode());
-        }
-    }
-
-    private static String detectLanguage(String text) {
-        try {
-            // Create a detector
-            Detector detector = DetectorFactory.create();
-
-            // Detect the language of the text
-            detector.setMaxTextLength(text.length()); // Set the maximum text length
-            detector.append(text);
-            String detectedLanguage = detector.detect(); // Perform language detection
-
-            // Return the detected language
-            return detectedLanguage;
-        } catch (LangDetectException e) {
-            e.printStackTrace();
-            // Return a default language if an error occurs
-            return "en";
         }
     }
 

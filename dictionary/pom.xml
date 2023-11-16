@@ -28,31 +28,19 @@
             <artifactId>javafx-web</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.14.3</version>
-        </dependency>
         <!-- VoiceRSS API Dependency -->
         <dependency>
             <groupId>com.voicerss</groupId>
             <artifactId>voicerss-tts</artifactId>
             <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>D:\Github\OPP\dictionary\src\main\java\org\openjfx\dictionary\lib\voicerss_tts.jar</systemPath>
+            <systemPath>D:\Github\OPP\dictionary\src\main\resources\org\openjfx\dictionary\lib\voicerss_tts.jar</systemPath>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
             <version>${javafx.version}</version> <!-- Sử dụng phiên bản phù hợp -->
-        </dependency>
-
-        <!-- langdetect -->
-        <dependency>
-            <groupId>com.cybozu.labs</groupId>
-            <artifactId>langdetect</artifactId>
-            <version>1.1-20120112</version>
         </dependency>
 
     </dependencies>

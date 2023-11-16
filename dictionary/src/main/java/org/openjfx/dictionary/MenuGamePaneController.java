@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
-
 public class MenuGamePaneController {
     @FXML
     private Button topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10;
@@ -32,16 +31,17 @@ public class MenuGamePaneController {
         Button button = (Button) event.getSource();
 
         // Mảng chứa tên các chủ đề
-        String[] topics = {"D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\animal.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\family.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\SportsAndGames.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\traffic.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\schoolAndUniversity.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\colorsAndShapes.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\Body.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\numbers.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\foodsAndDrinks.txt"
-                            , "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\moviesAndMusic.txt"};
+        String[] topics = {
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\animal.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\family.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\SportsAndGames.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\traffic.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\schoolAndUniversity.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\colorsAndShapes.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\Body.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\numbers.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\foodsAndDrinks.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\moviesAndMusic.txt" };
 
         // Lấy chỉ số của button được bấm trong mảng
         int index = Integer.parseInt(button.getId().substring(5)) - 1;
@@ -49,7 +49,8 @@ public class MenuGamePaneController {
         // Kiểm tra giới hạn chỉ số
         if (index >= 0 && index < topics.length) {
             String selectedTopic = topics[index];
-            CopyTextFile.Copy(selectedTopic, "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\vocabulary.txt");
+            CopyTextFile.Copy(selectedTopic,
+                    "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\vocabulary.txt");
         }
         showGame();
     }
