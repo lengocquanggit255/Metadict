@@ -8,6 +8,7 @@ module dictionary {
     requires voicerss.tts;
     requires java.net.http;
     requires langdetect;
+    requires javafx.media;
 
     opens org.openjfx.dictionary to javafx.fxml;
 

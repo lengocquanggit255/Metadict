@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.ContainerController">
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.ContainerController">
    <children>
       <AnchorPane prefHeight="480.0" prefWidth="56.0" style="-fx-background-color: #A7C5C5#A7C5C5;" styleClass="header_pane" stylesheets="@containerStyle.css">
          <children>
@@ -78,6 +78,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="gameButton" layoutX="11.0" layoutY="331.0" mnemonicParsing="false" onAction="#showMenuGamePane" prefWidth="31.0" text="game" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="content_pane" layoutX="56.0" layoutY="54.0" prefHeight="426.0" prefWidth="661.0" />

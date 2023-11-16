@@ -1,0 +1,192 @@
+bear: gấu
+polar bear: gấu Bắc cực
+panda: gấu trúc
+tiger: hổ
+tigress: hổ cái
+tiger cub: hổ con
+lion: sư tử
+lioness: sư tử cái
+lion cub: sư tử con
+panther: báo đen
+leopard: báo đốm
+cheetah: báo Ghê.ta
+gazelle: linh dương
+rhinoceros: tê giác
+hippopotamus: hà mã
+fox: cáo
+elephant: voi
+wolf: sói
+deer: nai
+doe: con nai cái
+fawn: nai con
+reindeer: tuần lộc
+elk: nai sừng tấm
+moose: nai sừng tấm
+rat: chuột
+giraffe: hươu cao cổ
+frog: ếch
+snake: rắn
+alligator: cá sấu
+crocodile: cá sấu
+bat: dơi
+hyena: linh cẩu
+chimpanzee: tinh tinh
+gorilla: gô ri la
+giant panda: gấu trúc
+boar: lợn rừng
+koala: koala
+camel: lạc đà
+sloth: con lười
+zebra: ngựa vằn
+squirrel: sóc
+baboon: khỉ đầu chó
+hedgehog: nhím
+monkey: khỉ
+racoon: gấu mèo
+platypus: thú mỏ vịt
+badger: con lửng
+weasel: chồn
+otter: rái cá
+skunk: chồn hôi
+crab: cua
+seal: hải cẩu
+octopus: bạch tuộc
+shark: cá mập
+seahorse: cá ngựa
+walrus: voi biển
+starfish: sao biển
+whale: cá voi
+penguin: chim cánh cụt
+jellyfish: sứa biển
+squid: con mực
+lobster: tôm hùm
+shrimp: tôm
+oyster: con hàu
+clam: con nghêu
+mussel: con trai
+oyster: con hàu
+scallop: sò điệp
+sentinel crab: con ghẹ
+dolphin: cá heo
+sea snail: ốc biển
+sea urchin: nhím biển
+sea turtle: rùa biển
+sea lion: sư tử biển
+coral: san hô
+seaweed: rong biển
+fish: cá
+clownfish: cá hề
+common carp: cá chép
+goldfish: cá vàng
+salmon: cá hồi
+crocodile: cá sấu
+anchovy: cá cơm biển
+sperm whale: cá nhà táng
+catfish: cá trê
+eel: lươn
+flounder: cá bơn
+goby: cá bống
+herring: cá trích
+mackerel: cá thu
+pomfret: cá chim
+catfish: cá trê
+tench: cá mè
+tilapia: cá rô
+pufferfish: cá nóc
+suckermouth catfish: cá dọn bể
+red tilapia: cá diêu hồng
+sardine: cá mòi
+snakehead fish: cá quả
+swordfish: cá kiếm
+stingray: cá đuối
+tuna: cá ngừ
+anabas: cá rô
+flowerhorn: cá la hán
+angelfish: cá thiên thần
+alligator: cá sấu Mỹ
+sea snake: rắn biển
+frog: ếch
+salamander: kỳ giông
+hippopotamus: hà mã
+sheep: cừu
+donkey: lừa
+buffalo: trâu
+goat: dê
+cow: bò
+goose: ngỗng
+horse: ngựa
+calf: bê con
+chicken: gà
+rooster: gà trống
+hen: gà mái
+chick: gà con
+duck: vịt
+drake: vịt đực
+duckling: vịt con
+turkey: gà tây
+ox: bò
+water buffalo: trâu
+sheep: cừu
+pig: lợn
+piglet: lợn con
+rabbit: thỏ
+bunny: thỏ con
+earthworm: giun đất
+cattle: gia súc
+dog: chó đực
+bitch: chó cái
+puppy: chó con
+cat: mèo
+queen: mèo cái
+kitten: mèo con
+bird: loài chim
+pheasant: gà lôi
+swallow: chim én
+canary: chim hoàng yến
+pigeon: chim bồ câu
+parrot: vẹt
+crow: quạ
+hummingbird: chim ruồi
+raven: quạ
+quail: chim cút
+kingfisher: chim bói cá
+swan: thiên nga
+woodpecker: chim gõ kiến
+toucan: chim toucan
+sparrow: chim sẻ
+peacock: công
+penguin: chim cánh cụt
+ostrich: đà điểu
+seagull: chim mòng biển
+eagle: đại bàng
+flamingo: hồng hạc
+hawk: diều hâu
+stork: cò
+falcon: chim ưng
+vulture: kền kền
+ant: kiến
+scorpion: bọ cạp
+aphid: con rệp
+louse: con rận
+bee: con ong
+butterfly: bướm
+beetle: bọ cánh cứng
+caterpillar: sâu bướm
+flea: con bị chét
+centipede: con rết
+tick: con ve
+cockroach: con gián
+spider: nhện
+termite: con mối
+wasp: ong bắp cày
+praying mantis: bọ ngựa
+cricket: con dế
+moth: con bướm đêm
+dragonfly: chuồn chuồn
+mosquito: con muỗi
+firefly: đom đóm
+maggot: con giòi
+fly: con ruồi
+cicada: ve sầu
+grasshopper: châu chấu
+ladybug: bọ rùa

@@ -7,7 +7,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <javafx.version>20.0.1</javafx.version>
+        <javafx.version>21</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
         <java.version>11</java.version>
         <voicerss.version>1.0.1</voicerss.version>
@@ -41,6 +41,13 @@
             <scope>system</scope>
             <systemPath>D:\Github\OPP\dictionary\src\main\java\org\openjfx\dictionary\lib\voicerss_tts.jar</systemPath>
         </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>${javafx.version}</version> <!-- Sử dụng phiên bản phù hợp -->
+        </dependency>
+
         <!-- langdetect -->
         <dependency>
             <groupId>com.cybozu.labs</groupId>

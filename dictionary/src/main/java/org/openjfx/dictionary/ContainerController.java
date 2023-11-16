@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ContainerController implements Initializable {
+
     @FXML
     public AnchorPane content_pane;
     @FXML
@@ -23,17 +24,30 @@ public class ContainerController implements Initializable {
     @FXML
     Button bookMarkButton;
     @FXML
+    Button gameButton;
+    @FXML
     Button GoogleTranslateButton;
 
     private AnchorPane anchorSearchPane;
     private AnchorPane anchorAddPane;
     private AnchorPane anchorBookMarkPane;
     private AnchorPane anchorGoogleTranslatePane;
+    private AnchorPane anchorMenuGamePane;
 
     private SearchPaneController searchController;
     private AddPaneController addController;
     private BookMarkPaneController bookMarkController;
+    private MenuGamePaneController menuGameController;
     private GoogleTranslateController GoogleTranslateController;
+
+    @FXML
+    public void showMenuGamePane() {
+        content_pane.getChildren().clear();
+        menuGameController.reload();
+        if (!content_pane.getChildren().contains(anchorMenuGamePane)) {
+            content_pane.getChildren().add(anchorMenuGamePane);
+        }
+    }
 
     @FXML
     public void showGoogleTranslatePane() {
@@ -77,6 +91,7 @@ public class ContainerController implements Initializable {
         main_pane.getChildren().add(searchButton);
         main_pane.getChildren().add(bookMarkButton);
         main_pane.getChildren().add(GoogleTranslateButton);
+        main_pane.getChildren().add(gameButton);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchPane.fxml"));
             anchorSearchPane = fxmlLoader.load();
@@ -108,5 +123,14 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuGamePane.fxml"));
+            anchorMenuGamePane = fxmlLoader.load();
+            menuGameController = fxmlLoader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+        menuGameController.setContainerController(this);
     }
 }
