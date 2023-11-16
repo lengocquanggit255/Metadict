@@ -18,8 +18,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-
-
 public class GamePaneController {
     @FXML
     private List<Button> leftButtons = new ArrayList<>();
@@ -40,7 +38,7 @@ public class GamePaneController {
     private Button buttonMusic;
     @FXML
     private Button buttonExit;
-    @FXML 
+    @FXML
     private Button yesButton;
     @FXML
     private Button noButton;
@@ -56,7 +54,7 @@ public class GamePaneController {
     private int minute = 4;
     private int second = 10;
     private int score = 0;
-    
+
     @FXML
     private ImageView soundOnImage;
     private ImageView soundOffImage;
@@ -64,19 +62,20 @@ public class GamePaneController {
     @FXML
     private AnchorPane exitGameBoxPane;
 
-    Image soundOn = new Image("file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
-    Image soundOff = new Image("file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_off.png");
+    Image soundOn = new Image(
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
+    Image soundOff = new Image(
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_off.png");
 
     private ButtonTextRandomizer buttonTextRandomizer;
     private SetColorBorder colorBorder;
     private List<String> englishWords;
     private List<String> vietnameseMeanings;
-    Map<String, String> vocabulary = loadVocabulary("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
+    Map<String, String> vocabulary;
 
     String c_sound = getClass().getResource("correct.mp3").toExternalForm();
     String w_sound = getClass().getResource("wrong.mp3").toExternalForm();
     String b_sound = getClass().getResource("BackgroundMusic.mp3").toExternalForm();
-
 
     Media c_media = new Media(c_sound);
     MediaPlayer CorrectSound = new MediaPlayer(c_media);
@@ -87,6 +86,8 @@ public class GamePaneController {
 
     public void initialize() {
         initializeButtons();
+        vocabulary = loadVocabulary(//! khởi tạo mọi thứ trong initialize NHẤT LÀ MẤY CÁI CẦN RELOAD
+                "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
         englishWords = new ArrayList<>(vocabulary.keySet());
         vietnameseMeanings = new ArrayList<>(vocabulary.values());
         buttonTextRandomizer = new ButtonTextRandomizer(englishWords, vietnameseMeanings, leftButtons, rightButtons);
@@ -110,13 +111,13 @@ public class GamePaneController {
     }
 
     private void initializeButtons() {
+        leftButtons.clear();//! Trước khi khởi tạo gì thì cần lear nó trước
+        rightButtons.clear();
         // Khởi tạo danh sách nút bên trái và bên phải
         leftButtons.addAll(Arrays.asList(
-            text0_L, text1_L, text2_L, text3_L, text4_L
-        ));
+                text0_L, text1_L, text2_L, text3_L, text4_L));
         rightButtons.addAll(Arrays.asList(
-            text0_R, text1_R, text2_R, text3_R, text4_R
-        ));
+                text0_R, text1_R, text2_R, text3_R, text4_R));
 
         soundOnImage = new ImageView(soundOn);
         soundOffImage = new ImageView(soundOff);
@@ -125,8 +126,9 @@ public class GamePaneController {
 
     /**
      * Đọc từ vựng từ file.
+     * 
      * @param fileName tên file từ.
-     * @return 
+     * @return
      */
     private Map<String, String> loadVocabulary(String fileName) {
         Map<String, String> vocabulary = new HashMap<>();
@@ -154,19 +156,20 @@ public class GamePaneController {
     private Button clickRightButton = null;
     private Button clickLeftButton = null;
     private Button clickTempRightButton = null;
-    private Button clickTempLeftButton =  null;
+    private Button clickTempLeftButton = null;
 
     @FXML
     private void onText_LClick(ActionEvent event) {
         clickLeftButton = (Button) event.getSource();
         CorrectSound.setVolume(1.0);
         WrongSound.setVolume(1.0);
-        if (clickTempLeftButton != null) colorBorder.resetColorButton(clickTempLeftButton);
+        if (clickTempLeftButton != null)
+            colorBorder.resetColorButton(clickTempLeftButton);
         if (isRightButtonClicked) {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
                 colorBorder.setBorderCorrectButton(clickLeftButton);
-                colorBorder.setBorderCorrectButton(clickRightButton); 
+                colorBorder.setBorderCorrectButton(clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
                 score++;
@@ -188,7 +191,7 @@ public class GamePaneController {
         } else {
             isLeftButtonClicked = true;
             colorBorder.setColorButton(clickLeftButton);
-            clickTempLeftButton =  clickLeftButton;
+            clickTempLeftButton = clickLeftButton;
         }
     }
 
@@ -197,12 +200,13 @@ public class GamePaneController {
         clickRightButton = (Button) event.getSource();
         CorrectSound.setVolume(1.0);
         WrongSound.setVolume(1.0);
-        if (clickTempRightButton != null) colorBorder.resetColorButton(clickTempRightButton);
+        if (clickTempRightButton != null)
+            colorBorder.resetColorButton(clickTempRightButton);
         if (isLeftButtonClicked) {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
-                colorBorder.setBorderCorrectButton(clickLeftButton);  
-                colorBorder.setBorderCorrectButton(clickRightButton);            
+                colorBorder.setBorderCorrectButton(clickLeftButton);
+                colorBorder.setBorderCorrectButton(clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
                 score++;
@@ -221,16 +225,17 @@ public class GamePaneController {
                 colorBorder.resetBorderButton(clickRightButton, 0.5);
             }
             isLeftButtonClicked = false;
-        } else {            
+        } else {
             isRightButtonClicked = true;
             colorBorder.setColorButton(clickRightButton);
-            clickTempRightButton =  clickRightButton;
+            clickTempRightButton = clickRightButton;
         }
     }
-    
+
     /**
      * Kiểm tra nghĩa tương ứng.
-     * @param word_target từ Tiếng Anh.
+     * 
+     * @param word_target  từ Tiếng Anh.
      * @param word_explain nghĩa Tiếng Việt.
      * @return trả về kết quả so sánh.
      */
@@ -243,6 +248,7 @@ public class GamePaneController {
      * bật tắt âm thanh.
      */
     private boolean checkAudio = true; // biến kiểm tra trạng thái âm thanh
+
     @FXML
     private void stopOrPlayMusic(ActionEvent event) {
         if (checkAudio) {
@@ -253,7 +259,7 @@ public class GamePaneController {
             buttonMusic.setGraphic(soundOnImage);
             BackgroundSound.play();
             checkAudio = true;
-        }        
+        }
     }
 
     @FXML
@@ -261,11 +267,11 @@ public class GamePaneController {
         BackgroundSound.pause();
         showExitGameBox();
         // if (result == buttonTypeYes) {
-        //     // Thoát game
-        //     System.exit(0);
+        // // Thoát game
+        // System.exit(0);
         // } else {
-        //     // Không làm gì cả, tiếp tục game
-        //     BackgroundSound.play();
+        // // Không làm gì cả, tiếp tục game
+        // BackgroundSound.play();
         // }
     }
 
@@ -273,37 +279,48 @@ public class GamePaneController {
     private void quitGame(ActionEvent event) {
 
     }
+
     @FXML
-    private void stayInGame(ActionEvent event) {}
-    
+    private void stayInGame(ActionEvent event) {
+    }
+
     public void countdown() {
         Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
-                second--;
-                if (second < 10) secondText.setText("0" + second);
-                else secondText.setText(second + "");
-                minuteText.setText("0" + minute);
-                if (second == 0) {
-                    second = 60;
-                    minute--;
-                }
-                if (minute == 0) {
-                    
-                }
-            })
-        );
+                new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
+                    second--;
+                    if (second < 10)
+                        secondText.setText("0" + second);
+                    else
+                        secondText.setText(second + "");
+                    minuteText.setText("0" + minute);
+                    if (second == 0) {
+                        second = 60;
+                        minute--;
+                    }
+                    if (minute == 0) {
+
+                    }
+                }));
 
         timeline.setCycleCount(second); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
         timeline.play();
     }
 
-    public void reload() {
-        BackgroundSound.play();  
-        countdown(); 
+    public void reload() {//! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
+        BackgroundSound.play();
+        countdown();
         score = 0;
         minute = 4;
         second = 60;
+        initializeButtons();
+        vocabulary = loadVocabulary(
+                "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
+        englishWords = new ArrayList<>(vocabulary.keySet());
+        vietnameseMeanings = new ArrayList<>(vocabulary.values());
+        buttonTextRandomizer = new ButtonTextRandomizer(englishWords, vietnameseMeanings, leftButtons, rightButtons);
+        buttonTextRandomizer.setRandomText();
     }
+
 
     @FXML
     public void showExitGameBox() {

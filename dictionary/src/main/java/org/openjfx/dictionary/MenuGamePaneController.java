@@ -18,14 +18,6 @@ public class MenuGamePaneController {
     private GamePaneController gameController;
     private ContainerController containerController;
 
-    public void setContainerController(ContainerController containerController) {
-        this.containerController = containerController;
-    }
-
-    public void setGameController(GamePaneController gameController) {
-        this.gameController = gameController;
-    }
-
     @FXML
     private void chooseTopic(ActionEvent event) {
         Button button = (Button) event.getSource();
@@ -49,6 +41,7 @@ public class MenuGamePaneController {
         // Kiểm tra giới hạn chỉ số
         if (index >= 0 && index < topics.length) {
             String selectedTopic = topics[index];
+            clear("vocabulary.txt"); //! clear trước khi load vào gamePane chứ k khi reload gameMenu
             CopyTextFile.Copy(selectedTopic,
                     "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\vocabulary.txt");
         }
@@ -73,7 +66,7 @@ public class MenuGamePaneController {
     }
 
     public void reload() {
-        clear("vocabulary.txt");
+      //  clear("vocabulary.txt");
     }
 
     @FXML
@@ -86,5 +79,13 @@ public class MenuGamePaneController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setContainerController(ContainerController containerController) {
+        this.containerController = containerController;
+    }
+
+    public void setGameController(GamePaneController gameController) {
+        this.gameController = gameController;
     }
 }
