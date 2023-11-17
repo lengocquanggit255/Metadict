@@ -87,11 +87,6 @@ public class ContainerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        main_pane.getChildren().add(addButton);
-        main_pane.getChildren().add(searchButton);
-        main_pane.getChildren().add(bookMarkButton);
-        main_pane.getChildren().add(GoogleTranslateButton);
-        main_pane.getChildren().add(gameButton);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchPane.fxml"));
             anchorSearchPane = fxmlLoader.load();
