@@ -51,9 +51,12 @@ public class GamePaneController {
     @FXML
     private Text scoreText;
 
-    private int minute = 4;
-    private int second = 10;
-    private int score = 0;
+    private int minute;
+    private int second;
+    private int score;
+    Timeline timeline;
+    private ContainerController containerController;
+    private AnchorPane anchorGamePane;
 
     @FXML
     private ImageView soundOnImage;
@@ -83,6 +86,10 @@ public class GamePaneController {
     MediaPlayer WrongSound = new MediaPlayer(w_media);
     Media b_media = new Media(b_sound);
     MediaPlayer BackgroundSound = new MediaPlayer(b_media);
+
+    public void setContainerController(ContainerController containerController) {
+        this.containerController = containerController;
+    }
 
     public void initialize() {
         initializeButtons();
@@ -264,28 +271,39 @@ public class GamePaneController {
 
     @FXML
     private void exitGame(ActionEvent event) {
-        BackgroundSound.pause();
+        Button button = (Button) event.getSource();
         showExitGameBox();
-        // if (result == buttonTypeYes) {
-        // // Thoát game
-        // System.exit(0);
-        // } else {
-        // // Không làm gì cả, tiếp tục game
-        // BackgroundSound.play();
-        // }
+        if (yesButton.equals(button)) {
+        // Thoát game
+            quitGame(event);
+        } 
+        if (noButton.equals(button) || xButton.equals(button)) {
+            stayInGame(event);
+        }
     }
 
     @FXML
     private void quitGame(ActionEvent event) {
-
+        //if (!containerController.content_pane.getChildren().contains(anchorGamePane)) {
+            containerController.content_pane.getChildren().clear();
+            BackgroundSound.stop();
+            timeline.stop();
+        //}
     }
 
     @FXML
     private void stayInGame(ActionEvent event) {
+        exitGameBoxPane.setDisable(true);
+        exitGameBoxPane.setVisible(false);
+        BackgroundSound.play();
+        timeline.play();
     }
 
     public void countdown() {
-        Timeline timeline = new Timeline(
+        score = 0;
+        minute = 4;
+        second = 60;
+        timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
                     second--;
                     if (second < 10)
@@ -294,7 +312,7 @@ public class GamePaneController {
                         secondText.setText(second + "");
                     minuteText.setText("0" + minute);
                     if (second == 0) {
-                        second = 60;
+                        second = 59;
                         minute--;
                     }
                     if (minute == 0) {
@@ -309,9 +327,6 @@ public class GamePaneController {
     public void reload() {//! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
         BackgroundSound.play();
         countdown();
-        score = 0;
-        minute = 4;
-        second = 60;
         initializeButtons();
         vocabulary = loadVocabulary(
                 "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
@@ -326,6 +341,10 @@ public class GamePaneController {
     public void showExitGameBox() {
         exitGameBoxPane.setDisable(false);
         exitGameBoxPane.setVisible(true);
+        BackgroundSound.pause();
+        timeline.pause();
     }
+
+    
 
 }

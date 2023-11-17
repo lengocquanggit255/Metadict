@@ -65,9 +65,9 @@ public class MenuGamePaneController {
         }
     }
 
-    public void reload() {
+    //public void reload() {
       //  clear("vocabulary.txt");
-    }
+    //}
 
     @FXML
     public void initialize() {

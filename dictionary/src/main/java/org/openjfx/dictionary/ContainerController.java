@@ -43,7 +43,7 @@ public class ContainerController implements Initializable {
     @FXML
     public void showMenuGamePane() {
         content_pane.getChildren().clear();
-        menuGameController.reload();
+        //menuGameController.reload();
         if (!content_pane.getChildren().contains(anchorMenuGamePane)) {
             content_pane.getChildren().add(anchorMenuGamePane);
         }
