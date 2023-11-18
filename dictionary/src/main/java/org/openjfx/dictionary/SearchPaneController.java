@@ -124,11 +124,11 @@ public class SearchPaneController implements Initializable {
         if (isMarked) {
             Helper.dictionary.unMarkedWords(currentSelectedWord);
             markButtonImageView.setImage(new Image(
-                    "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\icons\\markIcon.png"));
+                    "file:///D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\icons\\markIcon.png"));
         } else {
             Helper.dictionary.markWord(currentSelectedWord);
             markButtonImageView.setImage(new Image(
-                    "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\icons\\filledMarkIcon.png"));
+                    "file:///D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\icons\\filledMarkIcon.png"));
         }
     }
 

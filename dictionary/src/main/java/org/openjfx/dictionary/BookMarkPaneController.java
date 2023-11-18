@@ -178,6 +178,9 @@ public class BookMarkPaneController implements Initializable {
 
         deleteButton.managedProperty().bind(isContentLoaded);
         deleteButton.visibleProperty().bind(isContentLoaded);
+
+        saveButton.setDisable(true);
+        saveButton.setVisible(false);
     }
 
     private void filterList(String searchText) {

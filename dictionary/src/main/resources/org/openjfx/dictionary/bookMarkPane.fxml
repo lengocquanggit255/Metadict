@@ -9,58 +9,54 @@
 <?import javafx.scene.web.HTMLEditor?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="664.0" style="-fx-background-color: #EFF0EF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.BookMarkPaneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="761.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.BookMarkPaneController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="405.0" prefWidth="308.0">
-         <children>
-            <TextField fx:id="myTextField" layoutX="14.0" layoutY="22.0" prefHeight="34.0" prefWidth="226.0" promptText="Search..." style="-fx-background-color: #FABAA0;" />
-            <ListView fx:id="myListView" layoutX="13.0" layoutY="65.0" prefHeight="326.0" prefWidth="279.0" style="-fx-background-color: #FABAA0; -fx-control-inner-background: #FABAA0;" />
-            <Button layoutX="240.0" layoutY="22.0" minWidth="53.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="53.0" text="Enter" />
-         </children>
-      </AnchorPane>
-      <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="332.0" layoutY="79.0" prefHeight="326.0" prefWidth="308.0" />
-      <WebView fx:id="explainWebView" layoutX="332.0" layoutY="79.0" prefHeight="326.0" prefWidth="308.0" />
-      <Button fx:id="unMarkButton" layoutX="520.0" layoutY="43.0" mnemonicParsing="false" onAction="#unMarkWord" style="-fx-background-color: White;">
+      <AnchorPane layoutX="387.0" layoutY="114.0" prefHeight="281.0" prefWidth="356.0" style="-fx-background-color: #f0f9fa; -fx-border-color: #f0f9fa; -fx-background-radius: 8px; -fx-border-radius: 8px;" />
+      <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="392.0" layoutY="120.0" prefHeight="270.0" prefWidth="345.0" />
+      <WebView fx:id="explainWebView" layoutX="392.0" layoutY="120.0" prefHeight="270.0" prefWidth="345.0" />
+      <TextField fx:id="myTextField" layoutX="16.0" layoutY="49.0" prefHeight="45.0" prefWidth="360.0" promptText="Search..." style="-fx-background-color: #f0f9fa; -fx-border-color: #f0f9fa; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
+      <ListView fx:id="myListView" layoutX="16.0" layoutY="114.0" prefHeight="281.0" prefWidth="358.0" style="-fx-background-color: #f0f9fa; -fx-border-color: #f0f9fa; -fx-control-inner-background: #f0f9fa; -fx-background-radius: 8px; -fx-border-radius: 8px;" styleClass="scrollPane" stylesheets="@hideScroll.css" />
+      <Button fx:id="speakButton" layoutX="646.0" layoutY="35.0" mnemonicParsing="false" onAction="#speak" style="-fx-background-color: TRANSPARENT;">
          <graphic>
-            <ImageView fx:id="markButtonImageView" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/icons8_Star_Filled_52px.png" />
+                  <Image url="@icons/speakIcon.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="deleteButton" layoutX="470.0" layoutY="43.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: White;">
+      <Button fx:id="unMarkButton" layoutX="427.0" layoutY="35.0" mnemonicParsing="false" onAction="#unMarkWord" style="-fx-background-color: TRANSPARENT;">
          <graphic>
-            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/icons8_Trash_52px.png" />
+                  <Image url="@icons/filledMarkIcon.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="speakButton" layoutX="571.0" layoutY="43.0" mnemonicParsing="false" onAction="#speak" style="-fx-background-color: White;">
+      <Button fx:id="deleteButton" layoutX="573.0" layoutY="35.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: TRANSPARENT;">
          <graphic>
-            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/icons8_Speaker_48px.png" />
+                  <Image url="@icons/removeIcon.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="editButton" layoutX="431.0" layoutY="43.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: White;">
+      <Button fx:id="editButton" layoutX="500.0" layoutY="35.0" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: TRANSPARENT;">
          <graphic>
-            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/icons8_Edit_52px_2.png" />
+                  <Image url="@icons/editIcon.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="saveButton" layoutX="602.0" layoutY="381.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: White;">
+      <Button fx:id="saveButton" layoutX="677.0" layoutY="339.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: White;">
          <graphic>
-            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/4856668.png" />
+                  <Image url="@icons/saveIcon.png" />
                </image>
             </ImageView>
          </graphic>
