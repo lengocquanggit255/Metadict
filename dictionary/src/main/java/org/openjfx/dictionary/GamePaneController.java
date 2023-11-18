@@ -7,11 +7,16 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -35,9 +40,11 @@ public class GamePaneController {
     @FXML
     private Button text4_L, text4_R;
     @FXML
-    private Button buttonMusic;
+    private Button musicButton;
     @FXML
-    private Button buttonExit;
+    private Button homeButton;
+    @FXML
+    private Button backButton;
     @FXML
     private Button yesButton;
     @FXML
@@ -55,8 +62,10 @@ public class GamePaneController {
     private int second;
     private int score;
     Timeline timeline;
-    private ContainerController containerController;
-    private AnchorPane anchorGamePane;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private ImageView soundOnImage;
@@ -87,11 +96,7 @@ public class GamePaneController {
     Media b_media = new Media(b_sound);
     MediaPlayer BackgroundSound = new MediaPlayer(b_media);
 
-    public void setContainerController(ContainerController containerController) {
-        this.containerController = containerController;
-    }
-
-    public void initialize() {
+    private void initializeGame() {
         initializeButtons();
         vocabulary = loadVocabulary(//! khởi tạo mọi thứ trong initialize NHẤT LÀ MẤY CÁI CẦN RELOAD
                 "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
@@ -101,6 +106,17 @@ public class GamePaneController {
         buttonTextRandomizer.setRandomText();
         colorBorder = new SetColorBorder();
 
+        exitGameBoxPane.setDisable(true);
+        exitGameBoxPane.setVisible(false);
+        score = 0;
+        minute = 5;
+        second = 0;
+        scoreText.setText("0");
+        minuteText.setText("0" + minute);
+        secondText.setText("0" + second);
+    }
+
+    private void initializeSound() {
         // Tải âm thanh
         CorrectSound = new MediaPlayer(c_media);
         CorrectSound.setVolume(0.0); // Đặt âm lượng ban đầu
@@ -112,13 +128,11 @@ public class GamePaneController {
         WrongSound.stop();
         BackgroundSound = new MediaPlayer(b_media);
         BackgroundSound.setCycleCount(MediaPlayer.INDEFINITE); // phát lại liên tục
-
-        exitGameBoxPane.setDisable(true);
-        exitGameBoxPane.setVisible(false);
+        BackgroundSound.play();
     }
 
     private void initializeButtons() {
-        leftButtons.clear();//! Trước khi khởi tạo gì thì cần lear nó trước
+        leftButtons.clear();//! Trước khi khởi tạo gì thì cần clear nó trước
         rightButtons.clear();
         // Khởi tạo danh sách nút bên trái và bên phải
         leftButtons.addAll(Arrays.asList(
@@ -128,7 +142,7 @@ public class GamePaneController {
 
         soundOnImage = new ImageView(soundOn);
         soundOffImage = new ImageView(soundOff);
-        buttonMusic.setGraphic(soundOnImage);
+        musicButton.setGraphic(soundOnImage);
     }
 
     /**
@@ -259,36 +273,38 @@ public class GamePaneController {
     @FXML
     private void stopOrPlayMusic(ActionEvent event) {
         if (checkAudio) {
-            buttonMusic.setGraphic(soundOffImage);
+            musicButton.setGraphic(soundOffImage);
             BackgroundSound.pause();
             checkAudio = false;
         } else {
-            buttonMusic.setGraphic(soundOnImage);
+            musicButton.setGraphic(soundOnImage);
             BackgroundSound.play();
             checkAudio = true;
         }
     }
 
     @FXML
-    private void exitGame(ActionEvent event) {
-        Button button = (Button) event.getSource();
+    private void exitGame(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("Container.fxml"));
         showExitGameBox();
-        if (yesButton.equals(button)) {
-        // Thoát game
-            quitGame(event);
-        } 
-        if (noButton.equals(button) || xButton.equals(button)) {
-            stayInGame(event);
-        }
     }
 
     @FXML
-    private void quitGame(ActionEvent event) {
-        //if (!containerController.content_pane.getChildren().contains(anchorGamePane)) {
-            containerController.content_pane.getChildren().clear();
-            BackgroundSound.stop();
-            timeline.stop();
-        //}
+    private void backToChooseTopic(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("menuGamePane.fxml"));
+        showExitGameBox();
+    }
+
+    @FXML
+    private void quitGame(ActionEvent event) throws IOException{
+        exitGameBoxPane.setDisable(true);
+        exitGameBoxPane.setVisible(false);
+        BackgroundSound.stop();
+        timeline.stop();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -300,40 +316,34 @@ public class GamePaneController {
     }
 
     public void countdown() {
-        score = 0;
-        minute = 4;
-        second = 60;
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
-                    second--;
-                    if (second < 10)
+                    if (second > 0) second--;
+                    if (second < 10) {
                         secondText.setText("0" + second);
-                    else
+                        if (second == 0) {
+                            second = 60;
+                        } 
+                    } else {
                         secondText.setText(second + "");
-                    minuteText.setText("0" + minute);
-                    if (second == 0) {
-                        second = 59;
+                    }  
+                    if (second == 59) {
                         minute--;
+                        minuteText.setText("0" + minute);
                     }
                     if (minute == 0) {
 
                     }
                 }));
 
-        timeline.setCycleCount(second); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
+        timeline.setCycleCount(60*5); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
         timeline.play();
     }
 
     public void reload() {//! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
-        BackgroundSound.play();
+        initializeGame();
+        initializeSound();
         countdown();
-        initializeButtons();
-        vocabulary = loadVocabulary(
-                "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
-        englishWords = new ArrayList<>(vocabulary.keySet());
-        vietnameseMeanings = new ArrayList<>(vocabulary.values());
-        buttonTextRandomizer = new ButtonTextRandomizer(englishWords, vietnameseMeanings, leftButtons, rightButtons);
-        buttonTextRandomizer.setRandomText();
     }
 
 
@@ -344,7 +354,5 @@ public class GamePaneController {
         BackgroundSound.pause();
         timeline.pause();
     }
-
     
-
 }

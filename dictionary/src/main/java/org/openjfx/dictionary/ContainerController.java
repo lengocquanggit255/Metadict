@@ -1,10 +1,15 @@
 package org.openjfx.dictionary;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,21 +37,24 @@ public class ContainerController implements Initializable {
     private AnchorPane anchorAddPane;
     private AnchorPane anchorBookMarkPane;
     private AnchorPane anchorGoogleTranslatePane;
-    private AnchorPane anchorMenuGamePane;
 
     private SearchPaneController searchController;
     private AddPaneController addController;
     private BookMarkPaneController bookMarkController;
-    private MenuGamePaneController menuGameController;
     private GoogleTranslateController GoogleTranslateController;
 
+    public Button buttonGetInfo = new Button();
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     @FXML
-    public void showMenuGamePane() {
-        content_pane.getChildren().clear();
-        // menuGameController.reload();
-        if (!content_pane.getChildren().contains(anchorMenuGamePane)) {
-            content_pane.getChildren().add(anchorMenuGamePane);
-        }
+    public void showDefaultGameMenuPane(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("defaultGameMenu.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -59,7 +67,7 @@ public class ContainerController implements Initializable {
     }
 
     @FXML
-    public void showSearchPane() {
+    public void showSearchPane() {  
         content_pane.getChildren().clear();
         searchController.reload();
         if (!content_pane.getChildren().contains(anchorSearchPane)) {
@@ -118,14 +126,5 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuGamePane.fxml"));
-            anchorMenuGamePane = fxmlLoader.load();
-            menuGameController = fxmlLoader.getController();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        menuGameController.setContainerController(this);
     }
 }

@@ -7,19 +7,38 @@ import java.nio.file.Paths;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class MenuGamePaneController {
     @FXML
     private Button topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10;
+    @FXML
+    private AnchorPane anchorGameMenu;
+    @FXML
+    private Button backButton;
 
+    private DefaultGameMenuPaneController defaultGameMenuController;
     private AnchorPane anchorGamePane;
     private GamePaneController gameController;
-    private ContainerController containerController;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    public void setdefaultGameMenuController(DefaultGameMenuPaneController defaultGameMenuController) {
+        this.defaultGameMenuController = defaultGameMenuController;
+    }
+
+    public void setGameController(GamePaneController gameController) {
+        this.gameController = gameController;
+    }
 
     @FXML
-    private void chooseTopic(ActionEvent event) {
+    private void chooseTopic(ActionEvent event) throws IOException{
         Button button = (Button) event.getSource();
 
         // Mảng chứa tên các chủ đề
@@ -48,12 +67,11 @@ public class MenuGamePaneController {
         showGame();
     }
 
-    @FXML
     public void showGame() {
-        containerController.content_pane.getChildren().clear();
+        anchorGameMenu.getChildren().clear();
         gameController.reload();
-        if (!containerController.content_pane.getChildren().contains(anchorGamePane)) {
-            containerController.content_pane.getChildren().add(anchorGamePane);
+        if (!anchorGameMenu.getChildren().contains(anchorGamePane)) {
+            anchorGameMenu.getChildren().add(anchorGamePane);
         }
     }
 
@@ -65,27 +83,31 @@ public class MenuGamePaneController {
         }
     }
 
-    //public void reload() {
-      //  clear("vocabulary.txt");
-    //}
-
     @FXML
+    public void backToDefaultMenuButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("defaultGameMenu.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // public void initialize() {
+        
+    //     gameController.setMenuGameController(this);
+    // }
+
     public void initialize() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gamePane.fxml"));
             anchorGamePane = fxmlLoader.load();
             gameController = fxmlLoader.getController();
-            setGameController(this.gameController);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void setContainerController(ContainerController containerController) {
-        this.containerController = containerController;
-    }
-
-    public void setGameController(GamePaneController gameController) {
-        this.gameController = gameController;
+    public void showMenuDefault(ActionEvent event) throws IOException{
+        defaultGameMenuController.comeBackHome(event);
     }
 }
