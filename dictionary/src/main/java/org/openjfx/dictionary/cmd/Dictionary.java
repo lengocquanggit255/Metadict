@@ -185,7 +185,7 @@ public class Dictionary {
     }
 
     public void exportDictionaryToFile() {
-        String filepath = "D:/Github/OPP/dictionary/src/main/java/org/openjfx/dictionary/output/dictionaries.txt";
+        String filepath = "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\E_V.txt";
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filepath);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF8");
