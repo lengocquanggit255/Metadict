@@ -21,11 +21,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("container.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("startPane.fxml"));
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
+
+            // Center the stage on the screen
+            primaryStage.centerOnScreen();
         } catch (Exception e) {
             e.printStackTrace();
         }
