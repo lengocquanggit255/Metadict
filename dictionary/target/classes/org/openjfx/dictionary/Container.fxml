@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.ContainerController">
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.ContainerController">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,14 +15,7 @@
          </image>
       </ImageView>
       <AnchorPane fx:id="content_pane" layoutX="122.0" layoutY="79.0" prefHeight="437.0" prefWidth="761.0" />
-      <Button fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" layoutX="30.0" layoutY="70.0" mnemonicParsing="false" onAction="#showSearchPane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@containerStyle.css">
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="57.0">
-               <image>
-                  <Image url="@icons/searchIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="searchButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="77.0" mnemonicParsing="false" onAction="#showSearchPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -30,14 +23,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="bookMarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="30.0" layoutY="154.0" mnemonicParsing="false" onAction="#showBookMarkPane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@containerStyle.css">
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="57.0">
-               <image>
-                  <Image url="@icons/bookmarkIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="bookMarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="160.0" mnemonicParsing="false" onAction="#showBookMarkPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -45,14 +31,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" layoutX="30.0" layoutY="319.0" mnemonicParsing="false" onAction="#showAddPane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@containerStyle.css">
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="57.0">
-               <image>
-                  <Image url="@icons/addIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="GoogleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="242.0" mnemonicParsing="false" onAction="#showGoogleTranslatePane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -60,14 +39,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="GoogleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="30.0" layoutY="238.0" mnemonicParsing="false" onAction="#showGoogleTranslatePane" prefHeight="45.0" prefWidth="56.0" style="-fx-background-color: TRANSPARENT;" stylesheets="@containerStyle.css">
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="57.0">
-               <image>
-                  <Image url="@icons/ggTranslateIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="325.0" mnemonicParsing="false" onAction="#showAddPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -75,14 +47,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="gameButton" layoutX="30.0" layoutY="402.0" minHeight="57.0" mnemonicParsing="false" onAction="#showDefaultGameMenuPane" prefWidth="56.0" style="-fx-background-color: TRANSPARENT;">
-         <graphic>
-            <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@icons/gameIcon.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="gameButton" layoutX="40.0" layoutY="407.0" minHeight="57.0" mnemonicParsing="false" onAction="#showDefaultGameMenuPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;" />
    </children>
 </AnchorPane>

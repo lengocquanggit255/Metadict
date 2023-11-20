@@ -11,31 +11,31 @@
    <children>
       <TextField fx:id="LFTextField" alignment="TOP_LEFT" layoutX="28.0" layoutY="65.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" />
       <TextField fx:id="LTTextField" alignment="TOP_LEFT" layoutX="28.0" layoutY="286.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
-      <Button fx:id="detectLanguageButtonLF" layoutX="37.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="207.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Phát hiện ngôn ngữ" textFill="WHITE">
+      <Button fx:id="detectLanguageButtonLF" layoutX="37.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="207.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Phát hiện ngôn ngữ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="EnLanguageButtonLF" layoutX="246.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-border-radius: 20px; -fx-background-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Anh" textFill="WHITE">
+      <Button fx:id="EnLanguageButtonLF" layoutX="246.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Anh" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="ViLanguageButtonLF" layoutX="393.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Việt" textFill="WHITE">
+      <Button fx:id="ViLanguageButtonLF" layoutX="393.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Việt" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="EnLanguageButtonLT" layoutX="37.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Anh" textFill="WHITE">
+      <Button fx:id="EnLanguageButtonLT" layoutX="37.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Anh" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="ViLanguageButtonLT" layoutX="184.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Việt" textFill="WHITE">
+      <Button fx:id="ViLanguageButtonLT" layoutX="184.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Việt" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="CnLanguageButtonLT" layoutX="331.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Trung" textFill="WHITE">
+      <Button fx:id="CnLanguageButtonLT" layoutX="331.0" layoutY="239.0" mnemonicParsing="false" onAction="#selectLanguageTo" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Trung" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="CnLanguageButtonLF" layoutX="540.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Tiếng Trung" textFill="WHITE">
+      <Button fx:id="CnLanguageButtonLF" layoutX="540.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="145.0" styleClass="notSelected-button" stylesheets="@GoogleTransLate.css" text="Tiếng Trung" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
@@ -57,7 +57,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="translateButton" layoutX="297.0" layoutY="196.0" mnemonicParsing="false" onAction="#translate" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@GoogleTransLate.css" text="Dịch" textFill="WHITE">
+      <Button fx:id="translateButton" layoutX="297.0" layoutY="196.0" mnemonicParsing="false" onAction="#translate" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #03a9f4; -fx-border-color: BLACK; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Dịch" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>

@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class GoogleTranslateController implements Initializable {
     private Button selectedButtonLF;
@@ -52,12 +53,14 @@ public class GoogleTranslateController implements Initializable {
             selectedButtonLF.getStyleClass().remove("selected-button");
         }
         selectedButtonLF = detectLanguageButtonLF;
+        selectedButtonLF.getStyleClass().remove("notSelected-button");
         selectedButtonLF.getStyleClass().add("selected-button");
 
         if (selectedButtonLT != null) {
             selectedButtonLT.getStyleClass().remove("selected-button");
         }
         selectedButtonLT = EnLanguageButtonLT;
+        selectedButtonLT.getStyleClass().remove("notSelected-button");
         selectedButtonLT.getStyleClass().add("selected-button");
 
         currentLF = "";
@@ -75,11 +78,13 @@ public class GoogleTranslateController implements Initializable {
             selectedButtonLF.getStyleClass().remove("selected-button");
         }
         selectedButtonLF = detectLanguageButtonLF;
+        selectedButtonLF.getStyleClass().remove("notSelected-button");
         selectedButtonLF.getStyleClass().add("selected-button");
         if (selectedButtonLT != null) {
             selectedButtonLT.getStyleClass().remove("selected-button");
         }
         selectedButtonLT = EnLanguageButtonLT;
+        selectedButtonLT.getStyleClass().remove("notSelected-button");
         selectedButtonLT.getStyleClass().add("selected-button");
     }
 
@@ -136,7 +141,9 @@ public class GoogleTranslateController implements Initializable {
         if (selectedButtonLF != null) {
             selectedButtonLF.getStyleClass().remove("selected-button");
         }
+        selectedButtonLF.getStyleClass().add("notSelected-button");
         selectedButtonLF = (Button) source;
+        selectedButtonLF.getStyleClass().remove("notSelected-button");
         selectedButtonLF.getStyleClass().add("selected-button");
 
         System.out.println("Current LF: " + currentLF);
@@ -157,10 +164,24 @@ public class GoogleTranslateController implements Initializable {
         if (selectedButtonLT != null) {
             selectedButtonLT.getStyleClass().remove("selected-button");
         }
+        selectedButtonLT.getStyleClass().add("notSelected-button");
         selectedButtonLT = (Button) source;
+        selectedButtonLT.getStyleClass().remove("notSelected-button");
         selectedButtonLT.getStyleClass().add("selected-button");
 
         System.out.println("Current LT: " + currentLT);
+    }
+
+    @FXML
+    private void mouseExitButton(MouseEvent event) {
+        translateButton.setStyle(
+                "-fx-background-color: #03a9f4; -fx-border-color: BLACK; -fx-background-radius: 10px; -fx-border-radius: 10px;");
+    }
+
+    @FXML
+    private void mouseEnterButton(MouseEvent event) {
+        translateButton.setStyle(
+                "-fx-background-color: #03a9f4; -fx-border-color: WHITE; -fx-background-radius: 10px; -fx-border-radius: 10px;");
     }
 
 }

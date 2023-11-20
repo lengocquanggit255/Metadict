@@ -38,4 +38,16 @@ public class StartController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void mouseEnterStartButton() {
+        startButton.setStyle(
+                "-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: WHITE;");
+    }
+
+    @FXML
+    private void mouseEnterExitButton() {
+        startButton.setStyle(
+                "-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: BLACK;");
+    }
 }

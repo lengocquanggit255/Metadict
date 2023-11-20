@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -51,7 +52,7 @@ public class ContainerController implements Initializable {
     @FXML
     public void showDefaultGameMenuPane(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("defaultGameMenuPane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -67,7 +68,7 @@ public class ContainerController implements Initializable {
     }
 
     @FXML
-    public void showSearchPane() {  
+    public void showSearchPane() {
         content_pane.getChildren().clear();
         searchController.reload();
         if (!content_pane.getChildren().contains(anchorSearchPane)) {
@@ -91,6 +92,20 @@ public class ContainerController implements Initializable {
         if (!content_pane.getChildren().contains(anchorBookMarkPane)) {
             content_pane.getChildren().add(anchorBookMarkPane);
         }
+    }
+
+    @FXML
+    private void mouseExitButton(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        button.setStyle(
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+    }
+
+    @FXML
+    private void mouseEnterButton(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        button.setStyle(
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: WHITE;");
     }
 
     @Override
