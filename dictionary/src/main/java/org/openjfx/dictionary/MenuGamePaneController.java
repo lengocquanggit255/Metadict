@@ -84,18 +84,13 @@ public class MenuGamePaneController {
     }
 
     @FXML
-    public void backToDefaultMenuButton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("defaultGameMenu.fxml"));
+    private void backToDefaultMenuButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("defaultGameMenuPane.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
-    // public void initialize() {
-        
-    //     gameController.setMenuGameController(this);
-    // }
 
     public void initialize() {
         try {

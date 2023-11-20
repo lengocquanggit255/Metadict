@@ -156,7 +156,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <AnchorPane fx:id="exitGameBoxPane" prefHeight="426.0" prefWidth="661.0" style="-fx-background-color: #C0C0C080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="exitGameBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane layoutX="301.0" layoutY="195.0" prefHeight="150.0" prefWidth="350.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #FFFFFF;">
                <children>
@@ -167,11 +167,41 @@
                   </Button>
                   <Button fx:id="yesButton" layoutX="198.0" layoutY="102.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="26.0" prefWidth="54.0" text="YES" />
                   <Button fx:id="noButton" layoutX="277.0" layoutY="102.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="26.0" prefWidth="54.0" text="NO" />
-                  <Text layoutX="54.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Điểm của bạn sẽ không được ghi lại! Bạn có muốn thoát game không?" wrappingWidth="249.15423583984375">
+                  <Text layoutX="54.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score will not be recorded! Do you want to exit the game?" wrappingWidth="249.15423583984375">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="yourScoreBoxPane" layoutX="-1.0" layoutY="-3.0" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;">
+               <children>
+                  <AnchorPane layoutX="270.0" layoutY="123.0" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #FFFFFF;">
+                     <children>
+                        <Button layoutX="347.0" layoutY="5.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="47.0" style="-fx-background-color: #CC0000; -fx-background-radius: 5px;" text="X" textFill="WHITE" fx:id="xScoreButton">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="yesScoreButton" layoutX="229.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="YES" />
+                        <Button fx:id="noScoreButton" layoutX="304.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="NO" />
+                        <Text layoutX="129.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score is" textAlignment="CENTER" wrappingWidth="161.39999999999998">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="yourScoreText" layoutX="124.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="161.39999999999998">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="69.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to get to the high score board?" textAlignment="CENTER" wrappingWidth="268.20000000000005">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>

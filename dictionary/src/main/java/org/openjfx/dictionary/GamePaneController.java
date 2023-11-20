@@ -46,17 +46,13 @@ public class GamePaneController {
     @FXML
     private Button backButton;
     @FXML
-    private Button yesButton;
+    private Button yesButton, noButton, xButton;
     @FXML
-    private Button noButton;
+    private Button yesScoreButton, noScoreButton, xScoreButton;
     @FXML
-    private Button xButton;
+    private Text yourScoreText;
     @FXML
-    private Text minuteText;
-    @FXML
-    private Text secondText;
-    @FXML
-    private Text scoreText;
+    private Text minuteText, secondText, scoreText;
 
     private int minute;
     private int second;
@@ -68,11 +64,12 @@ public class GamePaneController {
     private Parent root;
 
     @FXML
-    private ImageView soundOnImage;
-    private ImageView soundOffImage;
+    private ImageView soundOnImage, soundOffImage;
 
     @FXML
     private AnchorPane exitGameBoxPane;
+    @FXML
+    private AnchorPane yourScoreBoxPane;
 
     Image soundOn = new Image(
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
@@ -108,8 +105,10 @@ public class GamePaneController {
 
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
+        yourScoreBoxPane.setDisable(true);
+        yourScoreBoxPane.setVisible(false);
         score = 0;
-        minute = 5;
+        minute = 1;
         second = 0;
         scoreText.setText("0");
         minuteText.setText("0" + minute);
@@ -321,7 +320,7 @@ public class GamePaneController {
                     if (second > 0) second--;
                     if (second < 10) {
                         secondText.setText("0" + second);
-                        if (second == 0) {
+                        if (second == 0 && minute > 0) {
                             second = 60;
                         } 
                     } else {
@@ -331,12 +330,13 @@ public class GamePaneController {
                         minute--;
                         minuteText.setText("0" + minute);
                     }
-                    if (minute == 0) {
-
+                    if (minute == 0 && second == 0) {
+                        yourScoreText.setText(score + "");
+                        showYourScoreBox();
                     }
                 }));
 
-        timeline.setCycleCount(60*5); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
+        timeline.setCycleCount(61); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
         timeline.play();
     }
 
@@ -346,11 +346,16 @@ public class GamePaneController {
         countdown();
     }
 
-
-    @FXML
     public void showExitGameBox() {
         exitGameBoxPane.setDisable(false);
         exitGameBoxPane.setVisible(true);
+        BackgroundSound.pause();
+        timeline.pause();
+    }
+
+    public void showYourScoreBox() {
+        yourScoreBoxPane.setDisable(false);
+        yourScoreBoxPane.setVisible(true);
         BackgroundSound.pause();
         timeline.pause();
     }

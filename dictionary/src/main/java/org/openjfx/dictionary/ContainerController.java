@@ -50,7 +50,7 @@ public class ContainerController implements Initializable {
 
     @FXML
     public void showDefaultGameMenuPane(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("defaultGameMenu.fxml"));
+        root = FXMLLoader.load(getClass().getResource("defaultGameMenuPane.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
