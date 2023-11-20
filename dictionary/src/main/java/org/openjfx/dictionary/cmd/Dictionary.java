@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -109,7 +110,7 @@ public class Dictionary {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
             while ((line = bufferedReader.readLine()) != null) {
-                int posSplit = line.indexOf("<html>");
+                int posSplit = line.indexOf("<html");
                 if (posSplit > 0 && posSplit < line.length()) {
                     String word_target = line.substring(0, posSplit);
                     String explainPart = line.substring(posSplit);
@@ -134,12 +135,12 @@ public class Dictionary {
         String filePath = "D:\\Github\\OPP\\dictionary\\src\\main\\java\\org\\openjfx\\dictionary\\output\\bookMark.txt";
 
         try {
-            File file = new File(filePath);
-            Scanner scanner = new Scanner(file);
+            FileReader fileReader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] words = line.split("\t");
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] words = line.split("<html");
                 if (words.length == 2) {
                     String word_target = words[0];
                     String word_explain = words[1];
@@ -149,9 +150,11 @@ public class Dictionary {
                 }
             }
             System.out.println("Import succeeded!");
-            scanner.close();
-        } catch (IOException e) {
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
         }
     }
 
@@ -169,7 +172,7 @@ public class Dictionary {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
             for (Word word : markedWords) {
-                bufferedWriter.write(word.getWord_target() + "\t" + word.getWord_explain());
+                bufferedWriter.write(word.getWord_target() + word.getWord_explain());
                 bufferedWriter.newLine();
             }
 
@@ -192,7 +195,7 @@ public class Dictionary {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
             for (Word word : words) {
-                bufferedWriter.write(word.getWord_target() + "\t" + word.getWord_explain());
+                bufferedWriter.write(word.getWord_target() + word.getWord_explain());
                 bufferedWriter.newLine();
             }
 
