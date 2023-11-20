@@ -9,8 +9,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="761.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.GoogleTranslateController">
    <children>
-      <TextField fx:id="LFTextField" layoutX="28.0" layoutY="65.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" />
-      <TextField fx:id="LTTextField" layoutX="28.0" layoutY="286.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
+      <TextField fx:id="LFTextField" alignment="TOP_LEFT" layoutX="28.0" layoutY="65.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" />
+      <TextField fx:id="LTTextField" alignment="TOP_LEFT" layoutX="28.0" layoutY="286.0" prefHeight="117.0" prefWidth="685.0" style="-fx-background-color: #fdfefe; -fx-background-radius: 20px; -fx-border-radius: 20px;" />
       <Button fx:id="detectLanguageButtonLF" layoutX="37.0" layoutY="18.0" mnemonicParsing="false" onAction="#selectLanguageFrom" prefHeight="44.0" prefWidth="207.0" style="-fx-background-color: #03a9f4; -fx-border-color: #03a9f4; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@GoogleTransLate.css" text="Phát hiện ngôn ngữ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
