@@ -14,12 +14,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -28,7 +31,6 @@ public class GamePaneController {
     private List<Button> leftButtons = new ArrayList<>();
     @FXML
     private List<Button> rightButtons = new ArrayList<>();
-
     @FXML
     private Button text0_L, text0_R;
     @FXML
@@ -40,36 +42,33 @@ public class GamePaneController {
     @FXML
     private Button text4_L, text4_R;
     @FXML
-    private Button musicButton;
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button backButton;
+    private Button musicButton, homeButton, backButton;
     @FXML
     private Button yesButton, noButton, xButton;
     @FXML
     private Button yesScoreButton, noScoreButton, xScoreButton;
     @FXML
-    private Text yourScoreText;
+    private Text yourScoreText, highScoreText;
     @FXML
     private Text minuteText, secondText, scoreText;
+    @FXML
+    private ImageView imageSpeaker;
+    @FXML
+    private AnchorPane exitGameBoxPane;
+    @FXML
+    private AnchorPane yourScoreBoxPane;
 
     private int minute;
     private int second;
     private int score;
+    private int highScore = 0;
+    private int checkTrueAnswer;
+    private int checkFalseAnswer;
     Timeline timeline;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    @FXML
-    private ImageView soundOnImage, soundOffImage;
-
-    @FXML
-    private AnchorPane exitGameBoxPane;
-    @FXML
-    private AnchorPane yourScoreBoxPane;
 
     Image soundOn = new Image(
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
@@ -77,7 +76,7 @@ public class GamePaneController {
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_off.png");
 
     private ButtonTextRandomizer buttonTextRandomizer;
-    private SetColorBorder colorBorder;
+    private SetColorButton colorButton;
     private List<String> englishWords;
     private List<String> vietnameseMeanings;
     Map<String, String> vocabulary;
@@ -101,7 +100,7 @@ public class GamePaneController {
         vietnameseMeanings = new ArrayList<>(vocabulary.values());
         buttonTextRandomizer = new ButtonTextRandomizer(englishWords, vietnameseMeanings, leftButtons, rightButtons);
         buttonTextRandomizer.setRandomText();
-        colorBorder = new SetColorBorder();
+        colorButton = new SetColorButton();
 
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
@@ -113,6 +112,19 @@ public class GamePaneController {
         scoreText.setText("0");
         minuteText.setText("0" + minute);
         secondText.setText("0" + second);
+        checkTrueAnswer = 0;
+        checkFalseAnswer = 5;
+
+        try (BufferedReader reader = new BufferedReader
+            (new FileReader("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                highScore = Integer.parseInt(line.trim());
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+        highScoreText.setText("HIGH SCORE: " + highScore);
     }
 
     private void initializeSound() {
@@ -139,9 +151,7 @@ public class GamePaneController {
         rightButtons.addAll(Arrays.asList(
                 text0_R, text1_R, text2_R, text3_R, text4_R));
 
-        soundOnImage = new ImageView(soundOn);
-        soundOffImage = new ImageView(soundOff);
-        musicButton.setGraphic(soundOnImage);
+        imageSpeaker.setImage(soundOn);
     }
 
     /**
@@ -183,34 +193,30 @@ public class GamePaneController {
         clickLeftButton = (Button) event.getSource();
         CorrectSound.setVolume(1.0);
         WrongSound.setVolume(1.0);
-        if (clickTempLeftButton != null)
-            colorBorder.resetColorButton(clickTempLeftButton);
+        if (clickTempLeftButton != null) {
+            colorButton.resetColorButton(clickTempLeftButton);
+        }
         if (isRightButtonClicked) {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
-                colorBorder.setBorderCorrectButton(clickLeftButton);
-                colorBorder.setBorderCorrectButton(clickRightButton);
+                checkTrueAnswer++;
+                setUpModeTrue(clickLeftButton, clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
                 score++;
                 scoreText.setText(score + "");
-                colorBorder.resetBorderButton(clickLeftButton, 0.25);
-                colorBorder.resetBorderButton(clickRightButton, 0.25);
-                buttonTextRandomizer.setRandomText();
                 clickRightButton = null;
                 clickLeftButton = null;
             } else {
-                colorBorder.setBorderWrongButton(clickLeftButton);
-                colorBorder.setBorderWrongButton(clickRightButton);
+                checkFalseAnswer--;
+                setUpModeFalse(clickLeftButton, clickRightButton);
                 WrongSound.seek(Duration.ZERO);
                 WrongSound.play();
-                colorBorder.resetBorderButton(clickLeftButton, 0.5);
-                colorBorder.resetBorderButton(clickRightButton, 0.5);
             }
             isRightButtonClicked = false;
         } else {
             isLeftButtonClicked = true;
-            colorBorder.setColorButton(clickLeftButton);
+            colorButton.setColorButton(clickLeftButton);
             clickTempLeftButton = clickLeftButton;
         }
     }
@@ -221,33 +227,28 @@ public class GamePaneController {
         CorrectSound.setVolume(1.0);
         WrongSound.setVolume(1.0);
         if (clickTempRightButton != null)
-            colorBorder.resetColorButton(clickTempRightButton);
+            colorButton.resetColorButton(clickTempRightButton);
         if (isLeftButtonClicked) {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
-                colorBorder.setBorderCorrectButton(clickLeftButton);
-                colorBorder.setBorderCorrectButton(clickRightButton);
+                checkTrueAnswer++;
+                setUpModeTrue(clickLeftButton, clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
                 score++;
                 scoreText.setText(score + "");
-                colorBorder.resetBorderButton(clickLeftButton, 0.25);
-                colorBorder.resetBorderButton(clickRightButton, 0.25);
-                buttonTextRandomizer.setRandomText();
                 clickRightButton = null;
                 clickLeftButton = null;
             } else {
-                colorBorder.setBorderWrongButton(clickLeftButton);
-                colorBorder.setBorderWrongButton(clickRightButton);
+                checkFalseAnswer--;
+                setUpModeFalse(clickLeftButton, clickRightButton);
                 WrongSound.seek(Duration.ZERO);
                 WrongSound.play();
-                colorBorder.resetBorderButton(clickLeftButton, 0.5);
-                colorBorder.resetBorderButton(clickRightButton, 0.5);
             }
             isLeftButtonClicked = false;
         } else {
             isRightButtonClicked = true;
-            colorBorder.setColorButton(clickRightButton);
+            colorButton.setColorButton(clickRightButton);
             clickTempRightButton = clickRightButton;
         }
     }
@@ -272,11 +273,11 @@ public class GamePaneController {
     @FXML
     private void stopOrPlayMusic(ActionEvent event) {
         if (checkAudio) {
-            musicButton.setGraphic(soundOffImage);
+            imageSpeaker.setImage(soundOff);
             BackgroundSound.pause();
             checkAudio = false;
         } else {
-            musicButton.setGraphic(soundOnImage);
+            imageSpeaker.setImage(soundOn);
             BackgroundSound.play();
             checkAudio = true;
         }
@@ -324,6 +325,15 @@ public class GamePaneController {
         timeline.play();
     }
 
+    @FXML 
+    private void chooseLevelAgain(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("levelGamePane.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void countdown() {
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
@@ -342,6 +352,11 @@ public class GamePaneController {
                     }  
                     if (minute == 0 && second == 0) {
                         yourScoreText.setText(score + "");
+                        if (score > highScore) {
+                            highScore = score;
+                            updateHighScore();
+                        }
+                        highScoreText.setText("HIGH SCORE: " + highScore);
                         showYourScoreBox();
                     }
                 }));
@@ -369,5 +384,68 @@ public class GamePaneController {
         BackgroundSound.stop();
         timeline.stop();
     }
+
+    private void updateHighScore() {
+        try (BufferedWriter writer = 
+            new BufferedWriter(new FileWriter("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
+            writer.write(Integer.toString(highScore));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
+    @FXML
+    private void mouseExitButton(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        button.setStyle(
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+    }
+
+    @FXML
+    private void mouseEnterButton(MouseEvent event) {
+        Button button = (Button) event.getSource();
+        button.setStyle(
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: WHITE;");
+    }
+
+    private void setUpModeTrue(Button button1, Button button2) {
+        if (LevelGamePaneController.getModeNumber() == 1) {
+            colorButton.setBorderCorrectButton(button1);
+            colorButton.setBorderCorrectButton(button2);
+            colorButton.resetBorderButton(button1, 0.25);
+            colorButton.resetBorderButton(button2, 0.25);
+            buttonTextRandomizer.setRandomText();
+        } else {
+            colorButton.setTransparentButton(button1);
+            colorButton.setTransparentButton(button2);
+            button1.setDisable(true);
+            button2.setDisable(true);
+            if (checkTrueAnswer == 5) {
+                checkTrueAnswer = 0;
+                for (Button button : leftButtons) {
+                    button.setDisable(false);
+                }
+                for (Button button : rightButtons) {
+                    button.setDisable(false);
+                }
+                buttonTextRandomizer.setRandomText();
+            }
+        }
+    }
+
+    private void setUpModeFalse(Button button1, Button button2) {
+        colorButton.setBorderWrongButton(button1);
+        colorButton.setBorderWrongButton(button2);
+        colorButton.resetBorderButton(button1, 0.5);
+        colorButton.resetBorderButton(button2, 0.5);
+        if (LevelGamePaneController.getModeNumber() == 1 && checkFalseAnswer == 0) {
+            yourScoreText.setText(score + "");
+            if (score > highScore) {
+                highScore = score;
+                updateHighScore();
+            }
+            highScoreText.setText("HIGH SCORE: " + highScore);
+            showYourScoreBox();
+        }
+    }
 }
