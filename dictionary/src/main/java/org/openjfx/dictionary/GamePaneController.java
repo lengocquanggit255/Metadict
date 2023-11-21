@@ -108,7 +108,7 @@ public class GamePaneController {
         yourScoreBoxPane.setDisable(true);
         yourScoreBoxPane.setVisible(false);
         score = 0;
-        minute = 1;
+        minute = 5;
         second = 0;
         scoreText.setText("0");
         minuteText.setText("0" + minute);
@@ -294,6 +294,16 @@ public class GamePaneController {
         showExitGameBox();
     }
 
+    @FXML 
+    private void playAgain(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("menuGamePane.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     @FXML
     private void quitGame(ActionEvent event) throws IOException{
         exitGameBoxPane.setDisable(true);
@@ -325,18 +335,18 @@ public class GamePaneController {
                         } 
                     } else {
                         secondText.setText(second + "");
+                        if (second == 59) {
+                            minute--;
+                            minuteText.setText("0" + minute);
+                        }
                     }  
-                    if (second == 59) {
-                        minute--;
-                        minuteText.setText("0" + minute);
-                    }
                     if (minute == 0 && second == 0) {
                         yourScoreText.setText(score + "");
                         showYourScoreBox();
                     }
                 }));
 
-        timeline.setCycleCount(61); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
+        timeline.setCycleCount(61*5); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
         timeline.play();
     }
 
@@ -356,8 +366,8 @@ public class GamePaneController {
     public void showYourScoreBox() {
         yourScoreBoxPane.setDisable(false);
         yourScoreBoxPane.setVisible(true);
-        BackgroundSound.pause();
-        timeline.pause();
+        BackgroundSound.stop();
+        timeline.stop();
     }
     
 }
