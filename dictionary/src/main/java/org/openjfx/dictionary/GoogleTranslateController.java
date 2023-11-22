@@ -73,6 +73,26 @@ public class GoogleTranslateController implements Initializable {
 
         currentLF = "";
         currentLT = Languages.Vietnamese;
+        detectLanguageButtonLF.getStyleClass().remove("notSelected-button");
+        detectLanguageButtonLF.getStyleClass().add("notSelected-button");
+
+        EnLanguageButtonLF.getStyleClass().remove("notSelected-button");
+        EnLanguageButtonLF.getStyleClass().add("notSelected-button");
+
+        ViLanguageButtonLF.getStyleClass().remove("notSelected-button");
+        ViLanguageButtonLF.getStyleClass().add("notSelected-button");
+
+        CnLanguageButtonLF.getStyleClass().remove("notSelected-button");
+        CnLanguageButtonLF.getStyleClass().add("notSelected-button");
+
+        EnLanguageButtonLT.getStyleClass().remove("notSelected-button");
+        EnLanguageButtonLT.getStyleClass().add("notSelected-button");
+
+        ViLanguageButtonLT.getStyleClass().remove("notSelected-button");
+        ViLanguageButtonLT.getStyleClass().add("notSelected-button");
+
+        CnLanguageButtonLT.getStyleClass().remove("notSelected-button");
+        CnLanguageButtonLT.getStyleClass().add("notSelected-button");
 
         if (selectedButtonLF != null) {
             selectedButtonLF.getStyleClass().remove("selected-button");
