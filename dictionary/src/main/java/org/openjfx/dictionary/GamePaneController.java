@@ -200,6 +200,10 @@ public class GamePaneController {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
                 checkTrueAnswer++;
+                colorButton.setBorderCorrectButton(clickLeftButton);
+                colorButton.setBorderCorrectButton(clickRightButton);
+                colorButton.resetBorderButton(clickLeftButton, 0.25);
+                colorButton.resetBorderButton(clickRightButton, 0.25);
                 setUpModeTrue(clickLeftButton, clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
@@ -209,6 +213,10 @@ public class GamePaneController {
                 clickLeftButton = null;
             } else {
                 checkFalseAnswer--;
+                colorButton.setBorderWrongButton(clickLeftButton);
+                colorButton.setBorderWrongButton(clickRightButton);
+                colorButton.resetBorderButton(clickLeftButton, 0.5);
+                colorButton.resetBorderButton(clickRightButton, 0.5);
                 setUpModeFalse(clickLeftButton, clickRightButton);
                 WrongSound.seek(Duration.ZERO);
                 WrongSound.play();
@@ -232,6 +240,10 @@ public class GamePaneController {
             // Check if both buttons have matching text
             if (check(clickLeftButton.getText(), clickRightButton.getText())) {
                 checkTrueAnswer++;
+                colorButton.setBorderCorrectButton(clickLeftButton);
+                colorButton.setBorderCorrectButton(clickRightButton);
+                colorButton.resetBorderButton(clickLeftButton, 0.25);
+                colorButton.resetBorderButton(clickRightButton, 0.25);
                 setUpModeTrue(clickLeftButton, clickRightButton);
                 CorrectSound.seek(Duration.ZERO);
                 CorrectSound.play();
@@ -241,6 +253,10 @@ public class GamePaneController {
                 clickLeftButton = null;
             } else {
                 checkFalseAnswer--;
+                colorButton.setBorderWrongButton(clickLeftButton);
+                colorButton.setBorderWrongButton(clickRightButton);
+                colorButton.resetBorderButton(clickLeftButton, 0.5);
+                colorButton.resetBorderButton(clickRightButton, 0.5);
                 setUpModeFalse(clickLeftButton, clickRightButton);
                 WrongSound.seek(Duration.ZERO);
                 WrongSound.play();
@@ -410,14 +426,8 @@ public class GamePaneController {
 
     private void setUpModeTrue(Button button1, Button button2) {
         if (LevelGamePaneController.getModeNumber() == 1) {
-            colorButton.setBorderCorrectButton(button1);
-            colorButton.setBorderCorrectButton(button2);
-            colorButton.resetBorderButton(button1, 0.25);
-            colorButton.resetBorderButton(button2, 0.25);
             buttonTextRandomizer.setRandomText();
         } else {
-            colorButton.setTransparentButton(button1);
-            colorButton.setTransparentButton(button2);
             button1.setDisable(true);
             button2.setDisable(true);
             if (checkTrueAnswer == 5) {
@@ -434,11 +444,7 @@ public class GamePaneController {
     }
 
     private void setUpModeFalse(Button button1, Button button2) {
-        colorButton.setBorderWrongButton(button1);
-        colorButton.setBorderWrongButton(button2);
-        colorButton.resetBorderButton(button1, 0.5);
-        colorButton.resetBorderButton(button2, 0.5);
-        if (LevelGamePaneController.getModeNumber() == 1 && checkFalseAnswer == 0) {
+        if (LevelGamePaneController.getModeNumber() == 3 && checkFalseAnswer == 0) {
             yourScoreText.setText(score + "");
             if (score > highScore) {
                 highScore = score;

@@ -32,8 +32,4 @@ public class SetColorButton {
     public void resetColorButton(Button button) {
         button.setStyle("-fx-background-color:  #03A9F4; -fx-background-radius: 25px; -fx-text-fill: #FFFFFF; -fx-font-size: 20px; -fx-font-weight: bold;");
     }
-
-    public void setTransparentButton(Button button) {
-        button.setStyle("-fx-background-color:  transparent");
-    }
 }

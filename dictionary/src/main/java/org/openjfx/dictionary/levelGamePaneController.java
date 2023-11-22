@@ -22,7 +22,6 @@ public class LevelGamePaneController {
     private Scene scene;
     private Parent root;
     private static int modeNumber = 1;
-    private GamePaneController gameController;
 
     @FXML
     private void backToDefaultMenuButton(ActionEvent event) throws IOException {
