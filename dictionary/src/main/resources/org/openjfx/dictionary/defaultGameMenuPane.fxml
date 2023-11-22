@@ -12,8 +12,8 @@
             <Image url="@icons/backgroundGame.png" />
          </image>
       </ImageView>
-      <Button fx:id="playGameButton" layoutX="321.0" layoutY="251.0" mnemonicParsing="false" onAction="#startGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: BLACK;" />
-      <Button fx:id="levelGameButton" layoutX="434.0" layoutY="249.0" mnemonicParsing="false" onAction="#chooseLevelGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: BLACK;" />
-      <Button fx:id="homeButton" layoutX="547.0" layoutY="252.0" mnemonicParsing="false" onAction="#comeBackHome" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: BLACK;" />
+      <Button fx:id="playGameButton" layoutX="321.0" layoutY="251.0" mnemonicParsing="false" onAction="#startGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: TRANSPARENT;" />
+      <Button fx:id="levelGameButton" layoutX="434.0" layoutY="249.0" mnemonicParsing="false" onAction="#chooseLevelGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: TRANSPARENT;" />
+      <Button fx:id="homeButton" layoutX="547.0" layoutY="252.0" mnemonicParsing="false" onAction="#comeBackHome" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: TRANSPARENT;" />
    </children>
 </AnchorPane>

@@ -51,7 +51,7 @@ public class LevelGamePaneController {
     private void mouseExitButton(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(
-                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;");
     }
 
     @FXML

@@ -23,28 +23,28 @@ public class DefaultGameMenuPaneController {
     private Scene scene;
     private Parent root;
 
-    @FXML 
+    @FXML
     public void startGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("menuGamePane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML 
+    @FXML
     private void chooseLevelGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("levelGamePane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML 
+    @FXML
     public void comeBackHome(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Container.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -54,7 +54,7 @@ public class DefaultGameMenuPaneController {
     private void mouseExitButton(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(
-                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;");
     }
 
     @FXML

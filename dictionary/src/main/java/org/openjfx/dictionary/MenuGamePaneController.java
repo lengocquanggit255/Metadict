@@ -39,7 +39,7 @@ public class MenuGamePaneController {
     }
 
     @FXML
-    private void chooseTopic(ActionEvent event) throws IOException{
+    private void chooseTopic(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();
 
         // Mảng chứa tên các chủ đề
@@ -61,7 +61,7 @@ public class MenuGamePaneController {
         // Kiểm tra giới hạn chỉ số
         if (index >= 0 && index < topics.length) {
             String selectedTopic = topics[index];
-            clear("vocabulary.txt"); //! clear trước khi load vào gamePane chứ k khi reload gameMenu
+            clear("vocabulary.txt"); // ! clear trước khi load vào gamePane chứ k khi reload gameMenu
             CopyTextFile.Copy(selectedTopic,
                     "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\vocabulary.txt");
         }
@@ -87,7 +87,7 @@ public class MenuGamePaneController {
     @FXML
     private void backToDefaultMenuButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("defaultGameMenuPane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -103,7 +103,7 @@ public class MenuGamePaneController {
         }
     }
 
-    public void showMenuDefault(ActionEvent event) throws IOException{
+    public void showMenuDefault(ActionEvent event) throws IOException {
         defaultGameMenuController.comeBackHome(event);
     }
 
@@ -111,7 +111,7 @@ public class MenuGamePaneController {
     private void mouseExitButton(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(
-                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;");
     }
 
     @FXML

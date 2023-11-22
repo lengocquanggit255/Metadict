@@ -138,10 +138,10 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutX="611.0" layoutY="414.0" mnemonicParsing="false" onAction="#backToChooseTopic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: BLACK; -fx-border-radius: 100px;" />
-      <Button fx:id="homeButton" layoutX="678.0" layoutY="414.0" mnemonicParsing="false" onAction="#exitGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: BLACK; -fx-border-radius: 100px;" />
+      <Button fx:id="backButton" layoutX="611.0" layoutY="414.0" mnemonicParsing="false" onAction="#backToChooseTopic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <Button fx:id="homeButton" layoutX="678.0" layoutY="414.0" mnemonicParsing="false" onAction="#exitGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
       <ImageView fx:id="imageSpeaker" fitHeight="52.0" fitWidth="52.0" layoutX="745.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="musicButton" layoutX="743.0" layoutY="412.0" mnemonicParsing="false" onAction="#stopOrPlayMusic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: BLACK; -fx-border-radius: 100px;" />
+      <Button fx:id="musicButton" layoutX="743.0" layoutY="412.0" mnemonicParsing="false" onAction="#stopOrPlayMusic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
       <Text fx:id="highScoreText" fill="WHITE" layoutX="372.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGH SCORE: " textAlignment="CENTER" wrappingWidth="215.19999999999993">
          <font>
             <Font name="System Bold" size="24.0" />

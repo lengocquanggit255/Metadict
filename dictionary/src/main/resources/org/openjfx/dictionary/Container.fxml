@@ -15,7 +15,7 @@
          </image>
       </ImageView>
       <AnchorPane fx:id="content_pane" layoutX="122.0" layoutY="79.0" prefHeight="437.0" prefWidth="761.0" />
-      <Button fx:id="searchButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="77.0" mnemonicParsing="false" onAction="#showSearchPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
+      <Button fx:id="searchButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="77.0" mnemonicParsing="false" onAction="#showSearchPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -23,7 +23,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="bookMarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="160.0" mnemonicParsing="false" onAction="#showBookMarkPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
+      <Button fx:id="bookMarkButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="160.0" mnemonicParsing="false" onAction="#showBookMarkPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -31,7 +31,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="GoogleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="242.0" mnemonicParsing="false" onAction="#showGoogleTranslatePane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
+      <Button fx:id="GoogleTranslateButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="242.0" mnemonicParsing="false" onAction="#showGoogleTranslatePane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="325.0" mnemonicParsing="false" onAction="#showAddPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;">
+      <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" layoutX="40.0" layoutY="325.0" mnemonicParsing="false" onAction="#showAddPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;">
          <opaqueInsets>
             <Insets bottom="1.0" />
          </opaqueInsets>
@@ -47,6 +47,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="gameButton" layoutX="40.0" layoutY="407.0" minHeight="57.0" mnemonicParsing="false" onAction="#showDefaultGameMenuPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;" />
+      <Button fx:id="gameButton" layoutX="40.0" layoutY="407.0" minHeight="57.0" mnemonicParsing="false" onAction="#showDefaultGameMenuPane" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="56.0" prefWidth="56.0" style="-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;" />
    </children>
 </AnchorPane>

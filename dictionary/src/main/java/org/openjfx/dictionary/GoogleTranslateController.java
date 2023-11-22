@@ -175,7 +175,7 @@ public class GoogleTranslateController implements Initializable {
     @FXML
     private void mouseExitButton(MouseEvent event) {
         translateButton.setStyle(
-                "-fx-background-color: #03a9f4; -fx-border-color: BLACK; -fx-background-radius: 10px; -fx-border-radius: 10px;");
+                "-fx-background-color: #03a9f4; -fx-border-color: TRANSPARENT; -fx-background-radius: 10px; -fx-border-radius: 10px;");
     }
 
     @FXML

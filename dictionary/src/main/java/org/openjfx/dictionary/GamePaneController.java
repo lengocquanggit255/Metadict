@@ -94,7 +94,7 @@ public class GamePaneController {
 
     private void initializeGame() {
         initializeButtons();
-        vocabulary = loadVocabulary(//! khởi tạo mọi thứ trong initialize NHẤT LÀ MẤY CÁI CẦN RELOAD
+        vocabulary = loadVocabulary(// ! khởi tạo mọi thứ trong initialize NHẤT LÀ MẤY CÁI CẦN RELOAD
                 "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/vocabulary.txt");
         englishWords = new ArrayList<>(vocabulary.keySet());
         vietnameseMeanings = new ArrayList<>(vocabulary.values());
@@ -115,8 +115,8 @@ public class GamePaneController {
         checkTrueAnswer = 0;
         checkFalseAnswer = 5;
 
-        try (BufferedReader reader = new BufferedReader
-            (new FileReader("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 highScore = Integer.parseInt(line.trim());
@@ -143,7 +143,7 @@ public class GamePaneController {
     }
 
     private void initializeButtons() {
-        leftButtons.clear();//! Trước khi khởi tạo gì thì cần clear nó trước
+        leftButtons.clear();// ! Trước khi khởi tạo gì thì cần clear nó trước
         rightButtons.clear();
         // Khởi tạo danh sách nút bên trái và bên phải
         leftButtons.addAll(Arrays.asList(
@@ -300,34 +300,33 @@ public class GamePaneController {
     }
 
     @FXML
-    private void exitGame(ActionEvent event) throws IOException{
+    private void exitGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Container.fxml"));
         showExitGameBox();
     }
 
     @FXML
-    private void backToChooseTopic(ActionEvent event) throws IOException{
+    private void backToChooseTopic(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("menuGamePane.fxml"));
         showExitGameBox();
     }
 
-    @FXML 
-    private void playAgain(ActionEvent event) throws IOException{
+    @FXML
+    private void playAgain(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("menuGamePane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-
     @FXML
-    private void quitGame(ActionEvent event) throws IOException{
+    private void quitGame(ActionEvent event) throws IOException {
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
         BackgroundSound.stop();
         timeline.stop();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -341,10 +340,10 @@ public class GamePaneController {
         timeline.play();
     }
 
-    @FXML 
+    @FXML
     private void chooseLevelAgain(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("levelGamePane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -353,19 +352,20 @@ public class GamePaneController {
     public void countdown() {
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
-                    if (second > 0) second--;
+                    if (second > 0)
+                        second--;
                     if (second < 10) {
                         secondText.setText("0" + second);
                         if (second == 0 && minute > 0) {
                             second = 60;
-                        } 
+                        }
                     } else {
                         secondText.setText(second + "");
                         if (second == 59) {
                             minute--;
                             minuteText.setText("0" + minute);
                         }
-                    }  
+                    }
                     if (minute == 0 && second == 0) {
                         yourScoreText.setText(score + "");
                         if (score > highScore) {
@@ -377,11 +377,11 @@ public class GamePaneController {
                     }
                 }));
 
-        timeline.setCycleCount(61*5); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
+        timeline.setCycleCount(61 * 5); // Đặt số lần lặp lại là giá trị thời gian chạy lùi
         timeline.play();
     }
 
-    public void reload() {//! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
+    public void reload() {// ! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
         initializeGame();
         initializeSound();
         countdown();
@@ -402,19 +402,19 @@ public class GamePaneController {
     }
 
     private void updateHighScore() {
-        try (BufferedWriter writer = 
-            new BufferedWriter(new FileWriter("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter("D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/highScore.txt"))) {
             writer.write(Integer.toString(highScore));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void mouseExitButton(MouseEvent event) {
         Button button = (Button) event.getSource();
         button.setStyle(
-                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: BLACK;");
+                "-fx-border-radius: 100px; -fx-background-radius: 100px; -fx-background-color: TRANSPARENT; -fx-border-color: TRANSPARENT;");
     }
 
     @FXML

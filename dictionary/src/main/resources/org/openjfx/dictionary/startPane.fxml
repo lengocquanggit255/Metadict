@@ -12,6 +12,6 @@
             <Image url="@icons/backgroundStartPane.png" />
          </image>
       </ImageView>
-      <Button fx:id="startButton" layoutX="294.0" layoutY="164.0" mnemonicParsing="false" onAction="#start" onMouseEntered="#mouseEnterStartButton" onMouseExited="#mouseEnterExitButton" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: BLACK;" />
+      <Button fx:id="startButton" layoutX="294.0" layoutY="164.0" mnemonicParsing="false" onAction="#start" onMouseEntered="#mouseEnterStartButton" onMouseExited="#mouseEnterExitButton" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: TRANSPARENT;" />
    </children>
 </AnchorPane>
