@@ -26,7 +26,7 @@ public class LevelGamePaneController {
     @FXML
     private void backToDefaultMenuButton(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("defaultGameMenuPane.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
