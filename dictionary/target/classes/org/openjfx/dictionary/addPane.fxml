@@ -11,7 +11,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="761.0" style="-fx-background-color: TRANSPARENT;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.AddPaneController">
    <children>
-      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="385.0" prefHeight="31.0" prefWidth="396.0" style="-fx-background-color: #e22134; -fx-border-color: #e22134; -fx-background-radius: 8px; -fx-border-radius: 8px;" text="Label" textFill="WHITE" visible="false">
+      <ImageView fitHeight="225.0" fitWidth="319.0" layoutX="3.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/imageInAddPane.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="355.0" layoutY="369.0" prefHeight="31.0" prefWidth="301.0" style="-fx-background-color: #0285c1; -fx-border-color: #0285c1; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Label" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -42,10 +47,5 @@
             <HTMLEditor fx:id="explainHTMLEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="5.0" layoutY="5.0" prefHeight="215.0" prefWidth="411.0" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="220.0" fitWidth="220.0" layoutX="44.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/addIcon.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

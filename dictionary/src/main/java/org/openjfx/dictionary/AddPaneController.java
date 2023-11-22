@@ -50,9 +50,9 @@ public class AddPaneController {
         messageLabel.setText(message);
         messageLabel.setVisible(true);
         if (isSuccess) {
-            messageLabel.setStyle("-fx-background-color: green;");
+            messageLabel.setStyle("-fx-background-color: #0285c1; -fx-border-color: #0285c1; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-text-fill: #ffbd59;");
         } else {
-            messageLabel.setStyle("-fx-background-color: #e22134;");
+            messageLabel.setStyle("-fx-background-color: #0285c1; -fx-border-color: #0285c1; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-text-fill: #ff3232;");
         }
     }
 
