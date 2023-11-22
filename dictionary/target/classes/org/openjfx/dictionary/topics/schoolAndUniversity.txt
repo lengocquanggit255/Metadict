@@ -1,0 +1,218 @@
+School: Trường học 
+Nursery school: Trường mẫu giáo
+Primary school: Trường tiểu học 
+Secondary school: Trường trung học 
+Public school: Trường Công lập
+Private school: Trường tư nhân 
+Boarding school: Trường nội trú 
+Day school: Trường bán trú
+College: Trường cao đẳng
+Technical college: Trường cao đẳng kỹ thuật 
+University: Trường đại học 
+Art college: Trường cao đẳng nghệ thuật
+Biology: Sinh học 
+Archaeology: Khảo cổ học
+Math: Toán học 
+Astronomy: Thiên văn học 
+Physics: Vật lý 
+Linguistics: Ngôn ngữ học 
+Chemistry: Hóa học 
+Engineering: Kỹ thuật 
+Science: Khoa học
+Medicine: Y học
+Literature: Văn học 
+Architecture: Kiến trúc
+Music: Âm nhạc 
+Sociology: Xã hội học 
+Geography: Địa lý
+Psychology: Tâm lý học 
+English: Tiếng Anh 
+Geology: Địa chất học  
+History: Lịch sử
+Economics: Kinh tế học
+Architecture: Kiến trúc
+Agriculture: Nông nghiệp
+Veterinary Medicine: Thú y
+Orthodontics: Răng - hàm - mặt
+Medicine: Y dược
+Public Health: Y tế Cộng đồng
+Nursing: Y tá
+Pharmacy: Dược phẩm
+Dentistry: Nha Khoa
+Hotel Management: Quản trị Khách sạn
+Pedagogy: Giáo dục học
+Pedagogical Management: Quản lý Giáo dục
+Primary Education: Giáo dục Tiểu học
+Early Childhood Education: Giáo dục Mầm non
+Mathematics Teacher Education: Sư phạm Toán
+Geography Teacher Education: Sư phạm Địa
+Physics Teacher Education: Sư phạm Lý
+Linguistics and Literature Teacher Education: Sư phạm Văn
+Biology Teacher Education: Sư phạm Sinh
+Politics: Chính trị học
+Anthropology: Nhân học
+International Studies: Quốc tế học
+Psychology: Tâm lý học
+Vietnamese Studies: Việt Nam học
+Industrial Design: Thiết kế Công nghiệp
+Law: Luật
+Constitutional and Administrative Law: Luật hiến pháp và luật hành chính
+Criminal Procedure Law: Luật Hình sự
+Civil Procedure Law: Luật Dân sự
+International Law: Luật Quốc tế
+Economic Law: Luật Kinh tế
+Civil Engineering: Kỹ sư Xây dựng Dân dụng
+Electrical Engineering: Kỹ sư điện
+Food Science: Khoa học Thực phẩm
+Transportation Engineering and Technology: Công nghệ Kỹ thuật Giao thông
+Materials Science and Engineering: Khoa học và công nghệ Vật Liệu
+Automotive Engineering Technology: Công nghệ Kỹ thuật ô tô
+Environmental Engineering: Công nghệ Môi trường
+Mechanical Engineering Technology: Công nghệ Kỹ thuật Cơ khí
+Chemical Engineering: Công nghiệp hóa chất
+Principal: Hiệu trưởng
+Vice Principal: Hiệu phó
+Teacher: Giáo viên
+Form Teacher: Giáo viên chủ nhiệm
+Lecturer: Giảng viên
+Teaching Assistant: Trợ giảng
+Tutor: Gia sư
+Pupil: Học sinh (tiểu học)
+Student: Sinh viên
+Janitor: Lao công
+School Security Guard: Bảo vệ trường
+Class Monitor: Lớp trưởng
+Vice-Monitor: Lớp phó
+Secretary: Bí thư
+Freshman: Sinh viên năm nhất
+Sophomore: Sinh viên năm hai
+Third-Year Student: Sinh viên năm ba
+Final Year Student: Sinh viên năm cuối
+Researcher: Nghiên cứu sinh
+Master Student: Sinh viên cao học
+PhD Student: Nghiên cứu sinh bằng tiến sĩ
+Library: Thư viện
+Hall: Hội trường
+Laboratory: Phòng thí nghiệm
+Classroom: Lớp học
+Auditorium: Giảng đường
+Sick Room: Phòng y tế
+Medical Room: Phòng y tế
+Canteen: Căng tin
+Cafeteria: Căng tin
+Gymnasium: Phòng thể chất
+Multipurpose Building: Nhà đa năng
+Principal's Office: Văn phòng hiệu trưởng
+Parking Space: Chỗ đỗ xe
+School Hall: Hội trường
+Desk: Bàn
+Chair: Ghế
+Bench: Ghế dài
+Ceiling Fan: Quạt trần
+Air Conditioner: Điều hòa nhiệt độ
+Locker: Tủ đựng đồ
+Lock: Ổ khóa
+Plug: Phích cắm
+Key: Chìa khóa
+Switch: Công tắc
+Blackboard: Bảng đen
+Attendance: Điểm chuyên cần
+Course: Khóa học
+Projector: Máy chiếu
+Subject: Môn học
+Chalk: Phấn viết bảng
+Semester: Kì học
+Timetable: Thời khóa biểu
+Homework: Bài tập về nhà
+Qualification: Bằng cấp
+Certificate: Chứng chỉ
+Notebook: Vở ghi
+Textbook: Sách giáo khoa
+Exercise Book: Vở bài tập
+Test Paper: Giấy kiểm tra
+Sound System: Hệ thống âm thanh
+Pencil Case: Hộp bút
+Paint: Màu vẽ
+Protractor: Thước đo góc
+Marker: Bút đánh dấu, bút viết bảng
+Pencil: Bút chì
+Fountain Pen: Bút mực
+Ballpoint Pen: Bút bi
+Correction Pen: Bút xóa
+Crayon: Sáp màu
+Eraser: Tẩy chì
+Stapler: Cái dập ghim
+Coloured Pencil: Bút chì màu
+Staple: Ghim
+Ruler: Thước kẻ
+Set Square: Thước vuông
+Push Pin: Đinh ghim
+Paper Clips: Kẹp giấy
+Scissors: Kéo
+Sticky Notes: Giấy nhớ
+Binder Clip: Kẹp bướm
+Lanyard: Dây đeo thẻ
+Calculator: Máy tính cầm tay
+Folder: Bìa kẹp tài liệu
+Pencil Sharpener: Gọt bút chì
+Tape: Băng dính
+Tape Dispenser: Dụng cụ cắt băng dính
+Name Tag: Nhãn vở
+Swivel Chair: Ghế xoay 
+Waste Basket: Thùng rác
+Glue: Keo dán giấy
+School Bag: Balo
+Map: Bản đồ
+Globe: Quả địa cầu
+Magnifying Glass: Kính lúp
+Go to class: Đến lớp
+Copy: Chép
+To be absent: Vắng mặt
+Write: Viết
+Sit down: Ngồi xuống
+Close the book: Gấp sách lại
+Stand up: Đứng lên
+Come in: Đi vào
+Open the book: Mở sách
+Turn to page: Lật trang
+Go out: Đi ra
+Take the roll call: Điểm danh
+Listen to the teacher: Nghe giảng
+Repeat: Nhắc lại
+Listen and repeat: Nghe và nhắc lại
+Do exercises: Làm bài tập
+Erase: Xóa
+Pay attention: Chú ý
+Answer: Trả lời
+Ask: Hỏi
+Work in a group: Làm việc theo nhóm
+Work in pairs: Làm việc theo cặp
+Discuss: Thảo luận
+Present: Thuyết trình
+Prepare: Chuẩn bị
+Learn: Học
+Study: Học
+Review: Ôn tập
+Practice: Luyện tập
+Speak: Nói
+Read: Đọc
+Listen to the radio: Nghe đài
+Raise sb's hand: Giơ tay
+Write on the board: Viết lên bảng
+Go to the board: Lên bảng
+Clean the board: Xóa bảng
+Finish the task: Hoàn thành bài tập
+Hand in: Nộp bài
+Greet teacher: Chào giáo viên
+Do the assignment: Làm bài luận
+Submit: Nộp bài
+Look at the board: Nhìn lên bảng
+Take note: Viết ghi chú
+Put your pen down: Đặt bút xuống
+Take a break: Giải lao
+Talk: Nói chuyện
+Argue: Tranh luận
+Chat: Nói chuyện
+Relax: Thư giãn
+Have snack: Ăn quà vặt
+

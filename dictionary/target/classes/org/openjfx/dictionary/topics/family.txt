@@ -96,7 +96,7 @@ Hot-temper: Nóng tính
 Cold: Lạnh lùng 
 Mad: Điên, khùng 
 Aggressive: Xấu bụng 
-Unkind: Xấu bụng, không tốt 
+Unkind: Xấu tính
 Unpleasant: Khó chịu 
 Cruel: Độc ác 
 Gruff: Thô lỗ cục cằn 

@@ -1,0 +1,153 @@
+Romance movie: phim lãng mạn
+Adventure movie : phim phiêu lưu
+Biography: phim về tiểu sử
+Comedy: phim hài
+Documentary: phim tài liệu
+Action movie: phim hành động
+Animated movie: phim hoạt hình
+Crime movie: phim hình sự
+Horror: phim kinh dị
+Musical: phim ca nhạc
+Science fiction: phim khoa học viễn tưởng
+Thriller: phim giật gân, ly kỳ
+Epics: phim cổ trang
+Hisorical Films: phim lịch sử
+War Films: phim về chiến tranh
+Western Films: phim Viễn Tây
+Sitcom movie: phim hài dài tập
+crime drama: phim tội phạm
+courtroom drama: phim trinh thám hình sự
+Movie-goer: Người xem phim
+Film review: Bài bình luận
+Cartoon: phim hoạt hình
+Fim adaptation: Sự chuyển thể thành phim
+actor: diễn viên
+Cameraman: Người quay phim
+Chick flick: phim lãng mạn
+cast: dàn diễn viên
+character: tính cách
+choreographer: Biên đạo múa
+cinema: Rạp chiếu phim
+cinematographer: nhà quay phim
+costumes: Trang phục
+climax: Cực điểm 
+director: giám đốc
+drama: kịch
+Film-goer: Người xem phim
+editor: biên tập viên
+entertainment: sự giải trí
+hero: anh hùng
+movie star: ngôi sao điện ảnh
+plot: âm mưu
+plot line: dòng âm mưu
+producer: người sản xuất
+screen: màn
+screenwriter: biên kịch
+sequel: phần tiếp theo
+stunt: đóng thế
+tragedy: bi kịch
+villain: nhân vật phản diện
+suspense: hồi hộp
+suspicious: đáng ngờ
+oppressive: áp bức
+totalitarian: độc tài
+uplifting: nâng cao tinh thần
+inspirational: truyền cảm hứng
+elite: ưu tú
+Beat: nhịp trống
+Harmony: hòa âm
+Lyrics: lời bài hát
+Melody hoặc tune: giai điệu
+Note: nốt nhạc
+Rhythm: nhịp điệu
+Scale: gam
+Solo: solo/đơn ca
+Duet: song ca
+In tune: đúng tông
+Out of tune: lệch tông
+CD: đĩa CD
+Amp: bộ khuếch đại âm thanh
+CD player: máy chạy CD
+Headphones: tai nghe
+Instrument: nhạc cụ
+Mic: micrô
+MP3 player: máy phát nhạc MP3
+Music stand: giá để bản nhạc
+Record player: máy thu âm
+Speakers: loa
+Stereo: dàn âm thanh nổi
+Blues: nhạc blue
+Classical: nhạc cổ điển
+Country: nhạc đồng quê
+Dance: nhạc nhảy
+Easy listening: nhạc dễ nghe
+Electronic: nhạc điện tử
+Folk: nhạc dân ca
+Heavy metal: nhạc rock mạnh
+Hip hop: nhạc hip hop
+Jazz: nhạc jazz
+Latin: nhạc Latin
+Opera: nhạc opera
+Pop: nhạc pop
+Rap: nhạc rap
+Reggae: nhạc reggae
+Rock: nhạc rock
+Symphony: nhạc giao hưởng
+Techno: nhạc khiêu vũ
+Band: ban nhạc
+Brass band: ban nhạc kèn đồng
+Choir: đội hợp xướng
+Concert band: ban nhạc biểu diễn
+Jazz band: ban nhạc jazz
+Orchestra: dàn nhạc giao hưởng
+Pop group: nhóm nhạc pop
+Rock band: ban nhạc rock
+Composer: nhà soạn nhạc
+Musician: nhạc công
+Performer: nghệ sĩ biểu diễn
+Bassist player: người chơi guitar bass
+Cellist: người chơi vi-ô-lông
+Conductor: người chỉ huy dàn nhạc
+Drummer: người chơi trống
+Flautist: người thổi sáo
+Guitarist: người chơi guitar
+Keyboard player: người chơi keyboard
+Organist: người chơi đàn organ
+Pianist: người chơi piano
+Pop star: ngôi sao nhạc pop
+Rapper: nguời hát rap
+Saxophonist: người thổi kèn saxophone
+Trumpeter: người thổi kèn trumpet
+Trombonist: người thổi kèn hai ống
+Violinist: người chơi vi-ô-lông
+Singer: ca sĩ
+Alto: giọng nữ cao
+Soprano: giọng nữ trầm
+Bass: giọng nam trầm
+Tenor: giọng nam cao
+Baritone: giọng nam trung
+Concert: buổi hòa nhạc
+Hymn: thánh ca
+Love song: ca khúc trữ tình
+National anthem: quốc ca
+Symphony: nhạc giao hưởng
+To record: thu âm
+To sing: hát
+Audience: khán giả
+National anthem: quốc ca
+Record: đĩa nhạc
+Record label: nhãn đĩa
+Recording: bản thu âm
+Recording studio: phòng thu
+Song: bài hát
+Stage: sân khấu
+Track: bài, phần trong đĩa
+Voice: giọng hát
+Loud: to
+Quiet: yên lặng
+Soft: nhỏ
+Slow: chậm
+Boring: nhàm chán
+Beautiful: hay
+Heavy: mạnh
+Great: tốt
