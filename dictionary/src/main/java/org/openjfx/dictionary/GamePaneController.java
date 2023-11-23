@@ -85,8 +85,6 @@ public class GamePaneController {
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/Speaker_off.png");
     private Image heart = new Image(
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/heart.png");
-    private Image infinity = new Image(
-            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/infinity.png");
 
     private ButtonTextRandomizer buttonTextRandomizer;
     private SetColorButton colorButton;
@@ -120,9 +118,7 @@ public class GamePaneController {
             heart3.setImage(heart);
             heart4.setImage(heart);
             heart5.setImage(heart);
-        } else {
-            heart1.setImage(infinity);
-        }
+        } 
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
         yourScoreBoxPane.setDisable(true);
