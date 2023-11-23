@@ -7,8 +7,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import com.voicerss.tts.Languages;
-
 public class Translate {
     public static String googleTranslate(String langFrom, String langTo, String text)
             throws IOException, InterruptedException {
@@ -51,30 +49,4 @@ public class Translate {
             throw new IOException("Translation request failed with status code: " + response.statusCode());
         }
     }
-
-    public static void main(String[] args) {
-        try {
-            // Translate "good" from English to French
-            String translation1 = googleTranslate("", "vi", "I love you so muh bby girl");
-            System.out.println("Translation 1: " + translation1);
-
-            // Translate "hello" from English to Spanish
-            String translation2 = googleTranslate("en", "es", "hello");
-            System.out.println("Translation 2: " + translation2);
-
-            // Translate "thank you" from English to German
-            String translation3 = googleTranslate("en", "de", "thank you");
-            System.out.println("Translation 3: " + translation3);
-
-            try {
-                Helper.speak(translation1, Languages.Vietnamese);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
-
 }

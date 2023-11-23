@@ -1,7 +1,6 @@
 package org.openjfx.dictionary.cmd;
 
 import com.voicerss.tts.AudioFormat;
-import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import com.voicerss.tts.VoiceProvider;
 
@@ -45,9 +44,5 @@ public class Voice {
                 line.drain();
             }
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        speakWord("hi", Languages.English_UnitedStates);
     }
 }
