@@ -80,9 +80,13 @@ public class GamePaneController {
     private Parent root;
 
     private Image soundOn = new Image(
-            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/Speaker_on.png");
     private Image soundOff = new Image(
-            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_off.png");
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/Speaker_off.png");
+    private Image heart = new Image(
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/heart.png");
+    private Image infinity = new Image(
+            "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/icons/infinity.png");
 
     private ButtonTextRandomizer buttonTextRandomizer;
     private SetColorButton colorButton;
@@ -110,7 +114,15 @@ public class GamePaneController {
         buttonTextRandomizer = new ButtonTextRandomizer(englishWords, vietnameseMeanings, leftButtons, rightButtons);
         buttonTextRandomizer.setRandomText();
         colorButton = new SetColorButton();
-
+        if (LevelGamePaneController.getModeNumber() == 3) {
+            heart1.setImage(heart);
+            heart2.setImage(heart);
+            heart3.setImage(heart);
+            heart4.setImage(heart);
+            heart5.setImage(heart);
+        } else {
+            heart1.setImage(infinity);
+        }
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
         yourScoreBoxPane.setDisable(true);
@@ -336,7 +348,9 @@ public class GamePaneController {
     private void stayInGame(ActionEvent event) {
         exitGameBoxPane.setDisable(true);
         exitGameBoxPane.setVisible(false);
-        BackgroundSound.play();
+        if (checkAudio) {
+            BackgroundSound.play();
+        }
         timeline.play();
     }
 
@@ -444,14 +458,41 @@ public class GamePaneController {
     }
 
     private void setUpModeFalse(Button button1, Button button2) {
-        if (LevelGamePaneController.getModeNumber() == 3 && checkFalseAnswer == 0) {
-            yourScoreText.setText(score + "");
-            if (score > highScore) {
-                highScore = score;
-                updateHighScore();
-            }
-            highScoreText.setText("HIGH SCORE: " + highScore);
-            showYourScoreBox();
+        if (LevelGamePaneController.getModeNumber() == 3) {
+            switch (checkFalseAnswer) {
+            case 4:
+                heart5.setImage(null);
+                break;
+            case 3:
+                heart5.setImage(null);
+                heart4.setImage(null);
+                break;
+            case 2:
+                heart5.setImage(null);
+                heart4.setImage(null);
+                heart3.setImage(null);
+                break;
+            case 1:
+                heart5.setImage(null);
+                heart4.setImage(null);
+                heart3.setImage(null);
+                heart2.setImage(null);
+                break;
+            case 0:
+                heart5.setImage(null);
+                heart4.setImage(null);
+                heart3.setImage(null);
+                heart2.setImage(null);
+                heart1.setImage(null);
+                yourScoreText.setText(score + "");
+                if (score > highScore) {
+                    highScore = score;
+                    updateHighScore();
+                }
+                highScoreText.setText("HIGH SCORE: " + highScore);
+                showYourScoreBox();
+                break;
+            }   
         }
     }
 }
