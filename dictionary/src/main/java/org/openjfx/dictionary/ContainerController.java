@@ -24,15 +24,15 @@ public class ContainerController implements Initializable {
     public AnchorPane main_pane;
 
     @FXML
-    Button addButton;
+    private Button addButton;
     @FXML
-    Button searchButton;
+    private Button searchButton;
     @FXML
-    Button bookMarkButton;
+    private Button bookMarkButton;
     @FXML
-    Button gameButton;
+    private Button gameButton;
     @FXML
-    Button GoogleTranslateButton;
+    private Button GoogleTranslateButton;
 
     private AnchorPane anchorSearchPane;
     private AnchorPane anchorAddPane;

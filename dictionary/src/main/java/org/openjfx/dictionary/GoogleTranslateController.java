@@ -21,31 +21,31 @@ public class GoogleTranslateController implements Initializable {
     private String currentLF;
     private String currentLT;
     @FXML
-    Button detectLanguageButtonLF;
+    private Button detectLanguageButtonLF;
     @FXML
-    Button EnLanguageButtonLF;
+    private Button EnLanguageButtonLF;
     @FXML
-    Button ViLanguageButtonLF;
+    private Button ViLanguageButtonLF;
     @FXML
-    Button CnLanguageButtonLF;
+    private Button CnLanguageButtonLF;
     @FXML
-    Button speakButtonLF;
+    private Button speakButtonLF;
     @FXML
-    TextField LFTextField;
+    private TextField LFTextField;
 
     @FXML
-    Button EnLanguageButtonLT;
+    private Button EnLanguageButtonLT;
     @FXML
-    Button ViLanguageButtonLT;
+    private Button ViLanguageButtonLT;
     @FXML
-    Button CnLanguageButtonLT;
+    private Button CnLanguageButtonLT;
     @FXML
-    Button speakButtonLT;
+    private Button speakButtonLT;
     @FXML
-    TextField LTTextField;
+    private TextField LTTextField;
 
     @FXML
-    Button translateButton;
+    private Button translateButton;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -109,7 +109,7 @@ public class GoogleTranslateController implements Initializable {
     }
 
     @FXML
-    public void translate() {
+    private void translate() {
         String text = LFTextField.getText();
         try {
             String translatedText = Helper.googleTranslate(currentLF, currentLT, text);
@@ -122,7 +122,7 @@ public class GoogleTranslateController implements Initializable {
     }
 
     @FXML
-    public void speakLF() {
+    private void speakLF() {
         if (!currentLF.isEmpty())
             try {
                 Helper.speak(LFTextField.getText(), currentLF);
@@ -133,7 +133,7 @@ public class GoogleTranslateController implements Initializable {
     }
 
     @FXML
-    public void speakLT() {
+    private void speakLT() {
         if (!currentLT.isEmpty())
             try {
                 Helper.speak(LTTextField.getText(), currentLT);
@@ -144,7 +144,7 @@ public class GoogleTranslateController implements Initializable {
     }
 
     @FXML
-    public void selectLanguageFrom(ActionEvent event) {
+    private void selectLanguageFrom(ActionEvent event) {
         Object source = event.getSource();
 
         if (source == detectLanguageButtonLF) {
@@ -170,7 +170,7 @@ public class GoogleTranslateController implements Initializable {
     }
 
     @FXML
-    public void selectLanguageTo(ActionEvent event) {
+    private void selectLanguageTo(ActionEvent event) {
         Object source = event.getSource();
 
         if (source == EnLanguageButtonLT) {

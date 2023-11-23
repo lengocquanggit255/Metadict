@@ -61,7 +61,7 @@ public class SearchPaneController implements Initializable {
     private String currentSelectedWord = "";
 
     @FXML
-    public void save() {
+    private void save() {
         editor.setDisable(true);
         editor.setVisible(false);
         saveButton.setDisable(true);
@@ -81,7 +81,7 @@ public class SearchPaneController implements Initializable {
     }
 
     @FXML
-    public void edit() {
+    private void edit() {
         editor.setDisable(false);
         editor.setVisible(true);
         saveButton.setDisable(false);
@@ -98,7 +98,7 @@ public class SearchPaneController implements Initializable {
     }
 
     @FXML
-    public void speak() {
+    private void speak() {
         try {
             Helper.speak(currentSelectedWord, Languages.English_UnitedStates);
         } catch (Exception e) {
@@ -108,13 +108,13 @@ public class SearchPaneController implements Initializable {
     }
 
     @FXML
-    public void delete() {
+    private void delete() {
         Helper.dictionary.remove(currentSelectedWord);
         reload();
     }
 
     @FXML
-    public void toggleMarkWord() {
+    private void toggleMarkWord() {
         if (currentSelectedWord.isEmpty()) {
             return;
         }

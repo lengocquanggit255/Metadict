@@ -11,16 +11,16 @@ import javafx.scene.web.HTMLEditor;
 
 public class AddPaneController {
     @FXML
-    TextField newWordTextField;
+    private TextField newWordTextField;
 
     @FXML
-    HTMLEditor explainHTMLEditor;
+    private HTMLEditor explainHTMLEditor;
 
     @FXML
     private Label messageLabel;
 
     @FXML
-    public void saveNewWord(ActionEvent event) {
+    private void saveNewWord(ActionEvent event) {
         String word_target = newWordTextField.getText();
         String word_explain = explainHTMLEditor.getHtmlText();
 
