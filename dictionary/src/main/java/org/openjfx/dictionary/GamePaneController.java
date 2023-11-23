@@ -67,14 +67,13 @@ public class GamePaneController {
     private int checkTrueAnswer;
     private int checkFalseAnswer;
     private Timeline timeline;
-    private boolean checkAudio = true; 
+    private boolean checkAudio = true;
     private boolean isLeftButtonClicked = false;
     private boolean isRightButtonClicked = false;
     private Button clickRightButton = null;
     private Button clickLeftButton = null;
     private Button clickTempRightButton = null;
     private Button clickTempLeftButton = null;
-
 
     private Stage stage;
     private Scene scene;
@@ -89,18 +88,18 @@ public class GamePaneController {
     private SetColorButton colorButton;
     private List<String> englishWords;
     private List<String> vietnameseMeanings;
-    Map<String, String> vocabulary;
+    private Map<String, String> vocabulary;
 
-    String c_sound = getClass().getResource("correct.mp3").toExternalForm();
-    String w_sound = getClass().getResource("wrong.mp3").toExternalForm();
-    String b_sound = getClass().getResource("BackgroundMusic.mp3").toExternalForm();
+    private String c_sound = getClass().getResource("correct.mp3").toExternalForm();
+    private String w_sound = getClass().getResource("wrong.mp3").toExternalForm();
+    private String b_sound = getClass().getResource("BackgroundMusic.mp3").toExternalForm();
 
-    Media c_media = new Media(c_sound);
-    MediaPlayer CorrectSound = new MediaPlayer(c_media);
-    Media w_media = new Media(w_sound);
-    MediaPlayer WrongSound = new MediaPlayer(w_media);
-    Media b_media = new Media(b_sound);
-    MediaPlayer BackgroundSound = new MediaPlayer(b_media);
+    private Media c_media = new Media(c_sound);
+    private MediaPlayer CorrectSound = new MediaPlayer(c_media);
+    private Media w_media = new Media(w_sound);
+    private MediaPlayer WrongSound = new MediaPlayer(w_media);
+    private Media b_media = new Media(b_sound);
+    private MediaPlayer BackgroundSound = new MediaPlayer(b_media);
 
     private void initializeGame() {
         initializeButtons();
