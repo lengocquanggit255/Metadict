@@ -1,0 +1,20 @@
+.button.selected-button {
+    -fx-background-color: #032d59;
+    -fx-border-color: #032d59;
+    /* Set the background color of the selected button */
+    -fx-text-fill: #FFFFFF;
+    /* Set the text color of the selected button */
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.button.notSelected-button {
+    -fx-background-color: #03a9f4;
+    -fx-border-color: #03a9f4;
+    /* Set the background color of the selected button */
+    -fx-text-fill: #FFFFFF;
+    /* Set the text color of the selected button */
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+

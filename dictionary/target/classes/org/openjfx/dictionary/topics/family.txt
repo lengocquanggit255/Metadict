@@ -1,0 +1,105 @@
+Mother: mẹ
+Father: bố
+Husband: chồng
+Wife: vợ
+Daughter: con gái
+Son: con trai
+Parent: bố/ mẹ
+Child: con
+Sibling: anh/ chị/ em ruột
+Brother: anh trai/ em trai
+Sister:  chị gái/ em gái
+Uncle: bác trai/ cậu/ chú
+Aunt: bác gái/ dì/ cô
+Nephew: cháu trai
+Niece: cháu gái
+Grandparent: ông bà
+Grandmother: bà
+Grandfather: ông
+Grandson: cháu trai
+Granddaughter: cháu gái
+Grandchild: cháu
+Cousin: anh/ chị/ em họ
+Relative: họ hàng
+Nuclear family: Gia đình hạt nhân
+Extended family: Đại gia đình
+Single parent: Bố/mẹ đơn thân
+Only child: Con một
+Mother-in-law: mẹ chồng/ mẹ vợ
+Father-in-law: bố chồng/ bố vợ
+Son-in-law: con rể
+Daughter-in-law: con dâu
+Sister-in-law: chị/ em dâu
+Brother-in-law: anh/ em rể
+Stepfather: dượng
+Stepmother: mẹ kế
+Brave: Anh hùng 
+Careful: Cẩn thận 
+Cheerful: Vui vẻ 
+Easy going: Dễ gần. 
+Exciting: Thú vị 
+Friendly: Thân thiện. 
+Funny: Vui vẻ 
+Generous: Hào phóng 
+Hardworking: Chăm chỉ. 
+Kind: Tốt bụng. 
+Out going: Cởi mở. 
+Polite: Lịch sự. 
+Quiet: Ít nói 
+Smart: Thông minh. 
+Sociable: Hòa đồng. 
+Soft: Dịu dàng 
+Talented: Tài năng, có tài. 
+Ambitious: Có nhiều tham vọng 
+Cautious: Thận trọng. 
+Competitive: Cạnh tranh, đua tranh 
+Confident: Tự tin 
+Serious: Nghiêm túc. 
+Creative: Sáng tạo 
+Dependable: Đáng tin tưởng 
+Enthusiastic: Hăng hái, tận tình 
+Extroverted: Hướng ngoại 
+Introverted: Hướng nội 
+Imaginative: Giàu trí hình dung 
+Observant: Tinh ý 
+Optimistic: Lạc quan 
+Rational: Có chừng mực, có lý trí 
+Sincere: Thành thật 
+Understanding: Biết thấu hiểu
+Wise: Thông thái uyên bác. 
+Clever: Khéo léo 
+Tacful: Lịch thiệp 
+Faithful: Chung thủy 
+Gentle: Nhẹ nhàng 
+Humorous: Hài hước 
+Honest: Trung thực 
+Loyal: Trung thành 
+Patient: Kiên nhẫn 
+Open-minded: Khoáng đạt 
+Talkative: Hoạt ngôn
+Bad-tempered: Nóng tính 
+Boring: Buồn chán. 
+Careless: Bất cẩn, cẩu thả
+Crazy: Điên khùng 
+Impolite: Bất lịch sự
+Lazy: Lười biếng 
+Mean: Keo kiệt. 
+Shy: Nhút nhát 
+Stupid: Ngu ngốc 
+Aggressive: Hung hăng, xông xáo 
+Pessimistic: Bi quan 
+Reckless: Hấp Tấp 
+Strict: Nghiêm khắc 
+Stubborn: Bướng bỉnh  
+Selfish: Ích kỷ 
+Hot-temper: Nóng tính 
+Cold: Lạnh lùng 
+Mad: Điên, khùng 
+Aggressive: Xấu bụng 
+Unkind: Xấu tính
+Unpleasant: Khó chịu 
+Cruel: Độc ác 
+Gruff: Thô lỗ cục cằn 
+Insolent: Láo xược 
+Haughty: Kiêu căng 
+Boast: Khoe khoang

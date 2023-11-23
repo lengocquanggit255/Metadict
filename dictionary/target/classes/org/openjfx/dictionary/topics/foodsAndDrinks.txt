@@ -1,0 +1,111 @@
+bacon: thịt xông khói
+beef: thịt bò
+beef brisket: gầu bò
+beef chuck: nạc vai bò
+beef plate: ba chỉ bò
+beefsteak: bít tết thịt bò
+breast fillet: thăn lưng bò
+chicken: thịt gà
+chicken breast: ức gà
+chicken drumstick: đùi gà
+chicken gizzard: mề gà
+chicken leg: chân gà
+chicken liver: gan gà
+chicken tail: phao câu gà
+chicken wing: cánh gà
+chicken wing tip: đầu cánh gà
+Chinese sausage: lạp xưởng
+cutlet: thịt cốt lết
+chop: thịt sườn
+fat: thịt mỡ
+goat: thịt dê
+ham: giăm bông
+heart: tim
+kidney: cật
+lamb: thịt cừu
+lamb chop: sườn cừu
+lard: mỡ heo
+lean meat: thịt nạc
+liver: gan
+meat: thịt
+meat ball: thịt viên
+minced pork: thịt heo băm 
+mutton: thịt cừu già
+inner fillet: thịt thăn trong
+pig’s skin: da heo
+pig’s tripe: bao tử heo
+pork: thịt heo
+pork cartilage: sụn heo
+pork shank: thịt chân giò heo
+pork side: thịt ba rọi
+quail: chim cút
+ribs: sườn
+roast: thịt quay
+sausage: xúc xích
+spare ribs: sườn non
+thigh: mạng sườn
+veal: thịt bê
+venison: thịt nai
+wild boar: thịt heo rừng
+crab: cua
+cod: cá tuyết
+fish: cá
+haddock: cá tuyết chấm đen
+herring: cá trích
+lobster: tôm hùm
+mackerel: cá thu
+mussels: con trai
+octopus: bạch tuộc
+oysters: hàu
+sardine: cá mòi
+salmon: cá hồi
+shrimps: tôm
+snail: ốc 
+squid: mực ống
+tuna: cá ngừ
+Alcohol: rượu bia
+Beer: bia
+Champagne: sâm banh
+Champagne: rượu sâm banh
+Coffee: cà phê
+Cocktail: cốc-tai
+Cocoa: ca cao
+Juice: nước ép trái cây
+Hot chocolate: sô cô la nóng
+Mineral water: nước khoáng
+Milkshake: sữa lắc
+Iced tea: trà đá
+Lemonade: nước chanh
+Liquor: đồ uống chưng cất
+Rum: rượu rum
+Soft drink: nước ngọt
+Smoothie: sinh tố
+Squash: nước hoa quả ép
+Soda: nước uống có gas
+Stout: bia đen
+Tea: trà
+Wine: rượu
+Whisky: rượu whisky
+White wine: rượu trắng
+Chip: khoai tây chiên
+Fast food: đồ ăn nhanh
+Ham: giăm bông
+Hamburger: bánh kẹp
+Paté: pa-tê
+Pizza: bánh Pizza
+Toast: bánh mì nướng
+Sandwich: bánh mì kẹp
+Sausage: xúc xích
+Broken rice: Cơm tấm
+Crab rice noodles: Bún cua
+Clam rice: Cơm hến
+Fried egg: Trứng chiên
+Fried rice: Cơm chiên
+Grilled fish: Chả cá/cá nướng
+Hot pot: Lẩu
+Salted vegetables: Dưa muối
+Steamed pork loaf: Chả lụa
+Stew fish: Cá kho
+Stuffed pancake: Bánh cuốn 
+Pia cake: Bánh pía
+Toasted coconut cake: Bánh dừa nướng

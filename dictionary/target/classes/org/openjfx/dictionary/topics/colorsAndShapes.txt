@@ -1,0 +1,63 @@
+Point: điểm
+Line: đoạn thẳng
+Line Segment: đoạn thẳng nối hai điểm
+Ray: tia
+Line Ray: đoạn thẳng nối hai điểm
+Angle: góc
+Triangle: tam giác
+Square: hình vuông
+Rectangle: hình chữ nhật
+Trapezoid: hình thang
+Parallelogram: hình bình hành
+Cube: hình lập phương
+Cylinder: hình trụ
+Sphere: hình cầu
+Cone: hình nón
+Symmetry: đối xứng
+Area: diện tích
+Perimeter: chu vi
+Diagonal: đường chéo
+Center: tâm
+Euclidean Geometry: hình học phổ cập
+Solid Geometry: hình học không gian
+Analytic Geometry: hình học phân tích
+Geometric Transformation: biến đổi hình học
+White: màu trắng
+Blue: màu xanh biển
+Green: màu xanh lá cây
+Yellow: màu vàng
+Orange: màu da cam
+Red: màu đỏ
+Pink: màu hồng
+Purple: màu tím
+Gray: màu xám
+Black: màu đen
+Brown: màu nâu
+Silver: màu bạc
+Cherry: Màu đỏ anh đào
+Bright red: Màu đỏ sáng
+Plum: Màu đỏ mận
+Wine: Đỏ màu rượu vang
+Rosy: Đỏ hoa hồng
+Reddish: Đỏ nhạt
+Melon: Màu quả dưa vàng
+Tangerine: Màu quýt
+Waxen: Vàng cam
+Pale yellow: Vàng nhạt
+Grape: Màu tím thẫm
+Eggplant: Màu cà tím
+Orchid: Màu tím nhạt
+Turquoise: Màu lam
+Light Blue: Xanh nhạt
+Navy: Xanh Navi
+Avocado: Màu xanh đậm 
+Chlorophyll: Xanh diệp lục
+Bright blue: Màu xanh nước biển tươi
+Bright green: Màu xanh lá cây tươi
+Light green: Màu xanh lá cây nhạt
+Dark green: Màu xanh lá cây đậm
+Light blue: Màu xanh da trời nhạt
+Dark blue: Màu xanh da trời đậm
+Leek – green: Xanh hành lá
+Apple green: Xanh táo
+Dark Green: Xanh lá cây đậm

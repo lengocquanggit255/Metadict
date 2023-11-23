@@ -1,0 +1,92 @@
+Hair: Tóc
+Ear: Tai
+Jaw: Hàm
+Nostril: Lỗ mũi
+Lip: Môi
+Tongue: Lưỡi
+Tooth: Răng
+Eyelid: Mí mắt
+Eyebrow: Lông mày
+Sideburns: Tóc mai
+Forehead: Trán
+Iris: Mống mắt
+Part: Tóc rẽ ngôi
+Mustache: Ria mép
+Beard: Râu
+Cheek: Má
+Nose: Mũi
+Nostril: Lỗ mũi
+Eye: Mắt
+Eyelashes: Lông mi
+Mouth: Miệng
+Face: Mặt
+Neck: Cổ
+Chin: Cằm
+Mouth: Miệng
+Arm: Tay
+Shoulder: Bờ vai
+Armpit: Nách
+Chest: Ngực
+Elbow: Khuỷu tay
+Upper arm: Bắp tay
+Abdomen: Bụng
+Thigh: Bắp đùi
+Knee: Đầu gối
+Waist: Thắt lưng
+Back: Lưng
+Buttocks: Mông
+Leg: Đôi chân
+Calf: Bắp chân
+Hip: Hông
+Fingernail: Móng tay
+Palm: Lòng bàn tay
+Ring finger: Ngón đeo nhẫn
+Index finger: Ngón trỏ
+Thumb: Ngón tay cái
+Middle finger: Ngón giữa
+Little finger: Ngón út
+Knuckle: Khớp đốt ngón tay
+Wrist: Cổ tay
+Big toe: Ngón chân cái
+Toenail: Móng chân
+Toe: Ngón chân
+Instep: Mu bàn chân
+Ball: Xương ngón chân
+Ankle: Mắt cá chân
+Heel: Gót chân
+Little toe: Ngón chân út
+Heart: Tim
+Brain: Não
+Intestines: Ruột
+Throat: Họng
+Muscle: Cơ
+Liver: Gan
+Esophagus: Thực quản
+Lung: Phổi
+Stomach: Dạ dày
+Muscle: Bắp thịt, cơ
+Windpipe: Khí quản
+Spinal cord: Dây cột sống, tủy sống
+Pancreas: Tụy
+Vein: Tĩnh mạch
+Artery: Động mạch
+Skeleton: Bộ xương
+Skull: Xương sọ
+Backbone: Xương sống
+Clavicle: Xương đòn
+Pelvis: Xương chậu
+Rib cage: Khung xương sườn
+Humerus: Xương cánh tay
+Rib: Xương sườn
+Kneecap: Xương bánh chè
+Vertebra: Đốt sống
+Femur: Xương đùi
+Collarbone: Xương quai xanh
+Hip bone: Xương hông
+Digestive system: Hệ tiêu hóa
+Skin: Da
+Nerve: Dây thần kinh
+Joint: Khớp
+Limb: Chân tay
+Nervous system: Hệ thần kinh
+Pupil: Con ngươi

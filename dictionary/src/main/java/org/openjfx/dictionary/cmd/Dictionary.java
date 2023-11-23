@@ -141,7 +141,6 @@ public class Dictionary {
                 String[] words = line.split("<html");
                 if (words.length == 2) {
                     String word_target = words[0];
-                    String word_explain = words[1];
                     markWord(word_target);
                 } else {
                     System.out.println("Invalid line format: " + line);
