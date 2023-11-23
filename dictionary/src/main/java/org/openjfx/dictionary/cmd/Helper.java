@@ -1,7 +1,6 @@
 package org.openjfx.dictionary.cmd;
 
 import com.voicerss.tts.AudioFormat;
-import com.voicerss.tts.Languages;
 import com.voicerss.tts.VoiceParameters;
 import com.voicerss.tts.VoiceProvider;
 
@@ -18,7 +17,6 @@ import javax.sound.sampled.*;
 
 public class Helper {
     public static Dictionary dictionary = new Dictionary();
-
     public static void speak(String text, String language) throws Exception {
         String API_KEY = "3d5347f37b39439ba63c6d0f6ab6ae6b";
         String AUDIO_PATH = "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/audio.wav";
@@ -131,9 +129,5 @@ public class Helper {
         else {
             throw new IOException("Translation request failed with status code: " + response.statusCode());
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        speak("hi", Languages.English_UnitedStates);
     }
 }
