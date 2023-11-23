@@ -35,6 +35,7 @@ public class DefaultGameMenuPaneController {
     @FXML
     private void chooseLevelGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("levelGamePane.fxml"));
+        LevelGamePaneController.reload();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

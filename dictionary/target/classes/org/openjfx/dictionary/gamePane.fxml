@@ -12,6 +12,26 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.GamePaneController">
    <children>
+      <AnchorPane fx:id="exitGameBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="301.0" layoutY="195.0" prefHeight="150.0" prefWidth="350.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #FFFFFF;">
+               <children>
+                  <Button layoutX="304.0" layoutY="5.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="17.0" prefWidth="47.0" style="-fx-background-color: #CC0000; -fx-background-radius: 5px;" text="X" textFill="WHITE" fx:id="xButton">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="yesButton" layoutX="198.0" layoutY="102.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="26.0" prefWidth="54.0" text="YES" />
+                  <Button fx:id="noButton" layoutX="277.0" layoutY="102.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="26.0" prefWidth="54.0" text="NO" />
+                  <Text layoutX="54.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score will not be recorded! Do you want to exit the game?" wrappingWidth="249.15423583984375">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="yourScoreBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;">
          <children>
             <AnchorPane layoutX="270.0" layoutY="123.0" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #FFFFFF;">
@@ -36,26 +56,6 @@
                   <Text layoutX="69.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to choose another level?" textAlignment="CENTER" wrappingWidth="268.20000000000005">
                      <font>
                         <Font size="25.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="exitGameBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane layoutX="301.0" layoutY="195.0" prefHeight="150.0" prefWidth="350.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: #FFFFFF;">
-               <children>
-                  <Button layoutX="304.0" layoutY="5.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="17.0" prefWidth="47.0" style="-fx-background-color: #CC0000; -fx-background-radius: 5px;" text="X" textFill="WHITE" fx:id="xButton">
-                     <font>
-                        <Font name="Arial Bold" size="10.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="yesButton" layoutX="198.0" layoutY="102.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="26.0" prefWidth="54.0" text="YES" />
-                  <Button fx:id="noButton" layoutX="277.0" layoutY="102.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="26.0" prefWidth="54.0" text="NO" />
-                  <Text layoutX="54.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score will not be recorded! Do you want to exit the game?" wrappingWidth="249.15423583984375">
-                     <font>
-                        <Font size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -92,7 +92,7 @@
             <Button fx:id="text4_R" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <AnchorPane layoutX="629.0" layoutY="190.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
+      <AnchorPane layoutX="575.0" layoutY="189.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
          <children>
             <GridPane layoutX="14.0" layoutY="20.0" prefHeight="94.0" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
@@ -155,7 +155,7 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="629.0" layoutY="301.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
+      <AnchorPane layoutX="743.0" layoutY="188.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
          <children>
             <GridPane layoutX="14.0" layoutY="20.0" prefHeight="94.0" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columnConstraints>
@@ -188,14 +188,20 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutX="611.0" layoutY="414.0" mnemonicParsing="false" onAction="#backToChooseTopic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
-      <Button fx:id="homeButton" layoutX="678.0" layoutY="414.0" mnemonicParsing="false" onAction="#exitGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
-      <ImageView fx:id="imageSpeaker" fitHeight="52.0" fitWidth="52.0" layoutX="745.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="musicButton" layoutX="743.0" layoutY="412.0" mnemonicParsing="false" onAction="#stopOrPlayMusic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
-      <Text fx:id="highScoreText" fill="WHITE" layoutX="372.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGH SCORE: " textAlignment="CENTER" wrappingWidth="215.19999999999993">
+      <Button fx:id="backButton" layoutX="630.0" layoutY="400.0" mnemonicParsing="false" onAction="#backToChooseTopic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <Button fx:id="homeButton" layoutX="700.0" layoutY="400.0" mnemonicParsing="false" onAction="#exitGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <ImageView fx:id="imageSpeaker" fitHeight="52.0" fitWidth="52.0" layoutX="770.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="musicButton" layoutX="770.0" layoutY="400.0" mnemonicParsing="false" onAction="#stopOrPlayMusic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <Text fx:id="highScoreText" fill="WHITE" layoutX="580.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGH SCORE: " wrappingWidth="215.19999999999993">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
+      <Text fill="WHITE" layoutX="582.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEART:" wrappingWidth="215.19999999999993">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="61.0" fitWidth="70.0" layoutX="686.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

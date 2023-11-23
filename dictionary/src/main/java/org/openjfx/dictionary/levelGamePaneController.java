@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 public class LevelGamePaneController {
     @FXML
-    private Button easyButton, mediumButton, hardButton;
+    private static Button easyButton, mediumButton, hardButton;
     @FXML
     private Button backButton;
 
@@ -22,6 +22,12 @@ public class LevelGamePaneController {
     private Scene scene;
     private Parent root;
     private static int modeNumber = 1;
+    private boolean checkStatusButton = false;
+    private static Button tempButton = null;
+
+    public static void reload() {
+        if (tempButton != null) setColorButton(tempButton);
+    }
 
     @FXML
     private void backToDefaultMenuButton(ActionEvent event) throws IOException {
@@ -33,17 +39,32 @@ public class LevelGamePaneController {
     }
 
     @FXML
-    private void chooseModeEasy() {
+    private void chooseModeEasy(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        if (tempButton != null) resetColorButton(tempButton);
+        tempButton = button;
+        setColorButton(tempButton);
+        checkStatusButton = true;
         modeNumber = 1;
     }
 
     @FXML
-    private void chooseModeMedium() {
+    private void chooseModeMedium(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        if (tempButton != null) resetColorButton(tempButton);
+        tempButton = button;
+        setColorButton(tempButton);
+        checkStatusButton = true;
         modeNumber = 2;
     }
 
     @FXML
-    private void chooseModeHard() {
+    private void chooseModeHard(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        if (tempButton != null) resetColorButton(tempButton);
+        tempButton = button;
+        setColorButton(tempButton);
+        checkStatusButton = true;
         modeNumber = 3;
     }
 
@@ -63,16 +84,26 @@ public class LevelGamePaneController {
 
     @FXML
     private void mouseExitModeButton(MouseEvent event) {
-        Button button = (Button) event.getSource();
-        button.setStyle(
-                "-fx-background-radius: 30px; -fx-background-color:  #03A9F4;");
+        if (!checkStatusButton) {
+            Button button = (Button) event.getSource();
+            button.setStyle("-fx-background-radius: 30px; -fx-background-color:  #03A9F4;");
+        }
     }
 
     @FXML
     private void mouseEnterModeButton(MouseEvent event) {
-        Button button = (Button) event.getSource();
-        button.setStyle(
-                "-fx-background-radius: 30px; -fx-background-color: #84CBF4;");
+        if (!checkStatusButton) {
+            Button button = (Button) event.getSource();
+            button.setStyle("-fx-background-radius: 30px; -fx-background-color: #84CBF4;");
+        }
+    }
+
+    private static void setColorButton(Button button) {
+        button.setStyle("-fx-background-radius: 30px; -fx-background-color:  #032D59;");
+    }
+
+    public void resetColorButton(Button button) {
+        button.setStyle("-fx-background-radius: 30px; -fx-background-color:  #03A9F4;");
     }
 
     public static int getModeNumber() {

@@ -57,6 +57,8 @@ public class GamePaneController {
     private AnchorPane exitGameBoxPane;
     @FXML
     private AnchorPane yourScoreBoxPane;
+    @FXML
+    private ImageView heart1, heart2, heart3, heart4, heart5;
 
     private int minute;
     private int second;
@@ -64,15 +66,23 @@ public class GamePaneController {
     private int highScore = 0;
     private int checkTrueAnswer;
     private int checkFalseAnswer;
-    Timeline timeline;
+    private Timeline timeline;
+    private boolean checkAudio = true; 
+    private boolean isLeftButtonClicked = false;
+    private boolean isRightButtonClicked = false;
+    private Button clickRightButton = null;
+    private Button clickLeftButton = null;
+    private Button clickTempRightButton = null;
+    private Button clickTempLeftButton = null;
+
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    Image soundOn = new Image(
+    private Image soundOn = new Image(
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_on.png");
-    Image soundOff = new Image(
+    private Image soundOff = new Image(
             "file:///D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/Speaker_off.png");
 
     private ButtonTextRandomizer buttonTextRandomizer;
@@ -181,13 +191,6 @@ public class GamePaneController {
     /**
      * cách thức game hoạt động.
      */
-    private boolean isLeftButtonClicked = false;
-    private boolean isRightButtonClicked = false;
-    private Button clickRightButton = null;
-    private Button clickLeftButton = null;
-    private Button clickTempRightButton = null;
-    private Button clickTempLeftButton = null;
-
     @FXML
     private void onText_LClick(ActionEvent event) {
         clickLeftButton = (Button) event.getSource();
@@ -284,8 +287,6 @@ public class GamePaneController {
     /**
      * bật tắt âm thanh.
      */
-    private boolean checkAudio = true; // biến kiểm tra trạng thái âm thanh
-
     @FXML
     private void stopOrPlayMusic(ActionEvent event) {
         if (checkAudio) {
@@ -349,7 +350,7 @@ public class GamePaneController {
         stage.show();
     }
 
-    public void countdown() {
+    private void countdown() {
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
                     if (second > 0)
@@ -381,20 +382,20 @@ public class GamePaneController {
         timeline.play();
     }
 
-    public void reload() {// ! Cực khì chú ý hàm reload, hãy reload mọi thứ cần reload :)
+    public void reload() {
         initializeGame();
         initializeSound();
         countdown();
     }
 
-    public void showExitGameBox() {
+    private void showExitGameBox() {
         exitGameBoxPane.setDisable(false);
         exitGameBoxPane.setVisible(true);
         BackgroundSound.pause();
         timeline.pause();
     }
 
-    public void showYourScoreBox() {
+    private void showYourScoreBox() {
         yourScoreBoxPane.setDisable(false);
         yourScoreBoxPane.setVisible(true);
         BackgroundSound.stop();
