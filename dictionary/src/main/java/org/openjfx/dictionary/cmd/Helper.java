@@ -19,7 +19,7 @@ public class Helper {
     public static Dictionary dictionary = new Dictionary();
     public static void speak(String text, String language) throws Exception {
         String API_KEY = "3d5347f37b39439ba63c6d0f6ab6ae6b";
-        String AUDIO_PATH = "D:/Github/OPP/dictionary/src/main/resources/org/openjfx/dictionary/audio.wav";
+        String AUDIO_PATH = "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\audio\\audio.wav";
         double speed = 1;
 
         VoiceProvider tts = new VoiceProvider(API_KEY);

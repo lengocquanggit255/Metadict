@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.controller.GamePaneController">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backgroundInGame.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="72.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="466.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" />
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" />
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" />
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="text0_L" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#onText_LClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" textAlignment="CENTER" />
+            <Button fx:id="text0_R" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" textAlignment="CENTER" GridPane.columnIndex="1" />
+            <Button fx:id="text1_L" mnemonicParsing="false" onAction="#onText_LClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.rowIndex="1" />
+            <Button fx:id="text1_R" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="text2_L" mnemonicParsing="false" onAction="#onText_LClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.rowIndex="2" />
+            <Button fx:id="text2_R" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="text3_L" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onText_LClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.rowIndex="3" />
+            <Button fx:id="text3_R" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="text4_L" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" onAction="#onText_LClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.rowIndex="4" />
+            <Button fx:id="text4_R" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onText_RClick" prefHeight="83.0" prefWidth="215.0" style="-fx-background-radius: 25px; -fx-background-color: #03A9F4; -fx-text-fill: #FFFFFF; -fx-font-size: 15px; -fx-font-weight: BOLD; -fx-wrap-text: TRUE; -fx-alignment: CENTER; -fx-content-display: CENTER;" text="" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="575.0" layoutY="189.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
+         <children>
+            <GridPane layoutX="14.0" layoutY="20.0" prefHeight="94.0" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="42.60001220703125" minHeight="10.0" prefHeight="32.200018310546874" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="63.4" minHeight="10.0" prefHeight="62.599981689453124" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="48.0" prefWidth="128.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="60.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="60.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fx:id="minuteText" fill="WHITE" layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="00">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Text fill="WHITE" layoutX="10.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text=":">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Text fx:id="secondText" fill="WHITE" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="00">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <AnchorPane prefHeight="48.0" prefWidth="122.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="46.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="TIME" wrappingWidth="54.326175689697266">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="743.0" layoutY="188.0" prefHeight="94.0" prefWidth="146.0" style="-fx-background-color: transparent; -fx-background-radius: 10px;">
+         <children>
+            <GridPane layoutX="14.0" layoutY="20.0" prefHeight="94.0" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="42.60001220703125" minHeight="10.0" prefHeight="33.799993896484374" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="62.60001220703125" minHeight="10.0" prefHeight="61.000006103515624" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="48.0" prefWidth="122.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="38.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="SCORE" wrappingWidth="70.32623672485352">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Text fx:id="scoreText" fill="WHITE" layoutX="12.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="0" textAlignment="CENTER" wrappingWidth="121.60007324218759">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Button fx:id="backButton" layoutX="630.0" layoutY="400.0" mnemonicParsing="false" onAction="#backToChooseTopic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <Button fx:id="homeButton" layoutX="700.0" layoutY="400.0" mnemonicParsing="false" onAction="#exitGame" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <ImageView fx:id="imageSpeaker" fitHeight="52.0" fitWidth="52.0" layoutX="772.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Speaker_on.png" />
+         </image></ImageView>
+      <Button fx:id="musicButton" layoutX="770.0" layoutY="400.0" mnemonicParsing="false" onAction="#stopOrPlayMusic" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-color: TRANSPARENT; -fx-border-radius: 100px;" />
+      <Text fx:id="highScoreText" fill="WHITE" layoutX="580.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGH SCORE: " wrappingWidth="215.19999999999993">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="582.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEART:" wrappingWidth="215.19999999999993">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="heart1" fitHeight="39.0" fitWidth="40.0" layoutX="680.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/infinity.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="heart2" fitHeight="40.0" fitWidth="40.0" layoutX="720.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="heart3" fitHeight="40.0" fitWidth="40.0" layoutX="760.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="heart4" fitHeight="40.0" fitWidth="40.0" layoutX="800.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="heart5" fitHeight="40.0" fitWidth="40.0" layoutX="840.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="exitGameBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="328.0" layoutY="165.0" prefHeight="210.0" prefWidth="303.0" style="-fx-background-color: TRANSPARENT;">
+               <children>
+                  <ImageView fitHeight="205.0" fitWidth="355.0" layoutX="6.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/exitBox.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="265.0" layoutY="13.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="29.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" textFill="WHITE" fx:id="xButton">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="yesButton" layoutX="50.0" layoutY="145.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="46.0" prefWidth="70.0" style="-fx-background-color: TRANSPARENT;" />
+                  <Button fx:id="noButton" layoutX="185.0" layoutY="146.0" mnemonicParsing="false" onAction="#stayInGame" prefHeight="40.0" prefWidth="70.0" style="-fx-background-color: TRANSPARENT;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="yourScoreBoxPane" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #C0C0C080;">
+         <children>
+            <AnchorPane layoutX="313.0" layoutY="117.0" prefHeight="306.0" prefWidth="315.0" style="-fx-background-color: TRANSPARENT;">
+               <children>
+                  <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/scoreBox.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="289.0" layoutY="14.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" textFill="WHITE" fx:id="xScoreButton">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="yesScoreButton" layoutX="49.0" layoutY="227.0" mnemonicParsing="false" onAction="#chooseLevelAgain" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: TRANSPARENT;" />
+                  <Button fx:id="noScoreButton" layoutX="203.0" layoutY="223.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="46.0" prefWidth="79.0" style="-fx-background-color: TRANSPARENT;" />
+                  <Text fx:id="yourScoreText" fill="WHITE" layoutX="86.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="161.39999999999998">
+                     <font>
+                        <Font size="50.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

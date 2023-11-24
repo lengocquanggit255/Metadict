@@ -9,7 +9,12 @@ module dictionary {
     requires javafx.media;
 
     opens org.openjfx.dictionary to javafx.fxml;
-
+    opens org.openjfx.dictionary.controller to javafx.fxml;
+    opens org.openjfx.dictionary.gamehelper to javafx.fxml;
+    
     exports org.openjfx.dictionary;
     exports org.openjfx.dictionary.cmd;
+    exports org.openjfx.dictionary.controller;
+    exports org.openjfx.dictionary.gamehelper;
+
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.controller.LevelGamePaneController">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backgroundLevel.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="easyButton" layoutX="356.0" layoutY="197.0" mnemonicParsing="false" onAction="#chooseModeEasy" onMouseEntered="#mouseEnterModeButton" onMouseExited="#mouseExitModeButton" prefHeight="48.0" prefWidth="250.0" style="-fx-background-color: #03A9F4; -fx-background-radius: 30px;" text="Easy" textFill="WHITE">
+         <font>
+            <Font name="CocomatPro-ExtraBold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="mediumButton" layoutX="356.0" layoutY="272.0" mnemonicParsing="false" onAction="#chooseModeMedium" onMouseEntered="#mouseEnterModeButton" onMouseExited="#mouseExitModeButton" prefHeight="48.0" prefWidth="250.0" style="-fx-background-color: #03A9F4; -fx-background-radius: 30px;" text="Medium" textFill="WHITE">
+         <font>
+            <Font name="CocomatPro-ExtraBold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="hardButton" layoutX="356.0" layoutY="348.0" mnemonicParsing="false" onAction="#chooseModeHard" onMouseEntered="#mouseEnterModeButton" onMouseExited="#mouseExitModeButton" prefHeight="48.0" prefWidth="250.0" style="-fx-background-color: #03A9F4; -fx-background-radius: 30px;" text="Hard" textFill="WHITE">
+         <font>
+            <Font name="CocomatPro-ExtraBold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="75.0" layoutY="46.0" mnemonicParsing="false" onAction="#backToDefaultMenuButton" onMouseEntered="#mouseEnterButton" onMouseExited="#mouseExitButton" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 100px; -fx-border-radius: 100px; -fx-border-color: TRANSPARENT;" />
+   </children>
+</AnchorPane>
