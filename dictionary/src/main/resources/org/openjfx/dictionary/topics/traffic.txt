@@ -1,91 +1,161 @@
 Bicycle: Xe đạp
-Minicab: Xe cho thuê
+Car: Ô tô
+Caravan: Xe du lịch
+Coach: Xe khách
+High-speed train: Tàu cao tốc
+Minicab: Xe taxi nhỏ
+Moped: Xe máy đạp
 Motorbike: Xe máy
+Railway train: Tàu hỏa
 Scooter: Xe tay ga
 Tram: Xe điện
 Truck: Xe tải
-Car: Ô tô
-Caravan: Xe lưu động
-Coach: Huấn luyện viên
-Van: Xe tải có kích thước nhỏ
-Moped: Xe máy có bàn đạp
-Bus: xe buýt
-Subway: tàu điện ngầm
-High-speed train: tàu cao tốc
-Railway train: tàu hỏa
-Coach: xe khách
-Taxi: xe taxi
-Tube: tàu điện ngầm
-Underground: tàu điện ngầm
-Helicopter: Trực thăng
-Glider: Tàu lượn
-Hot-air balloon: Khinh khí cầu
-Airplane: Máy bay
+Van: Xe bán tải
 Boat: Thuyền
+Canoe: Xuồng
+Cargo ship: Tàu chở hàng hóa
 Cruise ship: Tàu du lịch
+Ferry: Phà
+Hovercraft: Tàu phản lực
+Rowing boat: Thuyền chèo
 Sailboat: Thuyền buồm
 Ship: Tàu thủy
-Speedboat: Tàu siêu tốc
-Ferry: Phà
-Canoe: Xuồng
-Highway: Đường cao tốc 
-Motorcycle lane: Đường cho xe máy
-Motorway: Xa lộ
-Bend: Đường gấp khúc
-Bump: Đường bị xóc
-Car lane: Đường cho xe hơi
-Dual carriageway: Xa lộ hai chiều
-Fork: Ngã ba
-Pedestrian crossing: Vạch để qua đường
+Speedboat: Tàu cứu hỏa
+Helicopter: Trực thăng
+Airplane/Plane: Máy bay
+Propeller plane: Máy bay chạy bằng động cơ cánh quạt
+Glider: Máy bay lượn
+Hot-air balloon: Khinh khí cầu
+Railway train: Tàu hỏa
+Taxi: Xe taxi
+Tube: Tàu điện ngầm (ở nước Anh)
+Subway: Tàu điện ngầm
+Coach: Xe khách
+Underground: Tàu điện ngầm
+Bus: Xe buýt
+Bend: Đoạn đường gấp khúc
+Bump: Đoạn đường gồ ghề
+Car lane: Làn đường dành cho xe hơi
+Dual carriageway: Đường hai chiều
+Fork: Ngã ba đường
+Highway: Đường cao tốc
+Level crossing: Đường giao cắt với đường ray tàu
+Motorcycle lane: Làn đường dành cho xe máy
+Motorway: Đường cao tốc
+Pedestrian crossing: Vạch qua đường cho người đi bộ
 Railroad track: Đường ray xe lửa
-Roadside: Phần đường làm lề
-T-junction: Ngã ba đường
-Toll road: Đường có thu phí
-Turning: Điểm có thể rẽ
-Ring road: Đường vành đai
+Ring road: Đường vòng quanh thành phố
 Road: Đường
 Road narrows: Đường hẹp
-Road goes right: Đường đi bên phải
-Road sign: Bảng chỉ đường  
-Cross road: Đoạn đường hay giao nhau  
-Dead end: Đường cuối, đường cụt
-No U-Turn: Biển cấm vòng  
-Railway: Các loại đường sắt
-Road widens: Đường rộng hơn
-Roundabout: Bùng binh vòng tròn
-Slippery road: Đường trơn trượt
-Slow down: Giảm tốc độ  
+Roadside: Lề đường
+T-junction: Ngã ba đường hình chữ T
+Toll road: Đường có trạm thu phí
+Traffic jam: Tắc đường
+Traffic: Giao thông
+Turning: Điểm rẽ
+Cross road: Đoạn đường giao nhau
+Dead end: Đường cụt
+End of dual carriageway: Hết làn đường kép
+Handicap parking: Chỗ đỗ xe dành riêng cho người khuyết tật
+Hard shoulder: Vạch đứt cạnh xa lộ cho phép dừng xe
+No crossing: Cấm qua đường
+No entry: Biển cấm vào
+No horn: Biển cấm còi
+No overtaking: Biển cấm vượt
+No parking: Biển cấm đỗ xe
+No U-Turn: Biển cấm vòng
+Railway: Đường sắt
+Road goes right: Đường rẽ phải
+Road sign: Biển bảng chỉ đường
+Road widens: Đường trở nên rộng hơn
+Roundabout: Bùng binh
+Slippery road: Đường trơn
+Slow down: Yêu cầu giảm tốc độ
 Speed limit: Giới hạn tốc độ
-T-Junction: Ngã ba chữ T
-Hard shoulder: Khu cho đỗ xe
-No crossing: Biển cấm qua đường
-No entry: Không được vào  
-No horn: Biển cấm bấm còi  
-No overtaking: Biển cấm vượt qua
-No parking: Biển cấm đỗ xe  
-Two way traffic: Đường đi hai chiều
-Your priority: Đoạn đường ưu tiên
-Kerb: Mép vỉa hè
-Learner driver: Người tập lái xe
-One-way street: Đường một chiều
+T-Junction: Ngã ba hình chữ T
+Two-way traffic: Đường hai chiều
+Your priority: Đoạn đường được ưu tiên
 Accident: Tai nạn
-Breathalyzers: Dụng cụ đo độ cồn
-Car park: Bãi đậu xe máy
-Journey: Chuyến hành trình
-Junction: Giao lộ  
-Parking ticket: Vé giữ xe
+Breathalyzers: Dụng cụ kiểm tra độ cồn trong hơi thở
+Car park: Bãi đỗ xe
+Infrastructure: Cơ sở hạ tầng
+Journey: Hành trình
+Junction: Giao lộ
+Kerb: Mép vỉa hè
+Learner driver: Người tập lái
+One-way street: Đường một chiều
+Parking ticket: Vé đỗ xe
 Passenger: Hành khách
-Petrol station: Chỗ đổ xăng
-Trip: Chuyến đi
-Vehicle: Phương tiện  
-Traffic: Giao thông nói chung  
+Petrol station: Trạm bơm xăng
+Private transport: Phương tiện giao thông cá nhân
+Public transport: Phương tiện giao thông công cộng
+Sidewalk: Vỉa hè
+Signpost: Tấm biển báo giao thông
+Traffic: Giao thông (nói chung)
 Traffic jam: Tắc nghẽn giao thông
-Traffic light: Đèn giao thông  
-Transport: Vận, di chuyển
-Sidewalk: Vỉa hè  
-Signpost: Biển báo giao thông  
+Traffic light: Đèn giao thông
+Traffic warden: Nhân viên kiểm soát việc đỗ xe
+Transport: Vận chuyển
 Transport system: Hệ thống giao thông
 Transportation: Phương tiện giao thông
-
-
-
+Trip: Chuyến đi
+Vehicle: Phương tiện
+Bypass: Đường vòng
+Car hire: Thuê xe
+Car wash: Rửa xe ô tô
+Diesel: Dầu diesel
+Driver: Tài xế
+Driving instructor: Giáo viên dạy lái xe
+Driving lesson: Buổi học lái xe
+Driving licence: Bằng lái xe
+Driving test: Kỳ thi lái xe
+Garage: Gara
+Hard shoulder: Vạt đất cứng
+Jump leads: Dây nối cực pin
+Kerb: Mép vỉa hè
+Level crossing: Đoạn đường giao cấp
+Mechanic: Thợ sửa xe
+Oil: Dầu
+Parking meter: Máy tính tiền đỗ xe
+Parking space: Chỗ đỗ xe
+Petrol: Xăng
+Petrol pump: Bơm xăng
+Puncture: Lốp xịt
+Reverse gear: Số lùi
+Second-hand: Đồ cũ
+Services: Trạm dịch vụ
+Speed: Tốc độ
+To accelerate: Tăng tốc
+To change gear: Chuyển số
+To drive: Lái xe
+To skid: Trượt xe
+To slow down: Giảm tốc độ
+To stall: Bị chết máy
+To swerve: Ngoặt xe
+Toll road: Đường có thu phí
+Toll: Lệ phí
+Traffic: Giao thông
+Tyre pressure: Áp suất lốp
+Cone: Cọc tiêu giao thông
+Corner: Góc đường
+Crossroads: Ngã tư
+Crosswalk: Vạch qua đường dành cho người đi bộ
+Flat tyre: Bánh xe bị sịt
+Icy road: Đường băng giá
+Jack: Cần gạt hạc
+Lane: Làn đường
+Lay-by: Vị trí tạm dừng xe
+Manhole: Nắp cống
+Multi-storey car park: Bãi đỗ xe nhiều tầng
+Parking lot: Bãi đỗ xe
+Pavement: Vỉa hè
+Road map: Bản đồ đường
+Roadblock: Rào chắn đường
+Roadworks: Công trình sửa đường
+Speed camera: Camera ghi tốc độ
+Speeding fine: Tiền phạt vượt tốc độ
+Spray: Bụi nước
+To brake: Phanh
+Tunnel: Đường hầm
+Turnpike: Đường cao tốc có thu phí
+Unleaded: Không chì
