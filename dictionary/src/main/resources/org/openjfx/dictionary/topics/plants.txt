@@ -1,0 +1,147 @@
+Azalea: Hoa đỗ quyên
+Tuberose: Hoa huệ
+Narcissus: Hoa thủy tiên
+Snapdragon: Hoa mõm chó
+Forget-me-not: Hoa lưu ly thảo
+Violet: Hoa đồng thảo
+Pansy: Hoa bướm
+Morning glory: Hoa bìm bìm
+Hop: Hoa bia
+Horticulture: Kỹ thuật làm vườn
+Confetti: Hoa giấy
+Honeysuckle: Hoa kim ngân
+Hyacinth: Hoa hyacinth
+Dandelion: Hoa bồ công anh
+Cockscomb: Hoa mồng gà
+Columbine: Hoa bồ câu
+Camellia: Hoa trà
+Chamomile: Hoa cúc la mã
+Campanula: Hoa chuông
+Carnation: Hoa cẩm chướng
+Cosmos: Hoa cúc vạn thọ tây
+Crocus: Hoa nghệ tây
+Daffodil: Hoa thủy tiên vàng
+Dahlia: Hoa thược dược
+Daisy: Hoa cúc
+Flamboyant: Hoa phượng
+Magnolia: Hoa mộc lan
+Peony: Hoa mẫu đơn
+Sunflower: Hoa hướng dương
+Marigold: Hoa cúc vạn thọ
+Orchid: Hoa lan
+Lilac: Hoa cà
+Eglantine: Hoa tầm xuân
+Hellebore: Hoa lê lư
+Hibiscus: Hoa dâm bụt
+Impatiens: Hoa móng tay
+Iris: Hoa diên vĩ
+Lily: Hoa loa kèn
+Lotus: Hoa sen
+Lavender: Hoa oải hương
+Jasmine: Hoa nhài
+Gladiolus: Hoa lay ơn
+Water lily: Hoa súng
+Peach blossom: Hoa đào
+Celery: Cần tây
+Cabbage: Bắp cải
+Cauliflower: Súp lơ
+Fennel: Thì là
+Asparagus: Măng tây
+Broccoli: Bông cải xanh
+Horseradish: Cải ngựa
+Lettuce: Rau diếp
+Green onion: Hành lá
+Coriander: Rau mùi
+Knotgrass: Rau răm
+Centella: Rau má
+Gai choy: Cải đắng
+Herbs: Rau thơm
+Perilla leaf: Lá tía tô
+Malabar spinach: Rau mồng tơi
+Seaweed: Rong biển
+Wild betel leaves: Lá lốt
+Spinach: Rau chân vịt 
+Bean sprouts: Giá đỗ
+Corn: Ngô (bắp)
+Beetroot: Củ dền
+Marrow: Quả bí xanh
+Cucumber: Dưa leo
+Bell pepper: Ớt chuông
+Tomato: Quả cà chua
+Shallot: Củ hẹ
+Hot pepper: Ớt cay
+Sweet potato: Khoai lang
+Potato: Củ khoai tây
+Turmeric: Củ nghệ
+Galangal: Củ riềng
+Onion: Hành tây
+Radish: Củ cải
+Leek: Củ kiệu
+Kohlrabi: Su hào
+Carrot: Củ cà rốt
+Ginger: Gừng
+Squash: Bí
+White turnip: Củ cải trắng
+Eggplant: Cà tím
+Loofah: Mướp
+Fatty mushrooms: Nấm mỡ
+King oyster mushroom: Nấm đùi gà
+Black fungus: Nấm mộc nhĩ đen
+Melaleuca mushroom: Nấm tràm
+Abalone mushrooms: Nấm bào ngư
+Ganoderma: Nấm linh chi
+Enokitake: Nấm kim châm
+Straw mushrooms: Nấm rơm
+Seafood mushrooms: Nấm hải sản
+Mushroom: Nấm
+White fungus: Nấm tuyết
+Jackfruit: Mít
+Plum: Mận
+Lemon: Chanh vàng
+Papaya: Đu đủ
+Apple: Táo
+Grape: Nho
+Pomelo: Bưởi
+Banana: Chuối
+Peach: Đào
+Avocado: Bơ
+Watermelon: Dưa hấu
+Lychee: Vải
+Pomegranate: Lựu
+Orange: Cam
+Rambutan: Chôm chôm
+Coconut: Dừa
+Durian: Sầu riêng
+Kumquat: Quất (hay còn gọi là quả tắc)
+Cherry: Anh đào
+Strawberry: Dâu tây
+Pineapple: Dứa (hay còn gọi là quả thơm)
+Guava: Ổi
+Melon: Dưa
+Dragon fruit: Thanh long
+Longan: Nhãn
+Apricot: Mơ
+Mandarin: Quýt
+Mangosteen: Măng cụt
+Cantaloupe: Dưa vàng
+Blackberries: Mâm xôi đen
+Ambarella: Trái cóc
+Soursop: Mãng cầu xiêm
+Passion fruit: Chanh dây
+Star apple: Khế
+Mango: Xoài
+Cashew: Hạt điều
+Walnut: Hạt óc chó
+Almond: Hạnh nhân
+Sesame seeds: Hạt vừng
+Pumpkin seeds: Hạt bí
+Pine nut: Hạt thông
+Chia seeds: Hạt chia
+Sunflower seeds: Hạt hướng dương
+Macadamia: Hạt mắc ca
+Pistachio: Hạt dẻ cười
+Chestnut: Hạt dẻ
+Soybean: Đậu nành
+Mung bean: Đậu xanh
+Red bean: Đậu đỏ
+Peas: Đậu Hà Lan

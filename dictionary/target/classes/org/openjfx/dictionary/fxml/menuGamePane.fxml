@@ -101,7 +101,7 @@
                               <Font name="CocomatPro-ExtraBold" size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="topic8" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#chooseTopic" onMouseEntered="#mouseEnterTopicButton" onMouseExited="#mouseExitTopicButton" prefHeight="60.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: #03A9F4;" text="Numbers" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                        <Button fx:id="topic8" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#chooseTopic" onMouseEntered="#mouseEnterTopicButton" onMouseExited="#mouseExitTopicButton" prefHeight="60.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: #03A9F4;" text="Plants" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>

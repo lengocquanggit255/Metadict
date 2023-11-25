@@ -38,13 +38,13 @@ public class MenuGamePaneController {
         // Mảng chứa tên các chủ đề
         String[] topics = {
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\animal.txt",
-                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\family.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\peopleAndCharacter.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\SportsAndGames.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\traffic.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\schoolAndUniversity.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\colorsAndShapes.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\Body.txt",
-                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\numbers.txt",
+                "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\plants.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\foodsAndDrinks.txt",
                 "D:\\Github\\OPP\\dictionary\\src\\main\\resources\\org\\openjfx\\dictionary\\topics\\moviesAndMusic.txt" };
 
