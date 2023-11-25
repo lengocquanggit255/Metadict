@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -111,7 +110,8 @@ public class ContainerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/openjfx/dictionary/fxml/searchPane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("/org/openjfx/dictionary/fxml/searchPane.fxml"));
             anchorSearchPane = fxmlLoader.load();
             searchController = fxmlLoader.getController();
         } catch (IOException e) {
@@ -127,7 +127,8 @@ public class ContainerController implements Initializable {
         }
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/openjfx/dictionary/fxml/bookMarkPane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("/org/openjfx/dictionary/fxml/bookMarkPane.fxml"));
             anchorBookMarkPane = fxmlLoader.load();
             bookMarkController = fxmlLoader.getController();
         } catch (IOException e) {
@@ -135,7 +136,8 @@ public class ContainerController implements Initializable {
         }
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/openjfx/dictionary/fxml/GoogleTranslatePane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("/org/openjfx/dictionary/fxml/GoogleTranslatePane.fxml"));
             anchorGoogleTranslatePane = fxmlLoader.load();
             GoogleTranslateController = fxmlLoader.getController();
         } catch (IOException e) {

@@ -5,13 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.controller.StartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.dictionary.controller.StartController">
    <children>
-      <ImageView fitHeight="454.0" fitWidth="761.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/backgroundStartPane.png" />
          </image>
       </ImageView>
-      <Button fx:id="startButton" layoutX="294.0" layoutY="164.0" mnemonicParsing="false" onAction="#start" onMouseEntered="#mouseEnterStartButton" onMouseExited="#mouseEnterExitButton" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: TRANSPARENT;" />
+      <Button fx:id="startButton" layoutX="370.0" layoutY="206.0" mnemonicParsing="false" onAction="#start" onMouseEntered="#mouseEnterStartButton" onMouseExited="#mouseEnterExitButton" prefHeight="53.0" prefWidth="183.0" style="-fx-background-color: TRANSPARENT; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: TRANSPARENT;" />
    </children>
 </AnchorPane>

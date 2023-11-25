@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class StartController {
@@ -18,8 +17,9 @@ public class StartController {
     @FXML
     void start(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/openjfx/dictionary/fxml/container.fxml"));
-            // FXMLLoader fxmlLoader = new FXMLLoader(fxmlUrl);            
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    getClass().getResource("/org/openjfx/dictionary/fxml/container.fxml"));
+            // FXMLLoader fxmlLoader = new FXMLLoader(fxmlUrl);
             Parent root = fxmlLoader.load();
             // Create a new scene
             Scene scene = new Scene(root);
@@ -42,12 +42,12 @@ public class StartController {
     @FXML
     private void mouseEnterStartButton() {
         startButton.setStyle(
-                "-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: WHITE;");
+                "-fx-background-color: TRANSPARENT; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: WHITE;");
     }
 
     @FXML
     private void mouseEnterExitButton() {
         startButton.setStyle(
-                "-fx-background-color: TRANSPARENT; -fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: TRANSPARENT;");
+                "-fx-background-color: TRANSPARENT; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-color: TRANSPARENT;");
     }
 }
